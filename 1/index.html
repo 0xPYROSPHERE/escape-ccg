@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	<base href="https://cdn.jsdelivr.net/gh/0xPYROSPHERE/escape-ccg@main/1/">
+	<link rel="stylesheet" href="theme/game.css">
+	<meta name="robots" content="noindex, nofollow">
+	<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500&display=swap" rel="stylesheet">
+	<title>Escape Road</title>
+	<meta name="description" content=""/>
+	<style type="text/css">
+		.jss1:before {
+			top: 0;
+			width: 100%;
+			filter: blur(16px);
+			height: 100%;
+			content: "";
+			display: block;
+			opacity: .5;
+			z-index: 0;
+			position: absolute;
+			background-size: cover;
+			background-image: url("loading.png")
+		}
+	</style> 
+	<script>
+		window.fileMergerConfig = {
+			files: [
+				{name: "escape-road-v25011401.wasm.unityweb", parts: 3},
+				{name: "escape-road-v25011401.data.unityweb", parts: 2}
+			],
+			basePath: "Build/",
+			debug: true
+		}
+	</script>
+	<script src="https://cdn.jsdelivr.net/gh/bubbls/UGS-Assets@ac5cdfc0042aca584e72619375b4aca948a9243c/merge.js"></script>
+	<script>
+		var buildUrl = "Build";
+		var versionFolder = "";
+		buildUrl = versionFolder + buildUrl;
+		var loaderUrl = buildUrl + "/escape-road-v25011401.loader.js";
+		var config = {
+			dataUrl: buildUrl + "/escape-road-v25011401.data.unityweb",
+			frameworkUrl: buildUrl + "/escape-road-v25011401.framework.js.unityweb",
+			codeUrl: buildUrl + "/escape-road-v25011401.wasm.unityweb",
+			streamingAssetsUrl: versionFolder+"StreamingAssets",
+			companyName: "azgames.io",
+			productName: "Escape Road",
+			productVersion: "25011401",
+			pubId: ""
+		};
+		config.gameId = "escape-road";
+		config.eventLog=false;
+		config.buildAPI = "https://event.azgame.io/apiaz/event";
+		let currentDate = new Date();
+		let endLogDate = new Date("2025-03-08T07:31:48.701Z");
+		if(currentDate>endLogDate){
+			config.eventLog=false;
+		}
+		config.enableMoreGame="no";
+		config.enablePromotion = false;
+		config.gdHost=isHostOnGD();
+		if(config.gdHost){
+			config.enableMoreGame="no";
+			config.enablePromotion = false;
+			config.eventLog = false;
+			let pathSegments = window.location.pathname.split('/');
+			config.gdGameId = pathSegments[1];
+		}
+		function isHostOnGD() {
+			let domainParts = window.location.hostname.split('.');
+			let mainDomain = domainParts.slice(-2).join('.');
+			return (mainDomain=="gamedistribution.com");
+		}
+	</script>
+	<script id="gmsoft-jssdk" src="../gmsoftsdk_v5.js"></script>
+</head>
+
+<body>
+<div id="unity-container" style="display: none;">
+	<canvas id="unity-canvas"></canvas> 
+</div>
+<div id="loadingBlock" style="">
+	<div class="jss31 jss34 jss1">
+	<div style="position: absolute; font-family: Arial, Helvetica, sans-serif;	bottom: 10px; right: 10px; font-size: 18px; color: #ffffff; opacity: 0.5;">25011401</div>
+		<div class="spinner"></div>
+		<div class="jss31 jss34 jss48" style="flex: 1 1 0%;">
+			<div class="jss32">
+				<div class="jss7 jss9 jss20 jss3">
+					<div class="jss125">
+						<div class="jss123">
+						 <img src="https://cdn.jsdelivr.net/gh/0xPYROSPHERE/coolchemgames@main/images/icons/logo.png" style="width:200px;height:150px">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--PRODUCT_VERSION:25011401END-->
+		<div class="jss31 jss34" style="flex: 3 1 0%;">
+			<div class="jss32">
+				<div class="jss31 jss34 jss39 jss50 gameloader">
+					<div class="jss32">
+						<div class="gameloader-game-name">Escape Road</div>
+					</div>
+					<div class="jss32">
+						<div class="jss32 gameloader-logo">
+							<img id="game-logo" src="25011401/loading.png">
+						</div>
+					</div>
+					<div class="jss32">
+						<div>
+							<div class="gameloader-progressbar">
+								<div class="gameloader-progressbar-progress" id="progress_fill"
+										 style="width: 0%;"></div>
+							</div>
+							<div class="gameloader-progress-info">Game Loading...</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+	<script> 
+		var progressElement = document.getElementById('progress_fill');
+		var container =	document.getElementById("unity-container");
+		var canvas =	document.getElementById("unity-canvas");
+		var loadingBar = document.querySelector("#loadingBlock");
+		var progressBarFull = document.querySelector("#progress_fill");
+		var progress_text = document.querySelector(".gameloader-progress-info");
+		let text_percent = "";
+		var script = document.createElement("script");
+		script.src = loaderUrl;
+		script.onload = () => {
+		createUnityInstance(canvas, config, (progress) => {
+			progressElement.style.width = 100 * progress + "%";
+			text_percent = "Downloading file: " + Math.round(progress*100) + "%";
+			progress_text.innerText = text_percent;
+			if (progress >= 99) {
+				progress_text.innerText = "Game Loading ...";
+			}
+		}).then((unityInstance) => {
+			window.unityInstance = unityInstance;
+			setTimeout(function() {
+				loadingBar.style.display = "none";
+				window.focus();
+			}, 2000);
+			container.style.display = "block";
+		}).catch((message) => {
+			alert(message);
+		});
+		};
+		document.body.appendChild(script);
+	</script>
+	<script type="module">
+		// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+		const firebaseConfig = {
+		apiKey: "AIzaSyAwZ4bK-7JjO1sTWJQct_n0j2prA-w14jM",
+		authDomain: "escape-road.firebaseapp.com",
+		projectId: "escape-road",
+		storageBucket: "escape-road.firebasestorage.app",
+		messagingSenderId: "828919022324",
+		appId: "1:828919022324:web:acc6136ddbd55d303254a1",
+		measurementId: "G-1KL9BG7P9V"
+		};
+	</script>
+	<script>
+		function firebaseSetUserProperties(props) {
+			return;
+		}
+		function firebaseLogEvent(event_name) {
+			return;
+		}
+		function firebaseLogEventParameter(event_name, event_param) {
+			return;
+		}
+	</script>
+</body>	
+</html>
+
