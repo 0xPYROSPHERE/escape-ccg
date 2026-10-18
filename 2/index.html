@@ -3,10 +3,9 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <base href="https://cdn.jsdelivr.net/gh/0xPYROSPHERE/escape-ccg@main/2/">
+    <base href="https://cdn.jsdelivr.net/gh/0xPYROSPHERE/escape-ccg@b96676b3cc327f96da5090cf243c5729ed54c8bc/2/">
 	<link rel="stylesheet" href="theme/game.css">
 	<meta name="robots" content="noindex, nofollow">
-	<link rel="canonical" href="https://azgames.io/escape-road-2">
 	<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500&display=swap" rel="stylesheet">
 	<title>Escape Road 2</title>
 	<meta name="description" content=""/>
@@ -47,28 +46,41 @@
 	<script>
 		var buildUrl = "Build";
 		var versionFolder = "";
-		var loaderUrl = buildUrl + "/escape-road-2-v25102308.loader.js";
+		var loaderUrl = buildUrl + "/escape-road-2-v25010602.loader.js";
 		var config = {
-			dataUrl: buildUrl + "/escape-road-2-v25102308.data.unityweb",
-			frameworkUrl: buildUrl + "/escape-road-2-v25102308.framework.js.unityweb",
-			codeUrl: buildUrl + "/escape-road-2-v25102308.wasm.unityweb",
+			dataUrl: buildUrl + "/escape-road-2-v25010602.data.unityweb",
+			frameworkUrl: buildUrl + "/escape-road-2-v25010602.framework.js.unityweb",
+			codeUrl: buildUrl + "/escape-road-2-v25010602.wasm.unityweb",
 			streamingAssetsUrl: versionFolder+"StreamingAssets",
 			companyName: "azgames.io",
 			productName: "Escape Road 2",
 			productVersion: "25102308"
 		};
-		config.gameId = "escape-road-2";
-		config.eventLog = true;
+		config.gameId = "escape-road";
+		config.eventLog=false;
 		config.buildAPI = "https://event.azgame.io/apiaz/event";
 		let currentDate = new Date();
-		let endLogDate = new Date("2025-11-11T03:30:26.266Z");
+		let endLogDate = new Date("2025-03-08T07:31:48.701Z");
 		if(currentDate>endLogDate){
 			config.eventLog=false;
 		}
-		function _0x3d5f(){var _0x344170=['referrer','spoofLocation','href','https://azgames.io/','gameId','top','hostname'];_0x3d5f=function(){return _0x344170;};return _0x3d5f();}function _0x3ad9(_0x3d5fec,_0x3ad9ad){var _0x2b8f89=_0x3d5f();return _0x3ad9=function(_0x4f63ce,_0x57f96a){_0x4f63ce=_0x4f63ce-0x0;var _0x5985d3=_0x2b8f89[_0x4f63ce];return _0x5985d3;},_0x3ad9(_0x3d5fec,_0x3ad9ad);}isDiffHost()?!document[_0x3ad9(0x0)]&&(config={}):!document[_0x3ad9(0x0)]&&(window[_0x3ad9(0x1)][_0x3ad9(0x2)]=_0x3ad9(0x3)+config[_0x3ad9(0x4)]);function isDiffHost(){try{if(window[_0x3ad9(0x5)]&&window==window[_0x3ad9(0x5)])return![];if(window[_0x3ad9(0x5)][_0x3ad9(0x1)][_0x3ad9(0x6)]==window[_0x3ad9(0x1)][_0x3ad9(0x6)])return![];}catch(_0x3f6a22){return!![];}return!![];}
-		window["GMSOFT_SDKTYPE"] = "gm";
+		config.enableMoreGame="no";
+		config.enablePromotion = false;
+		config.gdHost=isHostOnGD();
+		if(config.gdHost){
+			config.enableMoreGame="no";
+			config.enablePromotion = false;
+			config.eventLog = false;
+			let pathSegments = window.location.pathname.split('/');
+			config.gdGameId = pathSegments[1];
+		}
+		function isHostOnGD() {
+			let domainParts = window.location.hostname.split('.');
+			let mainDomain = domainParts.slice(-2).join('.');
+			return (mainDomain=="gamedistribution.com");
+		}
 	</script>
-	<script>localStorage.setItem("gmsdksigndomain", "eyJzaWduZWQiOiJJaHQ2XC9qdTRUWk15dTljNUhNbWNmekM2QWFmdXFIbGlqOFNcL1ZNNGJxOFVERXZ2czBwc3gwZUZQNEdWSkVWNmVFU2FMaGV1UERNMnEwOVVhUFRLODFJbVpVYnBpTndMXC9wNENcL2R2RWRkanlQK1RyUFFqazNLOUxOM0ZNRDluN0hSXC9ZblAxRmJYTkxoOG0zY3ZLT1JjaWdyXC9Na1JJQnV4SndQaWlvTlFMTVVPbkIzUmZUUkV1czBXbThJK3l4WEdzWUttSVhrT1lGT2hMXC8xb29NNG1hYWswMHZCaFwvZ2J1T09DRDBmZE82K2k3WVFuQUpvQUlBVTNtVXZUc0g4bWN3XC9qUmtTc3E5a2hWdktWVStnem4rZndveVpKWDFWTE00alwvUzZWdVF5SGJoSWEzM0d6U2hjUDZYQXpUUTBIOWpsc2pzNU83aEx4alVkUlcrSDFsZW9RPT0iLCJhcCI6InllcyIsImhuIjoiZ2FtZWEuYXpnYW1lLmlvIiwiZG9tYWluIjoiYXpnYW1lLmlvIiwicyI6InllcyIsInN0eXBlIjoyfQ==");</script><script>localStorage.setItem("gmsdksigndomain", "eyJzaWduZWQiOiJJaHQ2XC9qdTRUWk15dTljNUhNbWNmekM2QWFmdXFIbGlqOFNcL1ZNNGJxOFVERXZ2czBwc3gwZUZQNEdWSkVWNmVFU2FMaGV1UERNMnEwOVVhUFRLODFJbVpVYnBpTndMXC9wNENcL2R2RWRkanlQK1RyUFFqazNLOUxOM0ZNRDluN0hSXC9ZblAxRmJYTkxoOG0zY3ZLT1JjaWdyXC9Na1JJQnV4SndQaWlvTlFMTVVPbkIzUmZUUkV1czBXbThJK3l4WEdzWUttSVhrT1lGT2hMXC8xb29NNG1hYWswMHZCaFwvZ2J1T09DRDBmZE82K2k3WVFuQUpvQUlBVTNtVXZUc0g4bWN3XC9qUmtTc3E5a2hWdktWVStnem4rZndveVpKWDFWTE00alwvUzZWdVF5SGJoSWEzM0d6U2hjUDZYQXpUUTBIOWpsc2pzNU83aEx4alVkUlcrSDFsZW9RPT0iLCJhcCI6InllcyIsImhuIjoiZ2FtZWEuYXpnYW1lLmlvIiwiZG9tYWluIjoiYXpnYW1lLmlvIiwicyI6InllcyIsInN0eXBlIjoyfQ==");</script><script id="gmsoft-jssdk" src="../gmsdkv1.js"></script>
+	<script id="gmsoft-jssdk" src="../gmsoftsdk_v5.js"></script>
 </head>
 
 <body>
