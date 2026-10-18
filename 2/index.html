@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <base href="https://cdn.jsdelivr.net/gh/0xPYROSPHERE/escape-ccg@b96676b3cc327f96da5090cf243c5729ed54c8bc/2/">
+    <base href="https://cdn.jsdelivr.net/gh/0xPYROSPHERE/escape-ccg@f1240030dfb723efc0ffd28bb9abe0661815989b/2/">
 	<link rel="stylesheet" href="theme/game.css">
 	<meta name="robots" content="noindex, nofollow">
 	<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500&display=swap" rel="stylesheet">
@@ -42,7 +42,17 @@
             "hash": ""
         }
     </script>
-	 
+	<script>
+        window.fileMergerConfig = {
+            files: [
+                {name: "escape-road-2-v25010602.data.unityweb", parts: 2},
+                {name: "escape-road-2-v25010602.wasm.unityweb", parts: 3}
+            ],
+            basePath: "Build/",
+            debug: true
+        };
+    </script>
+    <script src="https://cdn.jsdelivr.net/gh/bubbls/UGS-Assets@ac5cdfc0042aca584e72619375b4aca948a9243c/merge.js"></script>
 	<script>
 		var buildUrl = "Build";
 		var versionFolder = "";
