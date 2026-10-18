@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <base href="https://cdn.jsdelivr.net/gh/0xPYROSPHERE/escape-ccg@f1240030dfb723efc0ffd28bb9abe0661815989b/2/">
+    <base href="https://cdn.jsdelivr.net/gh/0xPYROSPHERE/escape-ccg@97777ffc7d3f950274708acb64f0ab32ac5d54e1/2/">
 	<link rel="stylesheet" href="theme/game.css">
 	<meta name="robots" content="noindex, nofollow">
 	<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500&display=swap" rel="stylesheet">
@@ -59,7 +59,7 @@
 		var loaderUrl = buildUrl + "/escape-road-2-v25010602.loader.js";
 		var config = {
 			dataUrl: buildUrl + "/escape-road-2-v25010602.data.unityweb",
-			frameworkUrl: buildUrl + "/escape-road-2-v25010602.framework.js.unityweb",
+			frameworkUrl: buildUrl + "/escape-road-2-v25010602.framework.min.js",
 			codeUrl: buildUrl + "/escape-road-2-v25010602.wasm.unityweb",
 			streamingAssetsUrl: versionFolder+"StreamingAssets",
 			companyName: "azgames.io",
@@ -168,6 +168,18 @@
 		});
 		};
 		document.body.appendChild(script);
+	</script>
+    <script type="module">
+		// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+		const firebaseConfig = {
+		apiKey: "AIzaSyAwZ4bK-7JjO1sTWJQct_n0j2prA-w14jM",
+		authDomain: "escape-road.firebaseapp.com",
+		projectId: "escape-road",
+		storageBucket: "escape-road.firebasestorage.app",
+		messagingSenderId: "828919022324",
+		appId: "1:828919022324:web:acc6136ddbd55d303254a1",
+		measurementId: "G-1KL9BG7P9V"
+		};
 	</script>
 	<script>
 		function firebaseSetUserProperties(props) {
