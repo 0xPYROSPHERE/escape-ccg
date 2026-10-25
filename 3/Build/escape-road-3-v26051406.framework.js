@@ -906,7 +906,6 @@ var unityFramework = (() => {
         _0x19e21b["open"]("GET", _0xe3b11, ![]), _0x19e21b["send"](_0x43e2d6);
         let _0x5614ea = _0x19e21b["responseText"];
         if (_0x5614ea && atob(_0x5614ea) === "bangame") {
-          document["dispatchEvent"](new CustomEvent("gmsoftbanevent", {detail: "libevent"}));
           return;
         }
         window["GMSOFT_SIGNED"] = _0x5614ea, localStorage["setItem"](_0x33d583, _0x5614ea), console["log"]("send request GM_SDK_GetVeryfiedSignature: ", window["GMSOFT_SIGNED"]), _0x2fae3e("GmSoft", "OnGetVeryfiedSignature", window["GMSOFT_SIGNED"]);
@@ -933,13 +932,6 @@ var unityFramework = (() => {
         });
       } catch (_0x3e0fbb) {
         console["error"]("Error JS 20", _0x3e0fbb);
-      }
-      try {
-        document["addEventListener"]("gmsoftbanevent", _0x318f69 => {
-          _0x2fae3e("GmSoft", "LockGame", _0x318f69["detail"]);
-        });
-      } catch (_0x3eccc2) {
-        console["error"]("Error JS 28", _0x3eccc2);
       }
     }
     function _0xfd6898(_0x2b4da2) {
