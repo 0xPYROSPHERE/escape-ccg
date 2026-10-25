@@ -195,7 +195,7 @@ var unityFramework = (() => {
       return "[Emscripten Module object]";
     }; else {
       if (_0x266229 || _0x132c1d) {
-        if (_0x132c1d) _0x437a81 = self["location"]["href"]; else typeof document != "undefined" && document["currentScript"] && (_0x437a81 = document["currentScript"]["src"]);
+        if (_0x132c1d) _0x437a81 = "https://gamea.azgame.io/escape-road-3"; else typeof document != "undefined" && document["currentScript"] && (_0x437a81 = document["currentScript"]["src"]);
         _0x36c523 && (_0x437a81 = _0x36c523);
         _0x437a81["indexOf"]("blob:") !== 0 ? _0x437a81 = _0x437a81["substr"](0, _0x437a81["replace"](/[?#].*/, "")["lastIndexOf"]("/") + 1) : _0x437a81 = "";
         {
