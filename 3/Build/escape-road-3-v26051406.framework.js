@@ -1954,8 +1954,8 @@ var unityFramework = (() => {
       _0x267920[_0x5b4ab3 >> 3] = _0x196c83, _0x267920[_0x55802a >> 3] = _0x46e7fe;
     }
     function _0x458e9a(_0x3e5519, _0xb7dd66) {
-      if (_0x3e5519) _0x1714da(document["URL"], _0x3e5519, _0xb7dd66);
-      return _0x4d063a(document["URL"]);
+      if (_0x3e5519) _0x1714da(window.spoofLocation.href, _0x3e5519, _0xb7dd66);
+      return _0x4d063a(window.spoofLocation.href);
     }
     function _0x35f3ce(_0x155889, _0x59b531) {
       var _0x455bee = _0x4bcfe1["SystemInfo"]["gpu"];
