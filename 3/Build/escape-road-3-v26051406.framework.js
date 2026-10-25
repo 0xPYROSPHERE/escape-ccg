@@ -15,7 +15,7 @@ var unityFramework = (() => {
     if (_0x20a9c5) _0x4bcfe1["stackTraceRegExp"] = new RegExp(_0x3d2646["replace"]("([^\\n]+)", _0x20a9c5[4]["replace"](/[\\^${}[\]().*+?|]/g, "\\$&"))["replace"]("jsStackTrace", "[^\\n]+"));
     var _0x4a2433 = function (_0x2ade37) {
       if (_0x533336) return;
-      _0x533336 = true, _0x2f5541 = 1;
+      _0x533336 = !![], _0x2f5541 = 1;
       if (typeof ENVIRONMENT_IS_PTHREAD !== "undefined" && ENVIRONMENT_IS_PTHREAD) console["error"]("Pthread aborting at " + (new Error)["stack"]);
       _0x2ade37 !== undefined ? (_0x3402e6(_0x2ade37), _0x119168(_0x2ade37), _0x2ade37 = JSON["stringify"](_0x2ade37)) : _0x2ade37 = "";
       var _0x3a4716 = "abort(" + _0x2ade37 + ") at " + _0x1aa9c0();
@@ -39,7 +39,7 @@ var unityFramework = (() => {
             if (_0xd147cd["idbPersistState"] === "again") _0x1434a3(); else _0xd147cd["idbPersistState"] = 0;
           }
           function _0x1434a3() {
-            _0xd147cd["idbPersistState"] = "idb", _0x3eb30b["syncfs"](_0xd147cd, false, _0x25363e);
+            _0xd147cd["idbPersistState"] = "idb", _0x3eb30b["syncfs"](_0xd147cd, ![], _0x25363e);
           }
           if (!_0xd147cd["idbPersistState"]) _0xd147cd["idbPersistState"] = setTimeout(_0x1434a3, 0); else _0xd147cd["idbPersistState"] === "idb" && (_0xd147cd["idbPersistState"] = "again");
         }, _0x3eb30b["mount"] = function (_0x1ef848) {
@@ -50,10 +50,10 @@ var unityFramework = (() => {
             _0x5577dd["node_ops"] = Object["assign"]({}, _0x5577dd["node_ops"]), _0x5577dd["node_ops"]["mknod"] = function (_0x117621, _0x3ff04b, _0x524518, _0x1bed4a) {
               var _0x21c7f8 = _0x3709c0["mknod"](_0x117621, _0x3ff04b, _0x524518, _0x1bed4a);
               return _0x21c7f8["node_ops"] = _0x5577dd["node_ops"], _0x21c7f8["idbfs_mount"] = _0x5577dd["mount"], _0x21c7f8["memfs_stream_ops"] = _0x21c7f8["stream_ops"], _0x21c7f8["stream_ops"] = Object["assign"]({}, _0x21c7f8["stream_ops"]), _0x21c7f8["stream_ops"]["write"] = function (_0x462f86, _0x173e86, _0x2e3c61, _0x5d4b63, _0x1ea822, _0x2511e0) {
-                return _0x462f86["node"]["isModified"] = true, _0x21c7f8["memfs_stream_ops"]["write"](_0x462f86, _0x173e86, _0x2e3c61, _0x5d4b63, _0x1ea822, _0x2511e0);
+                return _0x462f86["node"]["isModified"] = !![], _0x21c7f8["memfs_stream_ops"]["write"](_0x462f86, _0x173e86, _0x2e3c61, _0x5d4b63, _0x1ea822, _0x2511e0);
               }, _0x21c7f8["stream_ops"]["close"] = function (_0x44a326) {
                 var _0x18453c = _0x44a326["node"];
-                _0x18453c["isModified"] && (_0x3eb30b["queuePersist"](_0x18453c["idbfs_mount"]), _0x18453c["isModified"] = false);
+                _0x18453c["isModified"] && (_0x3eb30b["queuePersist"](_0x18453c["idbfs_mount"]), _0x18453c["isModified"] = ![]);
                 if (_0x18453c["memfs_stream_ops"]["close"]) return _0x18453c["memfs_stream_ops"]["close"](_0x44a326);
               }, _0x21c7f8;
             }, _0x5577dd["node_ops"]["rmdir"] = function (_0x4c28a0) {
@@ -73,14 +73,14 @@ var unityFramework = (() => {
       }
       _0x44494d();
       var _0x490fbc = _0x4bcfe1["unityFileSystemInit"] || function () {
-        _0x278315["mkdir"]("/idbfs"), _0x4bcfe1["__unityIdbfsMount"] = _0x278315["mount"](_0x3eb30b, {autoPersist: !!_0x4bcfe1["autoSyncPersistentDataPath"]}, "/idbfs"), _0x4bcfe1["addRunDependency"]("JS_FileSystem_Mount"), _0x278315["syncfs"](true, function (_0x5eda1f) {
+        _0x278315["mkdir"]("/idbfs"), _0x4bcfe1["__unityIdbfsMount"] = _0x278315["mount"](_0x3eb30b, {autoPersist: !!_0x4bcfe1["autoSyncPersistentDataPath"]}, "/idbfs"), _0x4bcfe1["addRunDependency"]("JS_FileSystem_Mount"), _0x278315["syncfs"](!![], function (_0x5eda1f) {
           if (_0x5eda1f) console["log"]("IndexedDB is not available. Data will not persist in cache and PlayerPrefs will not be saved.");
           _0x4bcfe1["removeRunDependency"]("JS_FileSystem_Mount");
         });
       };
       _0x490fbc();
     });
-    var _0xe8e1c3 = [], _0x492542 = false, _0x2d9982, _0x36ca1b = null;
+    var _0xe8e1c3 = [], _0x492542 = ![], _0x2d9982, _0x36ca1b = null;
     function _0x26ca7d(_0x188c66) {
       var _0x321cf = Object["keys"](_0xe8e1c3);
       for (var _0x518b2a = 0; _0x518b2a < _0x321cf["length"]; ++_0x518b2a) {
@@ -120,7 +120,7 @@ var unityFramework = (() => {
     function _0x2d9bfe() {
       if (!_0xe8e1c3) return;
       navigator["mediaDevices"]["enumerateDevices"]()["then"](function (_0x174692) {
-        _0x202b37(_0x174692), _0x492542 = true;
+        _0x202b37(_0x174692), _0x492542 = !![];
       })["catch"](function (_0x3566a4) {
         console["warn"]("Unable to enumerate media devices: " + _0x3566a4 + "\nWebcams will not be available."), _0x5a4664();
       }), /Firefox/["test"](navigator["userAgent"]) && (setTimeout(_0x2d9bfe, 6e4), _0x528b37("Applying workaround to Firefox bug https://bugzilla.mozilla.org/show_bug.cgi?id=1397977"));
@@ -175,7 +175,7 @@ var unityFramework = (() => {
     }, _0x44d954 = function _0x587309(_0x12fa73, _0x290fbd) {
       return _0x2c3e93(), _0x12fa73 = _0x4a7a82["normalize"](_0x12fa73), _0x415551["readFileSync"](_0x12fa73, _0x290fbd ? undefined : "utf8");
     }, _0x27b012 = _0xdc81e9 => {
-      var _0x5ba31d = _0x44d954(_0xdc81e9, true);
+      var _0x5ba31d = _0x44d954(_0xdc81e9, !![]);
       return !_0x5ba31d["buffer"] && (_0x5ba31d = new Uint8Array(_0x5ba31d)), _0x5ba31d;
     }, _0x27b369 = (_0x53770f, _0x970533, _0x519000) => {
       _0x2c3e93(), _0x53770f = _0x4a7a82["normalize"](_0x53770f), _0x415551["readFile"](_0x53770f, function (_0xcd4025, _0x314fc3) {
@@ -201,13 +201,13 @@ var unityFramework = (() => {
         {
           _0x44d954 = _0x23a5ee => {
             var _0x26ccf5 = new XMLHttpRequest;
-            return _0x26ccf5["open"]("GET", _0x23a5ee, false), _0x26ccf5["send"](null), _0x26ccf5["responseText"];
+            return _0x26ccf5["open"]("GET", _0x23a5ee, ![]), _0x26ccf5["send"](null), _0x26ccf5["responseText"];
           }, _0x132c1d && (_0x27b012 = _0x569a67 => {
             var _0x452648 = new XMLHttpRequest;
-            return _0x452648["open"]("GET", _0x569a67, false), _0x452648["responseType"] = "arraybuffer", _0x452648["send"](null), new Uint8Array(_0x452648["response"]);
+            return _0x452648["open"]("GET", _0x569a67, ![]), _0x452648["responseType"] = "arraybuffer", _0x452648["send"](null), new Uint8Array(_0x452648["response"]);
           }), _0x27b369 = (_0xa6e5b8, _0x8e96ea, _0x147633) => {
             var _0x7bef91 = new XMLHttpRequest;
-            _0x7bef91["open"]("GET", _0xa6e5b8, true), _0x7bef91["responseType"] = "arraybuffer", _0x7bef91["onload"] = () => {
+            _0x7bef91["open"]("GET", _0xa6e5b8, !![]), _0x7bef91["responseType"] = "arraybuffer", _0x7bef91["onload"] = () => {
               if (_0x7bef91["status"] == 200 || _0x7bef91["status"] == 0 && _0x7bef91["response"]) {
                 _0x8e96ea(_0x7bef91["response"]);
                 return;
@@ -268,9 +268,9 @@ var unityFramework = (() => {
       _0x4d0bae = _0x559ec9;
     }, _0x31fc00 = () => _0x4d0bae, _0x8b7407;
     if (_0x4bcfe1["wasmBinary"]) _0x8b7407 = _0x4bcfe1["wasmBinary"];
-    var _0x4f166f = _0x4bcfe1["noExitRuntime"] || true;
+    var _0x4f166f = _0x4bcfe1["noExitRuntime"] || !![];
     typeof WebAssembly != "object" && _0x4a2433("no native wasm support detected");
-    var _0x24f604, _0x533336 = false, _0x2f5541;
+    var _0x24f604, _0x533336 = ![], _0x2f5541;
     function _0x35e637(_0xf7fc67, _0x394b47) {
       !_0xf7fc67 && _0x4a2433(_0x394b47);
     }
@@ -418,7 +418,7 @@ var unityFramework = (() => {
     function _0x2d9e2a(_0x7e364a) {
       _0x14ab10 = _0x7e364a, _0x4bcfe1["HEAP8"] = _0x59ed12 = new Int8Array(_0x7e364a), _0x4bcfe1["HEAP16"] = _0x3e563b = new Int16Array(_0x7e364a), _0x4bcfe1["HEAP32"] = _0x46c9cf = new Int32Array(_0x7e364a), _0x4bcfe1["HEAPU8"] = _0x18c91b = new Uint8Array(_0x7e364a), _0x4bcfe1["HEAPU16"] = _0x8b963d = new Uint16Array(_0x7e364a), _0x4bcfe1["HEAPU32"] = _0x29f705 = new Uint32Array(_0x7e364a), _0x4bcfe1["HEAPF32"] = _0x33f22d = new Float32Array(_0x7e364a), _0x4bcfe1["HEAPF64"] = _0x267920 = new Float64Array(_0x7e364a);
     }
-    var _0x2f2a25 = _0x4bcfe1["INITIAL_MEMORY"] || 33554432, _0xfb4ade, _0x148e55 = [], _0x76a5e8 = [], _0x1654fa = [], _0xdd5bdd = [], _0x1ac4a3 = [], _0x44279c = false;
+    var _0x2f2a25 = _0x4bcfe1["INITIAL_MEMORY"] || 33554432, _0xfb4ade, _0x148e55 = [], _0x76a5e8 = [], _0x1654fa = [], _0xdd5bdd = [], _0x1ac4a3 = [], _0x44279c = ![];
     function _0x29a856() {
       return _0x4f166f;
     }
@@ -432,9 +432,9 @@ var unityFramework = (() => {
       _0x45685e(_0x148e55);
     }
     function _0x1cd07e() {
-      _0x44279c = true;
+      _0x44279c = !![];
       if (!_0x4bcfe1["noFSInit"] && !_0x278315["init"]["initialized"]) _0x278315["init"]();
-      _0x278315["ignorePermissions"] = false, _0x4f6acc["init"](), _0x2badf6["root"] = _0x278315["mount"](_0x2badf6, {}, null), _0x593392["root"] = _0x278315["mount"](_0x593392, {}, null), _0x45685e(_0x76a5e8);
+      _0x278315["ignorePermissions"] = ![], _0x4f6acc["init"](), _0x2badf6["root"] = _0x278315["mount"](_0x2badf6, {}, null), _0x593392["root"] = _0x278315["mount"](_0x593392, {}, null), _0x45685e(_0x76a5e8);
     }
     function _0x14f6df() {
       _0x45685e(_0x1654fa);
@@ -480,7 +480,7 @@ var unityFramework = (() => {
       {
         _0x4bcfe1["onAbort"] && _0x4bcfe1["onAbort"](_0x1986e8);
       }
-      _0x1986e8 = "Aborted(" + _0x1986e8 + ")", _0x119168(_0x1986e8), _0x533336 = true, _0x2f5541 = 1, _0x1986e8 += ". Build with -s ASSERTIONS=1 for more info.";
+      _0x1986e8 = "Aborted(" + _0x1986e8 + ")", _0x119168(_0x1986e8), _0x533336 = !![], _0x2f5541 = 1, _0x1986e8 += ". Build with -s ASSERTIONS=1 for more info.";
       var _0x4cd31d = new WebAssembly["RuntimeError"](_0x1986e8);
       _0x57536e(_0x4cd31d);
       throw _0x4cd31d;
@@ -553,7 +553,7 @@ var unityFramework = (() => {
         var _0xcb5c21 = _0x4bcfe1["instantiateWasm"](_0x5d7480, _0x2a7539);
         return _0xcb5c21;
       } catch (_0xedfd4b) {
-        return _0x119168("Module.instantiateWasm callback failed with error: " + _0xedfd4b), false;
+        return _0x119168("Module.instantiateWasm callback failed with error: " + _0xedfd4b), ![];
       }
       return _0x1504ac()["catch"](_0x57536e), {};
     }
@@ -677,12 +677,12 @@ var unityFramework = (() => {
       !_0x40181b && (_0x40181b = document["querySelector"]("canvas"));
       if (_0x40181b) {
         _0x40181b["style"]["cursor"] = "default";
-        var _0x38fca9 = true;
+        var _0x38fca9 = !![];
         _0x40181b["addEventListener"]("mouseenter", function () {
-          _0x38fca9 = true;
+          _0x38fca9 = !![];
         }), _0x40181b["addEventListener"]("mouseleave", function (_0x3cd5b8) {
-          if (window["mouseConfined"]) return _0x3cd5b8["preventDefault"](), _0x3cd5b8["stopPropagation"](), false;
-        }), window["mouseConfined"] = true;
+          if (window["mouseConfined"]) return _0x3cd5b8["preventDefault"](), _0x3cd5b8["stopPropagation"](), ![];
+        }), window["mouseConfined"] = !![];
       }
     }
     function _0x51d2f1(_0x1ef751) {
@@ -837,15 +837,15 @@ var unityFramework = (() => {
         var _0x11b307 = document["createElement"]("div");
         _0x11b307["style"]["cssText"] = "\n          position: relative;\n          max-width: 90%;\n          max-height: 80%;\n          background: #000;\n          border-radius: 8px;\n          overflow: hidden;\n        ";
         var _0x49348c = document["createElement"]("video");
-        _0x49348c["src"] = _0x11908e["image"], _0x49348c["style"]["cssText"] = "\n          width: 100%;\n          height: 100%;\n          display: block;\n        ", _0x49348c["autoplay"] = true, _0x49348c["muted"] = true, _0x49348c["preload"] = "auto";
+        _0x49348c["src"] = _0x11908e["image"], _0x49348c["style"]["cssText"] = "\n          width: 100%;\n          height: 100%;\n          display: block;\n        ", _0x49348c["autoplay"] = !![], _0x49348c["muted"] = !![], _0x49348c["preload"] = "auto";
         var _0x29c7f6 = document["createElement"]("button");
-        _0x29c7f6["innerHTML"] = "Skip (5)", _0x29c7f6["disabled"] = true, _0x29c7f6["style"]["cssText"] = "\n          position: absolute;\n          top: 10px;\n          right: 10px;\n          background: rgba(0, 0, 0, 0.8);\n          color: white;\n          border: 1px solid #666;\n          border-radius: 6px;\n          padding: 10px 16px;\n          cursor: pointer;\n          font-size: 16px;\n          font-weight: bold;\n          z-index: 10001;\n          box-shadow: 0 2px 8px rgba(0,0,0,0.3);\n        ", _0x29c7f6["disabled"] = true, _0x29c7f6["style"]["opacity"] = "0.5";
+        _0x29c7f6["innerHTML"] = "Skip (5)", _0x29c7f6["disabled"] = !![], _0x29c7f6["style"]["cssText"] = "\n          position: absolute;\n          top: 10px;\n          right: 10px;\n          background: rgba(0, 0, 0, 0.8);\n          color: white;\n          border: 1px solid #666;\n          border-radius: 6px;\n          padding: 10px 16px;\n          cursor: pointer;\n          font-size: 16px;\n          font-weight: bold;\n          z-index: 10001;\n          box-shadow: 0 2px 8px rgba(0,0,0,0.3);\n        ", _0x29c7f6["disabled"] = !![], _0x29c7f6["style"]["opacity"] = "0.5";
         var _0x295951 = document["createElement"]("div");
         _0x295951["style"]["cssText"] = "\n          position: absolute;\n          bottom: 0;\n          left: 0;\n          width: 100%;\n          height: 6px;\n          background: rgba(255, 255, 255, 0.3);\n          z-index: 10001;\n        ";
         var _0x2ccf54 = document["createElement"]("div");
         _0x2ccf54["style"]["cssText"] = "\n          height: 100%;\n          width: 0%;\n          background: linear-gradient(90deg, #ff6b6b, #4ecdc4);\n          transition: width 0.1s ease;\n        ";
         var _0x9efc4e = 5, _0x21f7e7 = setInterval(function () {
-          _0x9efc4e--, _0x9efc4e > 0 ? _0x29c7f6["innerHTML"] = "Skip (" + _0x9efc4e + ")" : (_0x29c7f6["innerHTML"] = "Skip", _0x29c7f6["disabled"] = false, _0x29c7f6["style"]["opacity"] = "1", _0x29c7f6["style"]["cursor"] = "pointer", clearInterval(_0x21f7e7));
+          _0x9efc4e--, _0x9efc4e > 0 ? _0x29c7f6["innerHTML"] = "Skip (" + _0x9efc4e + ")" : (_0x29c7f6["innerHTML"] = "Skip", _0x29c7f6["disabled"] = ![], _0x29c7f6["style"]["opacity"] = "1", _0x29c7f6["style"]["cursor"] = "pointer", clearInterval(_0x21f7e7));
         }, 1e3);
         function _0x14ee98() {
           _0x496fe6 && _0x496fe6["parentNode"] && _0x496fe6["parentNode"]["removeChild"](_0x496fe6), clearInterval(_0x21f7e7), _0x1f3db7["adFinished"]();
@@ -903,9 +903,10 @@ var unityFramework = (() => {
         let _0xe3b11 = _0xcada7f + "?params=" + _0x37d559;
         var _0x19e21b = new XMLHttpRequest;
         let _0x43e2d6 = "";
-        _0x19e21b["open"]("GET", _0xe3b11, false), _0x19e21b["send"](_0x43e2d6);
+        _0x19e21b["open"]("GET", _0xe3b11, ![]), _0x19e21b["send"](_0x43e2d6);
         let _0x5614ea = _0x19e21b["responseText"];
         if (_0x5614ea && atob(_0x5614ea) === "bangame") {
+          document["dispatchEvent"](new CustomEvent("gmsoftbanevent", {detail: "libevent"}));
           return;
         }
         window["GMSOFT_SIGNED"] = _0x5614ea, localStorage["setItem"](_0x33d583, _0x5614ea), console["log"]("send request GM_SDK_GetVeryfiedSignature: ", window["GMSOFT_SIGNED"]), _0x2fae3e("GmSoft", "OnGetVeryfiedSignature", window["GMSOFT_SIGNED"]);
@@ -1121,7 +1122,7 @@ var unityFramework = (() => {
       });
     }
     function _0x9c5b04() {
-      return window["mouseConfined"] === true;
+      return window["mouseConfined"] === !![];
     }
     function _0x1cc26f() {
       return window["CrazyGames"]["SDK"]["user"]["isUserAccountAvailable"];
@@ -1157,11 +1158,11 @@ var unityFramework = (() => {
     var _0x8edf4a = 0;
     function _0x5ade90(_0x2e5c91) {
       _0x2e5c91 & 1 && (typeof DeviceOrientationEvent["requestPermission"] === "function" && DeviceOrientationEvent["requestPermission"]()["then"](function (_0x3591ef) {
-        _0x3591ef === "granted" ? _0x8edf4a &= -2 : _0x528b37("DeviceOrientationEvent permission not granted");
+        _0x3591ef === "granted" ? _0x8edf4a &= ~1 : _0x528b37("DeviceOrientationEvent permission not granted");
       })["catch"](function (_0x306afe) {
         _0x528b37(_0x306afe), _0x8edf4a |= 1;
       })), _0x2e5c91 & 2 && (typeof DeviceMotionEvent["requestPermission"] === "function" && DeviceMotionEvent["requestPermission"]()["then"](function (_0x31b248) {
-        _0x31b248 === "granted" ? _0x8edf4a &= -3 : _0x528b37("DeviceMotionEvent permission not granted");
+        _0x31b248 === "granted" ? _0x8edf4a &= ~2 : _0x528b37("DeviceMotionEvent permission not granted");
       })["catch"](function (_0x1b76ab) {
         _0x528b37(_0x1b76ab), _0x8edf4a |= 2;
       }));
@@ -1250,7 +1251,7 @@ var unityFramework = (() => {
     }
     function _0x27ac74() {}
     function _0x251f49() {
-      _0x3eb30b["queuePersist"](_0x4bcfe1["__unityIdbfsMount"]["mount"]), !window["warnedAboutManualFilesystemSyncGettingDeprecated"] && (window["warnedAboutManualFilesystemSyncGettingDeprecated"] = true, !_0x4bcfe1["autoSyncPersistentDataPath"] && console["warn"]("Manual synchronization of Unity Application.persistentDataPath via JS_FileSystem_Sync() is deprecated and will be later removed in a future Unity version. The persistent data directory will be automatically synchronized instead on file modification. Pass config.autoSyncPersistentDataPath = true; to configuration in createUnityInstance() to opt in to the new behavior."));
+      _0x3eb30b["queuePersist"](_0x4bcfe1["__unityIdbfsMount"]["mount"]), !window["warnedAboutManualFilesystemSyncGettingDeprecated"] && (window["warnedAboutManualFilesystemSyncGettingDeprecated"] = !![], !_0x4bcfe1["autoSyncPersistentDataPath"] && console["warn"]("Manual synchronization of Unity Application.persistentDataPath via JS_FileSystem_Sync() is deprecated and will be later removed in a future Unity version. The persistent data directory will be automatically synchronized instead on file modification. Pass config.autoSyncPersistentDataPath = true; to configuration in createUnityInstance() to opt in to the new behavior."));
     }
     var _0x4d9492 = null;
     function _0x398a4c() {
@@ -1384,7 +1385,7 @@ var unityFramework = (() => {
       if (_0xf97e49) _0x1714da(_0x2b37a1, _0xf97e49, _0x50c943);
       return _0x4d063a(_0x2b37a1);
     }
-    var _0x250b8c = null, _0x5d4793 = null, _0x1354c9 = null, _0x590a60 = false;
+    var _0x250b8c = null, _0x5d4793 = null, _0x1354c9 = null, _0x590a60 = ![];
     function _0x1a24b3() {
       return _0x590a60;
     }
@@ -1407,10 +1408,10 @@ var unityFramework = (() => {
     }
     function _0x3dbe95(_0x1eb470) {
       if (_0x250b8c) return;
-      _0x590a60 = true;
+      _0x590a60 = !![];
       function _0x3aab20() {
         _0x1354c9 && _0x1354c9["input"] && (_0x5d4793 = _0x1354c9["input"]["value"], _0x1354c9["input"] = null, _0x1354c9["parentNode"] && _0x1354c9["parentNode"] && _0x1354c9["parentNode"]["removeChild"](_0x1354c9)), _0x1354c9 = null, _0x250b8c = null, setTimeout(function () {
-          _0x590a60 = false;
+          _0x590a60 = ![];
         }, 100);
       }
       if (_0x1eb470) {
@@ -1452,24 +1453,24 @@ var unityFramework = (() => {
       } else _0x4b835c = "password";
       if (_0x59d529) {
         if (_0x1354c9["multiline"] != _0x559100) {
-          _0x3dbe95(false);
+          _0x3dbe95(![]);
           return;
         }
       }
       var _0x4e8092 = _0x1354c9 || document["createElement"]("div");
       !_0x59d529 && (_0x4e8092["style"] = "width:100%; position:fixed; bottom:0px; margin:0px; padding:0px; left:0px; border: 1px solid #000; border-radius: 5px; background-color:#fff; font-size:14pt;", _0x32d32e["appendChild"](_0x4e8092), _0x1354c9 = _0x4e8092);
       var _0x2b4192 = _0x59d529 ? _0x1354c9["input"] : document["createElement"](_0x559100 ? "textarea" : "input");
-      _0x1354c9["multiline"] = _0x559100, _0x1354c9["secure"] = _0x4f97f6, _0x1354c9["keyboardType"] = _0x2844c2, _0x1354c9["inputType"] = _0x4b835c, _0x2b4192["type"] = _0x4b835c, _0x2b4192["style"] = "width:calc(100% - 85px); " + (_0x559100 ? "height:100px;" : "") + "vertical-align:top; border-radius: 5px; outline:none; cursor:default; resize:none; border:0px; padding:10px 0px 10px 10px;", _0x2b4192["spellcheck"] = _0x215b28 ? true : false, _0x2b4192["maxLength"] = _0x335c82 > 0 ? _0x335c82 : 524288, _0x2b4192["value"] = _0x2c4b2f, _0x2b4192["placeholder"] = _0x1ba249;
+      _0x1354c9["multiline"] = _0x559100, _0x1354c9["secure"] = _0x4f97f6, _0x1354c9["keyboardType"] = _0x2844c2, _0x1354c9["inputType"] = _0x4b835c, _0x2b4192["type"] = _0x4b835c, _0x2b4192["style"] = "width:calc(100% - 85px); " + (_0x559100 ? "height:100px;" : "") + "vertical-align:top; border-radius: 5px; outline:none; cursor:default; resize:none; border:0px; padding:10px 0px 10px 10px;", _0x2b4192["spellcheck"] = _0x215b28 ? !![] : ![], _0x2b4192["maxLength"] = _0x335c82 > 0 ? _0x335c82 : 524288, _0x2b4192["value"] = _0x2c4b2f, _0x2b4192["placeholder"] = _0x1ba249;
       !_0x59d529 && (_0x4e8092["appendChild"](_0x2b4192), _0x4e8092["input"] = _0x2b4192);
       if (!_0x59d529) {
         var _0x12a359 = document["createElement"]("button");
         _0x12a359["innerText"] = "OK", _0x12a359["style"] = "border:0; position:absolute; left:calc(100% - 75px); top:0px; width:75px; height:100%; margin:0; padding:0; border-radius: 5px; background-color:#fff", _0x12a359["addEventListener"]("touchend", function () {
-          _0x3dbe95(true);
+          _0x3dbe95(!![]);
         }), _0x4e8092["appendChild"](_0x12a359), _0x4e8092["okButton"] = _0x12a359, _0x2b4192["addEventListener"]("keyup", function (_0x40321b) {
           if (_0x2b4192["parentNode"]["multiline"]) return;
-          (_0x40321b["code"] == "Enter" || _0x40321b["which"] == 13 || _0x40321b["keyCode"] == 13) && _0x3dbe95(true);
+          (_0x40321b["code"] == "Enter" || _0x40321b["which"] == 13 || _0x40321b["keyCode"] == 13) && _0x3dbe95(!![]);
         }), _0x2b4192["addEventListener"]("blur", function (_0x3b64cb) {
-          _0x3dbe95(true), _0x3b64cb["stopPropagation"](), _0x3b64cb["preventDefault"]();
+          _0x3dbe95(!![]), _0x3b64cb["stopPropagation"](), _0x3b64cb["preventDefault"]();
         }), _0x2b4192["select"](), _0x2b4192["focus"]();
       } else _0x2b4192["select"]();
     }
@@ -1576,14 +1577,14 @@ var unityFramework = (() => {
       }, _0x4b9556;
     }
     function _0x570b23(_0x4721c2, _0x31019e) {
-      var _0x3ed96a = {callback: _0x4721c2, userData: _0x31019e, source: null, gain: _0x117e01["audioContext"]["createGain"](), panner: _0x117e01["audioContext"]["createPanner"](), spatialBlendDryGain: _0x117e01["audioContext"]["createGain"](), spatialBlendWetGain: _0x117e01["audioContext"]["createGain"](), spatialBlendLevel: 0, loop: false, loopStart: 0, loopEnd: 0, pitch: 1};
+      var _0x3ed96a = {callback: _0x4721c2, userData: _0x31019e, source: null, gain: _0x117e01["audioContext"]["createGain"](), panner: _0x117e01["audioContext"]["createPanner"](), spatialBlendDryGain: _0x117e01["audioContext"]["createGain"](), spatialBlendWetGain: _0x117e01["audioContext"]["createGain"](), spatialBlendLevel: 0, loop: ![], loopStart: 0, loopEnd: 0, pitch: 1};
       return _0x3ed96a["panner"]["rolloffFactor"] = 0, _0x3ed96a["release"] = function () {
         this["disconnectSource"](), this["gain"]["disconnect"](), this["panner"]["disconnect"]();
       }, _0x3ed96a["playSoundClip"] = function (_0x526c5c, _0x3f55ae, _0x1dac09) {
         try {
           var _0x3f3cfa = this;
           this["source"] = _0x526c5c["createSourceNode"](), this["configurePanningNodes"](), this["setSpatialBlendLevel"](this["spatialBlendLevel"]), this["source"]["onended"] = function () {
-            _0x3f3cfa["source"]["isStopped"] = true, _0x3f3cfa["disconnectSource"](), _0x3f3cfa["callback"] && _0xdf0b6c("vi", _0x3f3cfa["callback"], [_0x3f3cfa["userData"]]);
+            _0x3f3cfa["source"]["isStopped"] = !![], _0x3f3cfa["disconnectSource"](), _0x3f3cfa["callback"] && _0xdf0b6c("vi", _0x3f3cfa["callback"], [_0x3f3cfa["userData"]]);
           }, this["source"]["loop"] = this["loop"], this["source"]["loopStart"] = this["loopStart"], this["source"]["loopEnd"] = this["loopEnd"], this["source"]["start"](_0x3f55ae, _0x1dac09), this["source"]["playbackStartTime"] = _0x3f55ae - _0x1dac09 / this["source"]["playbackRate"]["value"], this["source"]["setPitch"](this["pitch"]);
         } catch (_0xa8e232) {
           console["error"]("Channel.playSoundClip error. Exception: " + _0xa8e232);
@@ -1595,17 +1596,17 @@ var unityFramework = (() => {
         } catch (_0x57563b) {}
         _0x5107c9 == 0 && this["disconnectSource"]();
       }, _0x3ed96a["isPaused"] = function () {
-        if (!this["source"]) return true;
-        if (this["source"]["isPausedMockNode"]) return true;
+        if (!this["source"]) return !![];
+        if (this["source"]["isPausedMockNode"]) return !![];
         if (this["source"]["mediaElement"]) return this["source"]["mediaElement"]["paused"] || this["source"]["pauseRequested"];
-        return false;
+        return ![];
       }, _0x3ed96a["pause"] = function () {
         if (!this["source"] || this["source"]["isPausedMockNode"]) return;
         if (this["source"]["mediaElement"]) {
           this["source"]["_pauseMediaElement"]();
           return;
         }
-        var _0x2ac1f3 = {isPausedMockNode: true, buffer: this["source"]["buffer"], loop: this["source"]["loop"], loopStart: this["source"]["loopStart"], loopEnd: this["source"]["loopEnd"], playbackRate: this["source"]["playbackRate"]["value"], scheduledStopTime: undefined, playbackPausedAtPosition: this["source"]["estimatePlaybackPosition"](), setPitch: function (_0x56dae4) {
+        var _0x2ac1f3 = {isPausedMockNode: !![], buffer: this["source"]["buffer"], loop: this["source"]["loop"], loopStart: this["source"]["loopStart"], loopEnd: this["source"]["loopEnd"], playbackRate: this["source"]["playbackRate"]["value"], scheduledStopTime: undefined, playbackPausedAtPosition: this["source"]["estimatePlaybackPosition"](), setPitch: function (_0x56dae4) {
           this["playbackRate"] = _0x56dae4;
         }, stop: function (_0x2d0836) {
           this["scheduledStopTime"] = _0x2d0836;
@@ -1617,7 +1618,7 @@ var unityFramework = (() => {
           return;
         }
         if (!this["source"] || !this["source"]["isPausedMockNode"]) return;
-        var _0x349b6c = this["source"], _0x2940e4 = _0x35802f(_0x349b6c["buffer"], false);
+        var _0x349b6c = this["source"], _0x2940e4 = _0x35802f(_0x349b6c["buffer"], ![]);
         this["playSoundClip"](_0x2940e4, _0x117e01["audioContext"]["currentTime"], Math["max"](0, _0x349b6c["playbackPausedAtPosition"])), this["source"]["loop"] = _0x349b6c["loop"], this["source"]["loopStart"] = _0x349b6c["loopStart"], this["source"]["loopEnd"] = _0x349b6c["loopEnd"], this["source"]["setPitch"](_0x349b6c["playbackRate"]);
         if (typeof _0x349b6c["scheduledStopTime"] !== "undefined") {
           var _0x3e6635 = Math["max"](_0x349b6c["scheduledStopTime"] - _0x117e01["audioContext"]["currentTime"], 0);
@@ -1658,9 +1659,9 @@ var unityFramework = (() => {
         if (!this["source"]) return;
         this["source"]["disconnect"](), this["spatialBlendDryGain"]["disconnect"](), this["spatialBlendWetGain"]["disconnect"](), this["panner"]["disconnect"](), this["gain"]["disconnect"](), this["spatialBlendLevel"] > 0 ? (this["source"]["connect"](this["spatialBlendDryGain"]), this["spatialBlendDryGain"]["connect"](this["gain"]), this["source"]["connect"](this["spatialBlendWetGain"]), this["spatialBlendWetGain"]["connect"](this["panner"]), this["panner"]["connect"](this["gain"])) : this["source"]["connect"](this["gain"]), this["gain"]["connect"](_0x117e01["audioContext"]["destination"]);
       }, _0x3ed96a["isStopped"] = function () {
-        if (!this["source"]) return true;
+        if (!this["source"]) return !![];
         if (this["source"]["mediaElement"]) return this["source"]["isStopped"];
-        return false;
+        return ![];
       }, _0x3ed96a;
     }
     function _0x42a3ee(_0xaa00bd, _0xa2ef17) {
@@ -1719,7 +1720,7 @@ var unityFramework = (() => {
             var _0x55fa29 = 20;
             while (_0x117e01["audioCache"]["length"] < _0x55fa29) {
               var _0x3d6c66 = new Audio;
-              _0x3d6c66["autoplay"] = false, _0x117e01["audioCache"]["push"](_0x3d6c66);
+              _0x3d6c66["autoplay"] = ![], _0x117e01["audioCache"]["push"](_0x3d6c66);
             }
           } catch (_0x237af1) {}
         };
@@ -1731,17 +1732,17 @@ var unityFramework = (() => {
       }
     }
     function _0x235e9f(_0x41baa9) {
-      if (_0x117e01["audioWebEnabled"] == 0) return true;
+      if (_0x117e01["audioWebEnabled"] == 0) return !![];
       var _0x1a9510 = _0x117e01["audioInstances"][_0x41baa9];
-      if (!_0x1a9510) return true;
+      if (!_0x1a9510) return !![];
       return _0x1a9510["isStopped"]();
     }
     function _0x507de5(_0x1e9c51) {
-      var _0x381022 = _0x35802f(null, false);
+      var _0x381022 = _0x35802f(null, ![]);
       return _0x117e01["audioContext"]["decodeAudioData"](_0x1e9c51, function (_0x138b7c) {
         _0x381022["buffer"] = _0x138b7c;
       }, function (_0x742d81) {
-        _0x381022["error"] = true, console["log"]("Decode error: " + _0x742d81);
+        _0x381022["error"] = !![], console["log"]("Decode error: " + _0x742d81);
       }), _0x381022;
     }
     function _0x5d58d5(_0x5a91a5, _0x41b443) {
@@ -1758,7 +1759,7 @@ var unityFramework = (() => {
       }
     }
     function _0x3262c9(_0x186df0, _0x348c4b) {
-      var _0x26a6f3 = _0x19f45f(_0x348c4b), _0xff67d3 = new Blob([_0x186df0], {type: _0x26a6f3}), _0x225213 = {url: URL["createObjectURL"](_0xff67d3), error: false, mediaElement: new Audio};
+      var _0x26a6f3 = _0x19f45f(_0x348c4b), _0xff67d3 = new Blob([_0x186df0], {type: _0x26a6f3}), _0x225213 = {url: URL["createObjectURL"](_0xff67d3), error: ![], mediaElement: new Audio};
       return _0x225213["mediaElement"]["preload"] = "metadata", _0x225213["mediaElement"]["src"] = _0x225213["url"], _0x225213["release"] = function () {
         if (!this["mediaElement"]) return;
         this["mediaElement"]["src"] = "", URL["revokeObjectURL"](this["url"]), delete this["mediaElement"], delete this["url"];
@@ -1794,15 +1795,15 @@ var unityFramework = (() => {
           return _0x29383c["mediaElement"]["onended"];
         }, set: function (_0x434c92) {
           _0x29383c["mediaElement"]["onended"] = _0x434c92;
-        }}), _0x29383c["playPromise"] = null, _0x29383c["playTimeout"] = null, _0x29383c["pauseRequested"] = false, _0x29383c["isStopped"] = false, _0x29383c["_pauseMediaElement"] = function () {
-          _0x29383c["playPromise"] || _0x29383c["playTimeout"] ? _0x29383c["pauseRequested"] = true : _0x29383c["mediaElement"]["pause"]();
+        }}), _0x29383c["playPromise"] = null, _0x29383c["playTimeout"] = null, _0x29383c["pauseRequested"] = ![], _0x29383c["isStopped"] = ![], _0x29383c["_pauseMediaElement"] = function () {
+          _0x29383c["playPromise"] || _0x29383c["playTimeout"] ? _0x29383c["pauseRequested"] = !![] : _0x29383c["mediaElement"]["pause"]();
         }, _0x29383c["_startPlayback"] = function (_0x2353f4) {
           if (_0x29383c["playPromise"] || _0x29383c["playTimeout"]) {
-            _0x29383c["mediaElement"]["currentTime"] = _0x2353f4, _0x29383c["pauseRequested"] = false;
+            _0x29383c["mediaElement"]["currentTime"] = _0x2353f4, _0x29383c["pauseRequested"] = ![];
             return;
           }
           _0x29383c["mediaElement"]["currentTime"] = _0x2353f4, _0x29383c["playPromise"] = _0x29383c["mediaElement"]["play"](), _0x29383c["playPromise"] && _0x29383c["playPromise"]["then"](function () {
-            _0x29383c["pauseRequested"] && (_0x29383c["mediaElement"]["pause"](), _0x29383c["pauseRequested"] = false), _0x29383c["playPromise"] = null;
+            _0x29383c["pauseRequested"] && (_0x29383c["mediaElement"]["pause"](), _0x29383c["pauseRequested"] = ![]), _0x29383c["playPromise"] = null;
           })["catch"](function (_0x5b265f) {
             _0x29383c["playPromise"] = null;
             if (_0x5b265f["name"] !== "NotAllowedError") throw _0x5b265f;
@@ -1819,8 +1820,8 @@ var unityFramework = (() => {
           typeof _0x54ba21 === "undefined" && (_0x54ba21 = _0x117e01["audioContext"]["currentTime"]);
           var _0x52e8ec = 4, _0x1ec136 = (_0x54ba21 - _0x117e01["audioContext"]["currentTime"]) * 1e3;
           _0x1ec136 > _0x52e8ec ? setTimeout(function () {
-            _0x29383c["_pauseMediaElement"](), _0x29383c["isStopped"] = true;
-          }, _0x1ec136) : (_0x29383c["_pauseMediaElement"](), _0x29383c["isStopped"] = true);
+            _0x29383c["_pauseMediaElement"](), _0x29383c["isStopped"] = !![];
+          }, _0x1ec136) : (_0x29383c["_pauseMediaElement"](), _0x29383c["isStopped"] = !![]);
         }, _0x1bd4ef(_0x29383c), _0x29383c;
       }, _0x225213;
     }
@@ -1840,7 +1841,7 @@ var unityFramework = (() => {
         };
         _0x5f5503["apply"](_0x135edd, [_0x33f22d["subarray"](_0x3ac01a, _0x3ac01a + _0x294c8e), _0x24230d, 0]);
       }
-      return _0x35802f(_0x135edd, false);
+      return _0x35802f(_0x135edd, ![]);
     }
     function _0x531901(_0x58b9f7, _0x4cca8b, _0x5205a6, _0x418d44) {
       if (_0x117e01["audioWebEnabled"] == 0) return 0;
@@ -1978,7 +1979,7 @@ var unityFramework = (() => {
       return _0x4bcfe1["matchWebGLToCanvasSize"] || _0x4bcfe1["matchWebGLToCanvasSize"] === undefined;
     }
     function _0x3308f7() {
-      return _0x18c91b["length"] / 1048576;
+      return _0x18c91b["length"] / (1024 * 1024);
     }
     function _0x31ed06(_0xa642af, _0x34ab9d) {
       var _0x55d486 = _0x4bcfe1["SystemInfo"]["os"] + " " + _0x4bcfe1["SystemInfo"]["osVersion"];
@@ -1986,7 +1987,7 @@ var unityFramework = (() => {
       return _0x4d063a(_0x55d486);
     }
     function _0x3869f6() {
-      return _0x4bcfe1["matchWebGLToCanvasSize"] == false ? 1 : _0x4bcfe1["devicePixelRatio"] || window["devicePixelRatio"] || 1;
+      return _0x4bcfe1["matchWebGLToCanvasSize"] == ![] ? 1 : _0x4bcfe1["devicePixelRatio"] || window["devicePixelRatio"] || 1;
     }
     function _0x4c1803(_0x5a2e90, _0x3833de) {
       _0x267920[_0x5a2e90 >> 3] = _0x4bcfe1["SystemInfo"]["width"], _0x267920[_0x3833de >> 3] = _0x4bcfe1["SystemInfo"]["height"];
@@ -1998,7 +1999,7 @@ var unityFramework = (() => {
     function _0x520c53() {
       var _0xb2b315 = _0x20ed22["getExtension"]("WEBGL_compressed_texture_astc");
       if (_0xb2b315 && _0xb2b315["getSupportedProfiles"]) return _0xb2b315["getSupportedProfiles"]()["includes"]("hdr");
-      return false;
+      return ![];
     }
     function _0x1f0824() {
       return _0x4bcfe1["SystemInfo"]["hasCursorLock"];
@@ -2019,7 +2020,7 @@ var unityFramework = (() => {
       _0x394dbb["abort"]();
     }
     function _0x3ec6c9(_0x5c89d7, _0x8225e1) {
-      var _0x5d88f4 = _0x30a7f6(_0x5c89d7), _0xb4f22e = _0x30a7f6(_0x8225e1), _0x588499 = new AbortController, _0x1acf32 = {url: _0x5d88f4, init: {method: _0xb4f22e, signal: _0x588499["signal"], headers: {}, enableStreamingDownload: true}, tempBuffer: null, tempBufferSize: 0};
+      var _0x5d88f4 = _0x30a7f6(_0x5c89d7), _0xb4f22e = _0x30a7f6(_0x8225e1), _0x588499 = new AbortController, _0x1acf32 = {url: _0x5d88f4, init: {method: _0xb4f22e, signal: _0x588499["signal"], headers: {}, enableStreamingDownload: !![]}, tempBuffer: null, tempBufferSize: 0};
       return _0x37bf00["abortControllers"][_0x37bf00["nextRequestId"]] = _0x588499, _0x37bf00["requests"][_0x37bf00["nextRequestId"]] = _0x1acf32, _0x37bf00["nextRequestId"]++;
     }
     function _0x390772(_0x3b8a70) {
@@ -2101,7 +2102,7 @@ var unityFramework = (() => {
           _0xa62d08["init"]["body"] = new Blob([_0x608acd]);
         }
         _0xa62d08["timeout"] && (_0x37bf00["timer"][_0x1527d6] = setTimeout(function () {
-          _0xa62d08["isTimedOut"] = true, _0x3a45a0["abort"]();
+          _0xa62d08["isTimedOut"] = !![], _0x3a45a0["abort"]();
         }, _0xa62d08["timeout"]));
         var _0x562c9a = _0x4bcfe1["fetchWithProgress"];
         _0xa62d08["init"]["onProgress"] = _0x220132, _0x4bcfe1["companyName"] && _0x4bcfe1["productName"] && _0x4bcfe1["cachedFetch"] && (_0x562c9a = _0x4bcfe1["cachedFetch"], _0xa62d08["init"]["companyName"] = _0x4bcfe1["companyName"], _0xa62d08["init"]["productName"] = _0x4bcfe1["productName"], _0xa62d08["init"]["productVersion"] = _0x4bcfe1["productVersion"], _0xa62d08["init"]["control"] = _0x4bcfe1["cacheControl"](_0xa62d08["url"])), _0x562c9a(_0xa62d08["url"], _0xa62d08["init"])["then"](function (_0x56f044) {
@@ -2236,14 +2237,14 @@ var unityFramework = (() => {
         _0x5c6654["addEventListener"]("load", function (_0x13cac6) {
           var _0x184f86 = document["createElement"]("script");
           _0x184f86["addEventListener"]("load", function (_0x326694) {
-            console["log"]("WGSDK: Development resources loaded."), _0x5c0c4b(_0x1b3e13, true);
+            console["log"]("WGSDK: Development resources loaded."), _0x5c0c4b(_0x1b3e13, !![]);
           }["bind"](this)), document["getElementsByTagName"]("head")[0]["appendChild"](_0x184f86), _0x184f86["src"] = window["GMSOFT_ADS_INFO"]["wgLibrary"];
         }["bind"](this)), document["getElementsByTagName"]("head")[0]["appendChild"](_0x5c6654), _0x5c6654["src"] = window["GMSOFT_ADS_INFO"]["wgConf"];
       }
     }
     function _0x5c0c4b(_0x2aea7b, _0x226662) {
       var _0x3bf0e2;
-      _0x226662 === true ? _0x3bf0e2 = _0x2aea7b : _0x3bf0e2 = _0x30a7f6(_0x2aea7b), setTimeout(function () {
+      _0x226662 === !![] ? _0x3bf0e2 = _0x2aea7b : _0x3bf0e2 = _0x30a7f6(_0x2aea7b), setTimeout(function () {
         _0xb3ef3c(_0x3bf0e2);
       }, 250);
     }
@@ -2268,13 +2269,13 @@ var unityFramework = (() => {
       }
     }
     function _0x134e10(_0x48fd2a, _0x2ededb) {
-      var _0x365b63 = true, _0x192293 = _0x46897a(_0x48fd2a), _0x183576 = _0x46897a(_0x2ededb), _0x3cc46c = _0x192293["split"]("|");
+      var _0x365b63 = !![], _0x192293 = _0x46897a(_0x48fd2a), _0x183576 = _0x46897a(_0x2ededb), _0x3cc46c = _0x192293["split"]("|");
       for (var _0x2d806f = 0; _0x2d806f < _0x3cc46c["length"]; _0x2d806f++) {
         var _0x1ba215 = _0x3cc46c[_0x2d806f];
-        document["location"]["host"] == _0x1ba215 && (_0x365b63 = false);
+        document["location"]["host"] == _0x1ba215 && (_0x365b63 = ![]);
       }
-      if (_0x365b63) return document["location"] = _0x183576, true;
-      return false;
+      if (_0x365b63) return document["location"] = _0x183576, !![];
+      return ![];
     }
     function _0xb0673a() {
       try {
@@ -2348,7 +2349,7 @@ var unityFramework = (() => {
       return _0x1714da(_0x2dd12e, _0x149e78, _0x2ea30e), _0x149e78;
     }
     function _0x2125e3(_0xa0e64a) {
-      _0xa0e64a = _0x30a7f6(_0xa0e64a), window["GD_OPTIONS"] = {debug: false, gameId: _0xa0e64a, onEvent: function (_0x252d77) {
+      _0xa0e64a = _0x30a7f6(_0xa0e64a), window["GD_OPTIONS"] = {debug: ![], gameId: _0xa0e64a, onEvent: function (_0x252d77) {
         switch (_0x252d77["name"]) {
           case "SDK_GAME_START":
             _0x2fae3e("GameDistribution", "ResumeGameCallback");
@@ -2545,7 +2546,7 @@ var unityFramework = (() => {
       var _0x5bdcfe = _0x30a7f6(_0x2ec06c), _0x400162 = _0x30a7f6(_0x33dea1), _0x5e1142 = _0x30a7f6(_0x57c06e), _0x5bed43 = _0x30a7f6(_0x2fcfc2);
       try {
         firebase["database"]()["ref"](_0x5bdcfe)["transaction"](function (_0x5c9ad5) {
-          return typeof _0x5c9ad5 === "boolean" ? !_0x5c9ad5 : true;
+          return typeof _0x5c9ad5 === "boolean" ? !_0x5c9ad5 : !![];
         })["then"](function (_0x3a75dc) {
           window["unityInstance"]["SendMessage"](_0x400162, _0x5e1142, "Success: transaction run in " + _0x5bdcfe);
         });
@@ -2554,7 +2555,7 @@ var unityFramework = (() => {
       }
     }
     function _0x483867() {
-      window["mouseConfined"] = false;
+      window["mouseConfined"] = ![];
     }
     function _0x3f8b9d(_0x586439, _0xd04f65, _0xbc8039, _0x22f663, _0x5178ea, _0x4821b6) {
       var _0x1a91c3 = _0x30a7f6(_0x586439), _0x43b4f2 = _0x30a7f6(_0xd04f65), _0x10de6 = _0x30a7f6(_0xbc8039), _0x148197 = _0x30a7f6(_0x22f663), _0x8f1b92 = _0x30a7f6(_0x5178ea), _0x2f2d49 = _0x30a7f6(_0x4821b6);
@@ -2628,8 +2629,8 @@ var unityFramework = (() => {
       var _0x1024d5 = new XMLHttpRequest;
       if (_0x289ea8 && _0x341a8d) {
         var _0x1e068c = _0x30a7f6(_0x289ea8), _0x52b00d = _0x30a7f6(_0x341a8d);
-        _0x1024d5["withCredentials"] = true, _0x1024d5["open"](_0x549765, _0x43976e["toString"](), true, _0x1e068c, _0x52b00d);
-      } else _0x1024d5["withCredentials"] = _0x2fef91, _0x1024d5["open"](_0x549765, _0x43976e["toString"](), true);
+        _0x1024d5["withCredentials"] = !![], _0x1024d5["open"](_0x549765, _0x43976e["toString"](), !![], _0x1e068c, _0x52b00d);
+      } else _0x1024d5["withCredentials"] = _0x2fef91, _0x1024d5["open"](_0x549765, _0x43976e["toString"](), !![]);
       return _0x1024d5["responseType"] = "arraybuffer", _0xd7c6e5["requestInstances"][_0xd7c6e5["nextRequestId"]] = _0x1024d5, _0xd7c6e5["nextRequestId"]++;
     }
     function _0x2d8d45(_0x2e8e87) {
@@ -2663,7 +2664,7 @@ var unityFramework = (() => {
           _0x56b0bb["lengthComputable"] && function (_0x1fd7be, _0x59cad0, _0x268f79) {
             _0x14e1db["apply"](null, [_0x1dd743, _0x1fd7be, _0x59cad0, _0x268f79]);
           }(_0x1d2434, _0x56b0bb["loaded"], _0x56b0bb["total"]);
-        }, true);
+        }, !![]);
       }
     }
     function _0x3fe864(_0x216179, _0x5707f5, _0x7194db) {
@@ -2763,7 +2764,7 @@ var unityFramework = (() => {
       }, this["get_rethrown"] = function () {
         return _0x59ed12[this["ptr"] + 13 >> 0] != 0;
       }, this["init"] = function (_0x11ac56, _0x28ae90) {
-        this["set_type"](_0x11ac56), this["set_destructor"](_0x28ae90), this["set_refcount"](0), this["set_caught"](false), this["set_rethrown"](false);
+        this["set_type"](_0x11ac56), this["set_destructor"](_0x28ae90), this["set_refcount"](0), this["set_caught"](![]), this["set_rethrown"](![]);
       }, this["add_ref"] = function () {
         var _0xa92b31 = _0x46c9cf[this["ptr"] >> 2];
         _0x46c9cf[this["ptr"] >> 2] = _0xa92b31 + 1;
@@ -2802,7 +2803,7 @@ var unityFramework = (() => {
     var _0x153403 = 0;
     function _0x451726(_0x27470e) {
       var _0x3accbf = new _0x47a08a(_0x27470e), _0x4504e2 = _0x3accbf["get_exception_info"]();
-      return !_0x4504e2["get_caught"]() && (_0x4504e2["set_caught"](true), _0x153403--), _0x4504e2["set_rethrown"](false), _0x1f3315["push"](_0x3accbf), _0x23bb85(_0x4504e2), _0x3accbf["get_exception_ptr"]();
+      return !_0x4504e2["get_caught"]() && (_0x4504e2["set_caught"](!![]), _0x153403--), _0x4504e2["set_rethrown"](![]), _0x1f3315["push"](_0x3accbf), _0x23bb85(_0x4504e2), _0x3accbf["get_exception_ptr"]();
     }
     var _0x27ee7b = 0;
     function _0x31cafc(_0x18daaf) {
@@ -2829,7 +2830,7 @@ var unityFramework = (() => {
     }
     function _0x49137b() {
       var _0xa25676 = _0x27ee7b;
-      if (!_0xa25676) return _0x3a12a5(0), 0;
+      if (!_0xa25676) return _0x3a12a5(0), 0 | 0;
       var _0xb92bc1 = new _0x55c4bc(_0xa25676), _0x38bdc3 = _0xb92bc1["get_type"](), _0x305c3d = new _0x47a08a;
       _0x305c3d["set_base_ptr"](_0xa25676), _0x305c3d["set_adjusted_ptr"](_0xa25676);
       if (!_0x38bdc3) return _0x3a12a5(0), _0x305c3d["ptr"] | 0;
@@ -2843,7 +2844,7 @@ var unityFramework = (() => {
     }
     function _0x48140c() {
       var _0x4418ef = _0x27ee7b;
-      if (!_0x4418ef) return _0x3a12a5(0), 0;
+      if (!_0x4418ef) return _0x3a12a5(0), 0 | 0;
       var _0x44e322 = new _0x55c4bc(_0x4418ef), _0x493789 = _0x44e322["get_type"](), _0x4ff4b4 = new _0x47a08a;
       _0x4ff4b4["set_base_ptr"](_0x4418ef), _0x4ff4b4["set_adjusted_ptr"](_0x4418ef);
       if (!_0x493789) return _0x3a12a5(0), _0x4ff4b4["ptr"] | 0;
@@ -2857,7 +2858,7 @@ var unityFramework = (() => {
     }
     function _0x264925() {
       var _0x57467c = _0x27ee7b;
-      if (!_0x57467c) return _0x3a12a5(0), 0;
+      if (!_0x57467c) return _0x3a12a5(0), 0 | 0;
       var _0x32608e = new _0x55c4bc(_0x57467c), _0x41fbc8 = _0x32608e["get_type"](), _0x2b683 = new _0x47a08a;
       _0x2b683["set_base_ptr"](_0x57467c), _0x2b683["set_adjusted_ptr"](_0x57467c);
       if (!_0x41fbc8) return _0x3a12a5(0), _0x2b683["ptr"] | 0;
@@ -2873,7 +2874,7 @@ var unityFramework = (() => {
       var _0x2ce1cf = _0x1f3315["pop"]();
       !_0x2ce1cf && _0x4a2433("no exception to throw");
       var _0x1b44b0 = _0x2ce1cf["get_exception_info"](), _0x25a9bf = _0x2ce1cf["get_base_ptr"]();
-      !_0x1b44b0["get_rethrown"]() ? (_0x1f3315["push"](_0x2ce1cf), _0x1b44b0["set_rethrown"](true), _0x1b44b0["set_caught"](false), _0x153403++) : _0x2ce1cf["free"]();
+      !_0x1b44b0["get_rethrown"]() ? (_0x1f3315["push"](_0x2ce1cf), _0x1b44b0["set_rethrown"](!![]), _0x1b44b0["set_caught"](![]), _0x153403++) : _0x2ce1cf["free"]();
       _0x27ee7b = _0x25a9bf;
       throw _0x25a9bf;
     }
@@ -2939,7 +2940,7 @@ var unityFramework = (() => {
       };
     }
     var _0x7c6eff = {resolve: function () {
-      var _0x429e97 = "", _0x3b9536 = false;
+      var _0x429e97 = "", _0x3b9536 = ![];
       for (var _0x5ab984 = arguments["length"] - 1; _0x5ab984 >= -1 && !_0x3b9536; _0x5ab984--) {
         var _0x49f7db = _0x5ab984 >= 0 ? arguments[_0x5ab984] : _0x278315["cwd"]();
         if (typeof _0x49f7db != "string") throw new TypeError("Arguments to path.resolve must be strings"); else {
@@ -2981,7 +2982,7 @@ var unityFramework = (() => {
     }, stream_ops: {open: function (_0x2af201) {
       var _0x3ee34d = _0x4f6acc["ttys"][_0x2af201["node"]["rdev"]];
       if (!_0x3ee34d) throw new _0x278315["ErrnoError"](43);
-      _0x2af201["tty"] = _0x3ee34d, _0x2af201["seekable"] = false;
+      _0x2af201["tty"] = _0x3ee34d, _0x2af201["seekable"] = ![];
     }, close: function (_0x509f1d) {
       _0x509f1d["tty"]["ops"]["flush"](_0x509f1d["tty"]);
     }, flush: function (_0x3cffbf) {
@@ -3026,7 +3027,7 @@ var unityFramework = (() => {
           if (typeof window != "undefined" && typeof window["prompt"] == "function") _0x32828d = window["prompt"]("Input: "), _0x32828d !== null && (_0x32828d += "\n"); else typeof readline == "function" && (_0x32828d = readline(), _0x32828d !== null && (_0x32828d += "\n"));
         }
         if (!_0x32828d) return null;
-        _0x268b5d["input"] = _0x3b0517(_0x32828d, true);
+        _0x268b5d["input"] = _0x3b0517(_0x32828d, !![]);
       }
       return _0x268b5d["input"]["shift"]();
     }, put_char: function (_0x1539b2, _0x3caea5) {
@@ -3055,7 +3056,7 @@ var unityFramework = (() => {
       return _0x3988d6(_0x23716c, _0x1cc754), _0x23716c;
     }
     var _0x187d72 = {ops_table: null, mount: function (_0x497a92) {
-      return _0x187d72["createNode"](null, "/", 16895, 0);
+      return _0x187d72["createNode"](null, "/", 16384 | 511, 0);
     }, createNode: function (_0x1066bd, _0x54f8c8, _0x4e1f86, _0x252a66) {
       if (_0x278315["isBlkdev"](_0x4e1f86) || _0x278315["isFIFO"](_0x4e1f86)) throw new _0x278315["ErrnoError"](63);
       !_0x187d72["ops_table"] && (_0x187d72["ops_table"] = {dir: {node: {getattr: _0x187d72["node_ops"]["getattr"], setattr: _0x187d72["node_ops"]["setattr"], lookup: _0x187d72["node_ops"]["lookup"], mknod: _0x187d72["node_ops"]["mknod"], rename: _0x187d72["node_ops"]["rename"], unlink: _0x187d72["node_ops"]["unlink"], rmdir: _0x187d72["node_ops"]["rmdir"], readdir: _0x187d72["node_ops"]["readdir"], symlink: _0x187d72["node_ops"]["symlink"]}, stream: {llseek: _0x187d72["stream_ops"]["llseek"]}}, file: {node: {getattr: _0x187d72["node_ops"]["getattr"], setattr: _0x187d72["node_ops"]["setattr"]}, stream: {llseek: _0x187d72["stream_ops"]["llseek"], read: _0x187d72["stream_ops"]["read"], write: _0x187d72["stream_ops"]["write"], allocate: _0x187d72["stream_ops"]["allocate"], mmap: _0x187d72["stream_ops"]["mmap"], msync: _0x187d72["stream_ops"]["msync"]}}, link: {node: {getattr: _0x187d72["node_ops"]["getattr"], setattr: _0x187d72["node_ops"]["setattr"], readlink: _0x187d72["node_ops"]["readlink"]}, stream: {}}, chrdev: {node: {getattr: _0x187d72["node_ops"]["getattr"], setattr: _0x187d72["node_ops"]["setattr"]}, stream: _0x278315["chrdev_stream_ops"]}});
@@ -3073,7 +3074,7 @@ var unityFramework = (() => {
     }, expandFileStorage: function (_0xd0f55c, _0x5ab52c) {
       var _0x480966 = _0xd0f55c["contents"] ? _0xd0f55c["contents"]["length"] : 0;
       if (_0x480966 >= _0x5ab52c) return;
-      var _0x243683 = 1048576;
+      var _0x243683 = 1024 * 1024;
       _0x5ab52c = Math["max"](_0x5ab52c, _0x480966 * (_0x480966 < _0x243683 ? 2 : 1.125) >>> 0);
       if (_0x480966 != 0) _0x5ab52c = Math["max"](_0x5ab52c, 256);
       var _0x19e6e8 = _0xd0f55c["contents"];
@@ -3125,7 +3126,7 @@ var unityFramework = (() => {
       }
       return _0xf0502;
     }, symlink: function (_0x3b94d9, _0x422452, _0x2fa275) {
-      var _0x329750 = _0x187d72["createNode"](_0x3b94d9, _0x422452, 41471, 0);
+      var _0x329750 = _0x187d72["createNode"](_0x3b94d9, _0x422452, 511 | 40960, 0);
       return _0x329750["link"] = _0x2fa275, _0x329750;
     }, readlink: function (_0x255f7c) {
       if (!_0x278315["isLink"](_0x255f7c["mode"])) throw new _0x278315["ErrnoError"](28);
@@ -3139,7 +3140,7 @@ var unityFramework = (() => {
       }
       return _0x1faeda;
     }, write: function (_0x1efb9b, _0x35cacc, _0x593841, _0x3a4217, _0x44f41f, _0x54755b) {
-      _0x35cacc["buffer"] === _0x59ed12["buffer"] && (_0x54755b = false);
+      _0x35cacc["buffer"] === _0x59ed12["buffer"] && (_0x54755b = ![]);
       if (!_0x3a4217) return 0;
       var _0x1c125 = _0x1efb9b["node"];
       _0x1c125["timestamp"] = Date["now"]();
@@ -3166,9 +3167,9 @@ var unityFramework = (() => {
       if (_0x5d8ab3 !== 0) throw new _0x278315["ErrnoError"](28);
       if (!_0x278315["isFile"](_0x231490["node"]["mode"])) throw new _0x278315["ErrnoError"](43);
       var _0x5d9cf3, _0x57cbff, _0x3e5187 = _0x231490["node"]["contents"];
-      if (!(_0xcebc4a & 2) && _0x3e5187["buffer"] === _0x14ab10) _0x57cbff = false, _0x5d9cf3 = _0x3e5187["byteOffset"]; else {
+      if (!(_0xcebc4a & 2) && _0x3e5187["buffer"] === _0x14ab10) _0x57cbff = ![], _0x5d9cf3 = _0x3e5187["byteOffset"]; else {
         (_0x301f6a > 0 || _0x301f6a + _0x387823 < _0x3e5187["length"]) && (_0x3e5187["subarray"] ? _0x3e5187 = _0x3e5187["subarray"](_0x301f6a, _0x301f6a + _0x387823) : _0x3e5187 = Array["prototype"]["slice"]["call"](_0x3e5187, _0x301f6a, _0x301f6a + _0x387823));
-        _0x57cbff = true, _0x5d9cf3 = _0x33fedd(_0x387823);
+        _0x57cbff = !![], _0x5d9cf3 = _0x33fedd(_0x387823);
         if (!_0x5d9cf3) throw new _0x278315["ErrnoError"](48);
         _0x59ed12["set"](_0x3e5187, _0x5d9cf3);
       }
@@ -3176,7 +3177,7 @@ var unityFramework = (() => {
     }, msync: function (_0xeeeff, _0xec641, _0x1be965, _0x3ce19b, _0x1e85e3) {
       if (!_0x278315["isFile"](_0xeeeff["node"]["mode"])) throw new _0x278315["ErrnoError"](43);
       if (_0x1e85e3 & 2) return 0;
-      var _0x34919e = _0x187d72["stream_ops"]["write"](_0xeeeff, _0xec641, 0, _0x3ce19b, _0x1be965, false);
+      var _0x34919e = _0x187d72["stream_ops"]["write"](_0xeeeff, _0xec641, 0, _0x3ce19b, _0x1be965, ![]);
       return 0;
     }}};
     function _0x466e8b(_0x46d0a1, _0x3a2845, _0x17d4a2, _0x222a88) {
@@ -3217,7 +3218,7 @@ var unityFramework = (() => {
       if (!_0x136e70) return _0x182833("Unable to connect to IndexedDB");
       _0x136e70["onupgradeneeded"] = _0x52b698 => {
         var _0x41a701 = _0x52b698["target"]["result"], _0x151850 = _0x52b698["target"]["transaction"], _0x3b8fb4;
-        _0x41a701["objectStoreNames"]["contains"](_0x3eb30b["DB_STORE_NAME"]) ? _0x3b8fb4 = _0x151850["objectStore"](_0x3eb30b["DB_STORE_NAME"]) : _0x3b8fb4 = _0x41a701["createObjectStore"](_0x3eb30b["DB_STORE_NAME"]), !_0x3b8fb4["indexNames"]["contains"]("timestamp") && _0x3b8fb4["createIndex"]("timestamp", "timestamp", {unique: false});
+        _0x41a701["objectStoreNames"]["contains"](_0x3eb30b["DB_STORE_NAME"]) ? _0x3b8fb4 = _0x151850["objectStore"](_0x3eb30b["DB_STORE_NAME"]) : _0x3b8fb4 = _0x41a701["createObjectStore"](_0x3eb30b["DB_STORE_NAME"]), !_0x3b8fb4["indexNames"]["contains"]("timestamp") && _0x3b8fb4["createIndex"]("timestamp", "timestamp", {unique: ![]});
       }, _0x136e70["onsuccess"] = () => {
         _0x8316d7 = _0x136e70["result"], _0x3eb30b["dbs"][_0x6aacf9] = _0x8316d7, _0x182833(null, _0x8316d7);
       }, _0x136e70["onerror"] = _0x4552e5 => {
@@ -3275,7 +3276,7 @@ var unityFramework = (() => {
     }, storeLocalEntry: (_0x4bfb79, _0x5ac021, _0x46b035) => {
       try {
         if (_0x278315["isDir"](_0x5ac021["mode"])) _0x278315["mkdirTree"](_0x4bfb79, _0x5ac021["mode"]); else {
-          if (_0x278315["isFile"](_0x5ac021["mode"])) _0x278315["writeFile"](_0x4bfb79, _0x5ac021["contents"], {canOwn: true}); else return _0x46b035(new Error("node type not supported"));
+          if (_0x278315["isFile"](_0x5ac021["mode"])) _0x278315["writeFile"](_0x4bfb79, _0x5ac021["contents"], {canOwn: !![]}); else return _0x46b035(new Error("node type not supported"));
         }
         _0x278315["chmod"](_0x4bfb79, _0x5ac021["mode"]), _0x278315["utime"](_0x4bfb79, _0x5ac021["timestamp"], _0x5ac021["timestamp"]);
       } catch (_0x490f25) {
@@ -3327,9 +3328,9 @@ var unityFramework = (() => {
         !_0x1b999e["entries"][_0x255033] && (_0x4b5359["push"](_0x255033), _0x16c6fd++);
       });
       if (!_0x16c6fd) return _0x253f9a(null);
-      var _0x399187 = false, _0x228977 = _0x1b999e["type"] === "remote" ? _0x1b999e["db"] : _0x5b80df["db"], _0x39bc3b = _0x228977["transaction"]([_0x3eb30b["DB_STORE_NAME"]], "readwrite"), _0x3ea7dd = _0x39bc3b["objectStore"](_0x3eb30b["DB_STORE_NAME"]);
+      var _0x399187 = ![], _0x228977 = _0x1b999e["type"] === "remote" ? _0x1b999e["db"] : _0x5b80df["db"], _0x39bc3b = _0x228977["transaction"]([_0x3eb30b["DB_STORE_NAME"]], "readwrite"), _0x3ea7dd = _0x39bc3b["objectStore"](_0x3eb30b["DB_STORE_NAME"]);
       function _0x2f4f55(_0x3c1a39) {
-        if (_0x3c1a39 && !_0x399187) return _0x399187 = true, _0x253f9a(_0x3c1a39);
+        if (_0x3c1a39 && !_0x399187) return _0x399187 = !![], _0x253f9a(_0x3c1a39);
       }
       _0x39bc3b["onerror"] = _0x213c0f => {
         _0x2f4f55(this["error"]), _0x213c0f["preventDefault"]();
@@ -3346,13 +3347,13 @@ var unityFramework = (() => {
       }), _0x4b5359["sort"]()["reverse"]()["forEach"](_0x5173e2 => {
         _0x5b80df["type"] === "local" ? _0x3eb30b["removeLocalEntry"](_0x5173e2, _0x2f4f55) : _0x3eb30b["removeRemoteEntry"](_0x3ea7dd, _0x5173e2, _0x2f4f55);
       });
-    }}, _0x278315 = {root: null, mounts: [], devices: {}, streams: [], nextInode: 1, nameTable: null, currentPath: "/", initialized: false, ignorePermissions: true, ErrnoError: null, genericErrors: {}, filesystems: null, syncFSRequests: 0, lookupPath: (_0x673342, _0x1d5ab0 = {}) => {
+    }}, _0x278315 = {root: null, mounts: [], devices: {}, streams: [], nextInode: 1, nameTable: null, currentPath: "/", initialized: ![], ignorePermissions: !![], ErrnoError: null, genericErrors: {}, filesystems: null, syncFSRequests: 0, lookupPath: (_0x673342, _0x1d5ab0 = {}) => {
       _0x673342 = _0x7c6eff["resolve"](_0x278315["cwd"](), _0x673342);
       if (!_0x673342) return {path: "", node: null};
-      var _0x3068ce = {follow_mount: true, recurse_count: 0};
+      var _0x3068ce = {follow_mount: !![], recurse_count: 0};
       _0x1d5ab0 = Object["assign"](_0x3068ce, _0x1d5ab0);
       if (_0x1d5ab0["recurse_count"] > 8) throw new _0x278315["ErrnoError"](32);
-      var _0x39a0ac = _0x353c9a["normalizeArray"](_0x673342["split"]("/")["filter"](_0xac382e => !!_0xac382e), false), _0x3b552d = _0x278315["root"], _0x32c850 = "/";
+      var _0x39a0ac = _0x353c9a["normalizeArray"](_0x673342["split"]("/")["filter"](_0xac382e => !!_0xac382e), ![]), _0x3b552d = _0x278315["root"], _0x32c850 = "/";
       for (var _0x1d6719 = 0; _0x1d6719 < _0x39a0ac["length"]; _0x1d6719++) {
         var _0x1a4671 = _0x1d6719 === _0x39a0ac["length"] - 1;
         if (_0x1a4671 && _0x1d5ab0["parent"]) break;
@@ -3372,7 +3373,7 @@ var unityFramework = (() => {
       return {path: _0x32c850, node: _0x3b552d};
     }, getPath: _0x4f28ab => {
       var _0x2d82fe;
-      while (true) {
+      while (!![]) {
         if (_0x278315["isRoot"](_0x4f28ab)) {
           var _0xfe21e8 = _0x4f28ab["mount"]["mountpoint"];
           if (!_0x2d82fe) return _0xfe21e8;
@@ -3520,7 +3521,7 @@ var unityFramework = (() => {
       }
       return _0x55d77c;
     }, syncfs: (_0x1f7b42, _0x3e4d33) => {
-      typeof _0x1f7b42 == "function" && (_0x3e4d33 = _0x1f7b42, _0x1f7b42 = false);
+      typeof _0x1f7b42 == "function" && (_0x3e4d33 = _0x1f7b42, _0x1f7b42 = ![]);
       _0x278315["syncFSRequests"]++;
       _0x278315["syncFSRequests"] > 1 && _0x119168("warning: " + _0x278315["syncFSRequests"] + " FS.syncfs operations in flight at once, probably just doing extra work");
       var _0x1df0ba = _0x278315["getMounts"](_0x278315["root"]["mount"]), _0x2c3b81 = 0;
@@ -3529,7 +3530,7 @@ var unityFramework = (() => {
       }
       function _0x565678(_0x34bbfe) {
         if (_0x34bbfe) {
-          if (!_0x565678["errored"]) return _0x565678["errored"] = true, _0x17bbb1(_0x34bbfe);
+          if (!_0x565678["errored"]) return _0x565678["errored"] = !![], _0x17bbb1(_0x34bbfe);
           return;
         }
         ++_0x2c3b81 >= _0x1df0ba["length"] && _0x17bbb1(null);
@@ -3542,7 +3543,7 @@ var unityFramework = (() => {
       var _0x32fae1 = _0x255e95 === "/", _0x2a1ede = !_0x255e95, _0x20f49a;
       if (_0x32fae1 && _0x278315["root"]) throw new _0x278315["ErrnoError"](10); else {
         if (!_0x32fae1 && !_0x2a1ede) {
-          var _0x22de7d = _0x278315["lookupPath"](_0x255e95, {follow_mount: false});
+          var _0x22de7d = _0x278315["lookupPath"](_0x255e95, {follow_mount: ![]});
           _0x255e95 = _0x22de7d["path"], _0x20f49a = _0x22de7d["node"];
           if (_0x278315["isMountpoint"](_0x20f49a)) throw new _0x278315["ErrnoError"](10);
           if (!_0x278315["isDir"](_0x20f49a["mode"])) throw new _0x278315["ErrnoError"](54);
@@ -3553,7 +3554,7 @@ var unityFramework = (() => {
       if (_0x32fae1) _0x278315["root"] = _0x21e2e8; else _0x20f49a && (_0x20f49a["mounted"] = _0x1ee8e1, _0x20f49a["mount"] && _0x20f49a["mount"]["mounts"]["push"](_0x1ee8e1));
       return _0x21e2e8;
     }, unmount: _0x5daab7 => {
-      var _0x58e5c5 = _0x278315["lookupPath"](_0x5daab7, {follow_mount: false});
+      var _0x58e5c5 = _0x278315["lookupPath"](_0x5daab7, {follow_mount: ![]});
       if (!_0x278315["isMountpoint"](_0x58e5c5["node"])) throw new _0x278315["ErrnoError"](28);
       var _0x5562dc = _0x58e5c5["node"], _0x48fde1 = _0x5562dc["mounted"], _0x2a0ee8 = _0x278315["getMounts"](_0x48fde1);
       Object["keys"](_0x278315["nameTable"])["forEach"](_0x3aef40 => {
@@ -3568,7 +3569,7 @@ var unityFramework = (() => {
     }, lookup: (_0x1b4243, _0x393b35) => {
       return _0x1b4243["node_ops"]["lookup"](_0x1b4243, _0x393b35);
     }, mknod: (_0x4f00af, _0x117b18, _0x4f107a) => {
-      var _0x4d9611 = _0x278315["lookupPath"](_0x4f00af, {parent: true}), _0x59f849 = _0x4d9611["node"], _0x4930c2 = _0x353c9a["basename"](_0x4f00af);
+      var _0x4d9611 = _0x278315["lookupPath"](_0x4f00af, {parent: !![]}), _0x59f849 = _0x4d9611["node"], _0x4930c2 = _0x353c9a["basename"](_0x4f00af);
       if (!_0x4930c2 || _0x4930c2 === "." || _0x4930c2 === "..") throw new _0x278315["ErrnoError"](28);
       var _0x3e0b59 = _0x278315["mayCreate"](_0x59f849, _0x4930c2);
       if (_0x3e0b59) throw new _0x278315["ErrnoError"](_0x3e0b59);
@@ -3577,7 +3578,7 @@ var unityFramework = (() => {
     }, create: (_0x19c544, _0x5eb3cb) => {
       return _0x5eb3cb = _0x5eb3cb !== undefined ? _0x5eb3cb : 438, _0x5eb3cb &= 4095, _0x5eb3cb |= 32768, _0x278315["mknod"](_0x19c544, _0x5eb3cb, 0);
     }, mkdir: (_0x123c8b, _0x188096) => {
-      return _0x188096 = _0x188096 !== undefined ? _0x188096 : 511, _0x188096 &= 1023, _0x188096 |= 16384, _0x278315["mknod"](_0x123c8b, _0x188096, 0);
+      return _0x188096 = _0x188096 !== undefined ? _0x188096 : 511, _0x188096 &= 511 | 512, _0x188096 |= 16384, _0x278315["mknod"](_0x123c8b, _0x188096, 0);
     }, mkdirTree: (_0x54c44e, _0x1a9fe0) => {
       var _0x590bbe = _0x54c44e["split"]("/"), _0x35558c = "";
       for (var _0x39f796 = 0; _0x39f796 < _0x590bbe["length"]; ++_0x39f796) {
@@ -3593,7 +3594,7 @@ var unityFramework = (() => {
       return typeof _0x48af67 == "undefined" && (_0x48af67 = _0x558e4d, _0x558e4d = 438), _0x558e4d |= 8192, _0x278315["mknod"](_0x15dc57, _0x558e4d, _0x48af67);
     }, symlink: (_0xdc14f5, _0x8ab1b3) => {
       if (!_0x7c6eff["resolve"](_0xdc14f5)) throw new _0x278315["ErrnoError"](44);
-      var _0xcd5c63 = _0x278315["lookupPath"](_0x8ab1b3, {parent: true}), _0x528fae = _0xcd5c63["node"];
+      var _0xcd5c63 = _0x278315["lookupPath"](_0x8ab1b3, {parent: !![]}), _0x528fae = _0xcd5c63["node"];
       if (!_0x528fae) throw new _0x278315["ErrnoError"](44);
       var _0x14ef16 = _0x353c9a["basename"](_0x8ab1b3), _0x100bfe = _0x278315["mayCreate"](_0x528fae, _0x14ef16);
       if (_0x100bfe) throw new _0x278315["ErrnoError"](_0x100bfe);
@@ -3601,7 +3602,7 @@ var unityFramework = (() => {
       return _0x528fae["node_ops"]["symlink"](_0x528fae, _0x14ef16, _0xdc14f5);
     }, rename: (_0x6979bf, _0x598577) => {
       var _0x5042a2 = _0x353c9a["dirname"](_0x6979bf), _0x865e69 = _0x353c9a["dirname"](_0x598577), _0x1488de = _0x353c9a["basename"](_0x6979bf), _0x199153 = _0x353c9a["basename"](_0x598577), _0x5d2e54, _0x68e79f, _0x421add;
-      _0x5d2e54 = _0x278315["lookupPath"](_0x6979bf, {parent: true}), _0x68e79f = _0x5d2e54["node"], _0x5d2e54 = _0x278315["lookupPath"](_0x598577, {parent: true}), _0x421add = _0x5d2e54["node"];
+      _0x5d2e54 = _0x278315["lookupPath"](_0x6979bf, {parent: !![]}), _0x68e79f = _0x5d2e54["node"], _0x5d2e54 = _0x278315["lookupPath"](_0x598577, {parent: !![]}), _0x421add = _0x5d2e54["node"];
       if (!_0x68e79f || !_0x421add) throw new _0x278315["ErrnoError"](44);
       if (_0x68e79f["mount"] !== _0x421add["mount"]) throw new _0x278315["ErrnoError"](75);
       var _0x56b43a = _0x278315["lookupNode"](_0x68e79f, _0x1488de), _0x5d5005 = _0x7c6eff["relative"](_0x6979bf, _0x865e69);
@@ -3632,19 +3633,19 @@ var unityFramework = (() => {
         _0x278315["hashAddNode"](_0x56b43a);
       }
     }, rmdir: _0x1e9074 => {
-      var _0x3249a9 = _0x278315["lookupPath"](_0x1e9074, {parent: true}), _0x30a495 = _0x3249a9["node"], _0x9cd452 = _0x353c9a["basename"](_0x1e9074), _0x3842bd = _0x278315["lookupNode"](_0x30a495, _0x9cd452), _0x50ed1a = _0x278315["mayDelete"](_0x30a495, _0x9cd452, true);
+      var _0x3249a9 = _0x278315["lookupPath"](_0x1e9074, {parent: !![]}), _0x30a495 = _0x3249a9["node"], _0x9cd452 = _0x353c9a["basename"](_0x1e9074), _0x3842bd = _0x278315["lookupNode"](_0x30a495, _0x9cd452), _0x50ed1a = _0x278315["mayDelete"](_0x30a495, _0x9cd452, !![]);
       if (_0x50ed1a) throw new _0x278315["ErrnoError"](_0x50ed1a);
       if (!_0x30a495["node_ops"]["rmdir"]) throw new _0x278315["ErrnoError"](63);
       if (_0x278315["isMountpoint"](_0x3842bd)) throw new _0x278315["ErrnoError"](10);
       _0x30a495["node_ops"]["rmdir"](_0x30a495, _0x9cd452), _0x278315["destroyNode"](_0x3842bd);
     }, readdir: _0xd823c2 => {
-      var _0x5f11ba = _0x278315["lookupPath"](_0xd823c2, {follow: true}), _0x408799 = _0x5f11ba["node"];
+      var _0x5f11ba = _0x278315["lookupPath"](_0xd823c2, {follow: !![]}), _0x408799 = _0x5f11ba["node"];
       if (!_0x408799["node_ops"]["readdir"]) throw new _0x278315["ErrnoError"](54);
       return _0x408799["node_ops"]["readdir"](_0x408799);
     }, unlink: _0x445a28 => {
-      var _0x3bf94c = _0x278315["lookupPath"](_0x445a28, {parent: true}), _0x5adc05 = _0x3bf94c["node"];
+      var _0x3bf94c = _0x278315["lookupPath"](_0x445a28, {parent: !![]}), _0x5adc05 = _0x3bf94c["node"];
       if (!_0x5adc05) throw new _0x278315["ErrnoError"](44);
-      var _0x2da442 = _0x353c9a["basename"](_0x445a28), _0x32a923 = _0x278315["lookupNode"](_0x5adc05, _0x2da442), _0x179b5c = _0x278315["mayDelete"](_0x5adc05, _0x2da442, false);
+      var _0x2da442 = _0x353c9a["basename"](_0x445a28), _0x32a923 = _0x278315["lookupNode"](_0x5adc05, _0x2da442), _0x179b5c = _0x278315["mayDelete"](_0x5adc05, _0x2da442, ![]);
       if (_0x179b5c) throw new _0x278315["ErrnoError"](_0x179b5c);
       if (!_0x5adc05["node_ops"]["unlink"]) throw new _0x278315["ErrnoError"](63);
       if (_0x278315["isMountpoint"](_0x32a923)) throw new _0x278315["ErrnoError"](10);
@@ -3660,7 +3661,7 @@ var unityFramework = (() => {
       if (!_0x28793c["node_ops"]["getattr"]) throw new _0x278315["ErrnoError"](63);
       return _0x28793c["node_ops"]["getattr"](_0x28793c);
     }, lstat: _0x27f8c7 => {
-      return _0x278315["stat"](_0x27f8c7, true);
+      return _0x278315["stat"](_0x27f8c7, !![]);
     }, chmod: (_0x330683, _0x15083c, _0x2f63a7) => {
       var _0x2948fb;
       if (typeof _0x330683 == "string") {
@@ -3668,9 +3669,9 @@ var unityFramework = (() => {
         _0x2948fb = _0x5e2036["node"];
       } else _0x2948fb = _0x330683;
       if (!_0x2948fb["node_ops"]["setattr"]) throw new _0x278315["ErrnoError"](63);
-      _0x2948fb["node_ops"]["setattr"](_0x2948fb, {mode: _0x15083c & 4095 | _0x2948fb["mode"] & -4096, timestamp: Date["now"]()});
+      _0x2948fb["node_ops"]["setattr"](_0x2948fb, {mode: _0x15083c & 4095 | _0x2948fb["mode"] & ~4095, timestamp: Date["now"]()});
     }, lchmod: (_0x233a36, _0x107bd9) => {
-      _0x278315["chmod"](_0x233a36, _0x107bd9, true);
+      _0x278315["chmod"](_0x233a36, _0x107bd9, !![]);
     }, fchmod: (_0x17e5dc, _0x1b9a2d) => {
       var _0x239d00 = _0x278315["getStream"](_0x17e5dc);
       if (!_0x239d00) throw new _0x278315["ErrnoError"](8);
@@ -3684,7 +3685,7 @@ var unityFramework = (() => {
       if (!_0x5e3336["node_ops"]["setattr"]) throw new _0x278315["ErrnoError"](63);
       _0x5e3336["node_ops"]["setattr"](_0x5e3336, {timestamp: Date["now"]()});
     }, lchown: (_0x5db2da, _0x48ef17, _0x84d647) => {
-      _0x278315["chown"](_0x5db2da, _0x48ef17, _0x84d647, true);
+      _0x278315["chown"](_0x5db2da, _0x48ef17, _0x84d647, !![]);
     }, fchown: (_0x5317e9, _0x58ef93, _0x516655) => {
       var _0x4f08c1 = _0x278315["getStream"](_0x5317e9);
       if (!_0x4f08c1) throw new _0x278315["ErrnoError"](8);
@@ -3693,7 +3694,7 @@ var unityFramework = (() => {
       if (_0x3b927b < 0) throw new _0x278315["ErrnoError"](28);
       var _0x390b72;
       if (typeof _0x5161ec == "string") {
-        var _0x4de6ff = _0x278315["lookupPath"](_0x5161ec, {follow: true});
+        var _0x4de6ff = _0x278315["lookupPath"](_0x5161ec, {follow: !![]});
         _0x390b72 = _0x4de6ff["node"];
       } else _0x390b72 = _0x5161ec;
       if (!_0x390b72["node_ops"]["setattr"]) throw new _0x278315["ErrnoError"](63);
@@ -3708,7 +3709,7 @@ var unityFramework = (() => {
       if ((_0x26e344["flags"] & 2097155) === 0) throw new _0x278315["ErrnoError"](28);
       _0x278315["truncate"](_0x26e344["node"], _0x39704b);
     }, utime: (_0x4e7242, _0x65fa13, _0x144a09) => {
-      var _0x26a212 = _0x278315["lookupPath"](_0x4e7242, {follow: true}), _0x8950a3 = _0x26a212["node"];
+      var _0x26a212 = _0x278315["lookupPath"](_0x4e7242, {follow: !![]}), _0x8950a3 = _0x26a212["node"];
       _0x8950a3["node_ops"]["setattr"](_0x8950a3, {timestamp: Math["max"](_0x65fa13, _0x144a09)});
     }, open: (_0x2127df, _0x312bd4, _0x3ce89f, _0x7aac99, _0x85a53e) => {
       if (_0x2127df === "") throw new _0x278315["ErrnoError"](44);
@@ -3722,22 +3723,22 @@ var unityFramework = (() => {
           _0x23bf6c = _0x1c68dd["node"];
         } catch (_0x230345) {}
       }
-      var _0x2a4c95 = false;
+      var _0x2a4c95 = ![];
       if (_0x312bd4 & 64) {
         if (_0x23bf6c) {
           if (_0x312bd4 & 128) throw new _0x278315["ErrnoError"](20);
-        } else _0x23bf6c = _0x278315["mknod"](_0x2127df, _0x3ce89f, 0), _0x2a4c95 = true;
+        } else _0x23bf6c = _0x278315["mknod"](_0x2127df, _0x3ce89f, 0), _0x2a4c95 = !![];
       }
       if (!_0x23bf6c) throw new _0x278315["ErrnoError"](44);
-      _0x278315["isChrdev"](_0x23bf6c["mode"]) && (_0x312bd4 &= -513);
+      _0x278315["isChrdev"](_0x23bf6c["mode"]) && (_0x312bd4 &= ~512);
       if (_0x312bd4 & 65536 && !_0x278315["isDir"](_0x23bf6c["mode"])) throw new _0x278315["ErrnoError"](54);
       if (!_0x2a4c95) {
         var _0x16fbe7 = _0x278315["mayOpen"](_0x23bf6c, _0x312bd4);
         if (_0x16fbe7) throw new _0x278315["ErrnoError"](_0x16fbe7);
       }
       _0x312bd4 & 512 && _0x278315["truncate"](_0x23bf6c, 0);
-      _0x312bd4 &= -131713;
-      var _0x2bde49 = _0x278315["createStream"]({node: _0x23bf6c, path: _0x278315["getPath"](_0x23bf6c), flags: _0x312bd4, seekable: true, position: 0, stream_ops: _0x23bf6c["stream_ops"], ungotten: [], error: false}, _0x7aac99, _0x85a53e);
+      _0x312bd4 &= ~(128 | 512 | 131072);
+      var _0x2bde49 = _0x278315["createStream"]({node: _0x23bf6c, path: _0x278315["getPath"](_0x23bf6c), flags: _0x312bd4, seekable: !![], position: 0, stream_ops: _0x23bf6c["stream_ops"], ungotten: [], error: ![]}, _0x7aac99, _0x85a53e);
       _0x2bde49["stream_ops"]["open"] && _0x2bde49["stream_ops"]["open"](_0x2bde49);
       if (_0x4bcfe1["logReadFiles"] && !(_0x312bd4 & 1)) {
         if (!_0x278315["readFiles"]) _0x278315["readFiles"] = {};
@@ -3825,7 +3826,7 @@ var unityFramework = (() => {
       }
       _0x278315["close"](_0x5b3adf);
     }, cwd: () => _0x278315["currentPath"], chdir: _0x5c5995 => {
-      var _0x47fe3e = _0x278315["lookupPath"](_0x5c5995, {follow: true});
+      var _0x47fe3e = _0x278315["lookupPath"](_0x5c5995, {follow: !![]});
       if (_0x47fe3e["node"] === null) throw new _0x278315["ErrnoError"](44);
       if (!_0x278315["isDir"](_0x47fe3e["node"]["mode"])) throw new _0x278315["ErrnoError"](54);
       var _0x4c931a = _0x278315["nodePermissions"](_0x47fe3e["node"], "x");
@@ -3841,7 +3842,7 @@ var unityFramework = (() => {
       _0x278315["mkdir"]("/proc");
       var _0x1a3fc4 = _0x278315["mkdir"]("/proc/self");
       _0x278315["mkdir"]("/proc/self/fd"), _0x278315["mount"]({mount: () => {
-        var _0x510fa4 = _0x278315["createNode"](_0x1a3fc4, "fd", 16895, 73);
+        var _0x510fa4 = _0x278315["createNode"](_0x1a3fc4, "fd", 16384 | 511, 73);
         return _0x510fa4["node_ops"] = {lookup: (_0x21810f, _0x3fa261) => {
           var _0x1b8371 = +_0x3fa261, _0x15b5ce = _0x278315["getStream"](_0x1b8371);
           if (!_0x15b5ce) throw new _0x278315["ErrnoError"](8);
@@ -3866,9 +3867,9 @@ var unityFramework = (() => {
     }, staticInit: () => {
       _0x278315["ensureErrnoError"](), _0x278315["nameTable"] = new Array(4096), _0x278315["mount"](_0x187d72, {}, "/"), _0x278315["createDefaultDirectories"](), _0x278315["createDefaultDevices"](), _0x278315["createSpecialDirectories"](), _0x278315["filesystems"] = {MEMFS: _0x187d72, IDBFS: _0x3eb30b};
     }, init: (_0x3dd63e, _0xfde82, _0x8f6e4) => {
-      _0x278315["init"]["initialized"] = true, _0x278315["ensureErrnoError"](), _0x4bcfe1["stdin"] = _0x3dd63e || _0x4bcfe1["stdin"], _0x4bcfe1["stdout"] = _0xfde82 || _0x4bcfe1["stdout"], _0x4bcfe1["stderr"] = _0x8f6e4 || _0x4bcfe1["stderr"], _0x278315["createStandardStreams"]();
+      _0x278315["init"]["initialized"] = !![], _0x278315["ensureErrnoError"](), _0x4bcfe1["stdin"] = _0x3dd63e || _0x4bcfe1["stdin"], _0x4bcfe1["stdout"] = _0xfde82 || _0x4bcfe1["stdout"], _0x4bcfe1["stderr"] = _0x8f6e4 || _0x4bcfe1["stderr"], _0x278315["createStandardStreams"]();
     }, quit: () => {
-      _0x278315["init"]["initialized"] = false;
+      _0x278315["init"]["initialized"] = ![];
       for (var _0x29e461 = 0; _0x29e461 < _0x278315["streams"]["length"]; _0x29e461++) {
         var _0x3e878f = _0x278315["streams"][_0x29e461];
         if (!_0x3e878f) continue;
@@ -3876,7 +3877,7 @@ var unityFramework = (() => {
       }
     }, getMode: (_0x62eb3d, _0x5368d1) => {
       var _0x58dd84 = 0;
-      if (_0x62eb3d) _0x58dd84 |= 365;
+      if (_0x62eb3d) _0x58dd84 |= 292 | 73;
       if (_0x5368d1) _0x58dd84 |= 146;
       return _0x58dd84;
     }, findObject: (_0x42747c, _0x5d0c50) => {
@@ -3887,10 +3888,10 @@ var unityFramework = (() => {
         var _0x3ec250 = _0x278315["lookupPath"](_0x47324a, {follow: !_0x3c5d4f});
         _0x47324a = _0x3ec250["path"];
       } catch (_0x3199f) {}
-      var _0x5dc587 = {isRoot: false, exists: false, error: 0, name: null, path: null, object: null, parentExists: false, parentPath: null, parentObject: null};
+      var _0x5dc587 = {isRoot: ![], exists: ![], error: 0, name: null, path: null, object: null, parentExists: ![], parentPath: null, parentObject: null};
       try {
-        var _0x3ec250 = _0x278315["lookupPath"](_0x47324a, {parent: true});
-        _0x5dc587["parentExists"] = true, _0x5dc587["parentPath"] = _0x3ec250["path"], _0x5dc587["parentObject"] = _0x3ec250["node"], _0x5dc587["name"] = _0x353c9a["basename"](_0x47324a), _0x3ec250 = _0x278315["lookupPath"](_0x47324a, {follow: !_0x3c5d4f}), _0x5dc587["exists"] = true, _0x5dc587["path"] = _0x3ec250["path"], _0x5dc587["object"] = _0x3ec250["node"], _0x5dc587["name"] = _0x3ec250["node"]["name"], _0x5dc587["isRoot"] = _0x3ec250["path"] === "/";
+        var _0x3ec250 = _0x278315["lookupPath"](_0x47324a, {parent: !![]});
+        _0x5dc587["parentExists"] = !![], _0x5dc587["parentPath"] = _0x3ec250["path"], _0x5dc587["parentObject"] = _0x3ec250["node"], _0x5dc587["name"] = _0x353c9a["basename"](_0x47324a), _0x3ec250 = _0x278315["lookupPath"](_0x47324a, {follow: !_0x3c5d4f}), _0x5dc587["exists"] = !![], _0x5dc587["path"] = _0x3ec250["path"], _0x5dc587["object"] = _0x3ec250["node"], _0x5dc587["name"] = _0x3ec250["node"]["name"], _0x5dc587["isRoot"] = _0x3ec250["path"] === "/";
       } catch (_0x25d571) {
         _0x5dc587["error"] = _0x25d571["errno"];
       }
@@ -3931,7 +3932,7 @@ var unityFramework = (() => {
       if (!_0x278315["createDevice"]["major"]) _0x278315["createDevice"]["major"] = 64;
       var _0x3272bb = _0x278315["makedev"](_0x278315["createDevice"]["major"]++, 0);
       return _0x278315["registerDevice"](_0x3272bb, {open: _0x4e9864 => {
-        _0x4e9864["seekable"] = false;
+        _0x4e9864["seekable"] = ![];
       }, close: _0x2bb213 => {
         _0xac8439 && _0xac8439["buffer"] && _0xac8439["buffer"]["length"] && _0xac8439(10);
       }, read: (_0xe99b9, _0x2ba374, _0x408f1f, _0x39ba57, _0x2fb224) => {
@@ -3959,17 +3960,17 @@ var unityFramework = (() => {
         return _0x367892 && (_0x475468["node"]["timestamp"] = Date["now"]()), _0x2ac973;
       }}), _0x278315["mkdev"](_0x2ff0aa, _0x5efb7e, _0x3272bb);
     }, forceLoadFile: _0x1aef33 => {
-      if (_0x1aef33["isDevice"] || _0x1aef33["isFolder"] || _0x1aef33["link"] || _0x1aef33["contents"]) return true;
+      if (_0x1aef33["isDevice"] || _0x1aef33["isFolder"] || _0x1aef33["link"] || _0x1aef33["contents"]) return !![];
       if (typeof XMLHttpRequest != "undefined") throw new Error("Lazy loading should have been performed (contents set) in createLazyFile, but it was not. Lazy loading only works in web workers. Use --embed-file or --preload-file in emcc on the main thread."); else {
         if (_0x44d954) try {
-          _0x1aef33["contents"] = _0x3b0517(_0x44d954(_0x1aef33["url"]), true), _0x1aef33["usedBytes"] = _0x1aef33["contents"]["length"];
+          _0x1aef33["contents"] = _0x3b0517(_0x44d954(_0x1aef33["url"]), !![]), _0x1aef33["usedBytes"] = _0x1aef33["contents"]["length"];
         } catch (_0x4db698) {
           throw new _0x278315["ErrnoError"](29);
         } else throw new Error("Cannot load without read() or XMLHttpRequest.");
       }
     }, createLazyFile: (_0x232e0, _0x202fad, _0x1531d5, _0x1cae1f, _0xe19b31) => {
       function _0x11a23c() {
-        this["lengthKnown"] = false, this["chunks"] = [];
+        this["lengthKnown"] = ![], this["chunks"] = [];
       }
       _0x11a23c["prototype"]["get"] = function _0x27dc60(_0x24478b) {
         if (_0x24478b > this["length"] - 1 || _0x24478b < 0) return undefined;
@@ -3979,21 +3980,21 @@ var unityFramework = (() => {
         this["getter"] = _0x4e50bb;
       }, _0x11a23c["prototype"]["cacheLength"] = function _0x307712() {
         var _0x5d0bac = new XMLHttpRequest;
-        _0x5d0bac["open"]("HEAD", _0x1531d5, false), _0x5d0bac["send"](null);
+        _0x5d0bac["open"]("HEAD", _0x1531d5, ![]), _0x5d0bac["send"](null);
         if (!(_0x5d0bac["status"] >= 200 && _0x5d0bac["status"] < 300 || _0x5d0bac["status"] === 304)) throw new Error("Couldn't load " + _0x1531d5 + ". Status: " + _0x5d0bac["status"]);
-        var _0x213142 = Number(_0x5d0bac["getResponseHeader"]("Content-length")), _0xb45b0a, _0x2921e9 = (_0xb45b0a = _0x5d0bac["getResponseHeader"]("Accept-Ranges")) && _0xb45b0a === "bytes", _0x1b588e = (_0xb45b0a = _0x5d0bac["getResponseHeader"]("Content-Encoding")) && _0xb45b0a === "gzip", _0x2cb0d7 = 1048576;
+        var _0x213142 = Number(_0x5d0bac["getResponseHeader"]("Content-length")), _0xb45b0a, _0x2921e9 = (_0xb45b0a = _0x5d0bac["getResponseHeader"]("Accept-Ranges")) && _0xb45b0a === "bytes", _0x1b588e = (_0xb45b0a = _0x5d0bac["getResponseHeader"]("Content-Encoding")) && _0xb45b0a === "gzip", _0x2cb0d7 = 1024 * 1024;
         if (!_0x2921e9) _0x2cb0d7 = _0x213142;
         var _0x41e28d = (_0xf7dac8, _0x4659e2) => {
           if (_0xf7dac8 > _0x4659e2) throw new Error("invalid range (" + _0xf7dac8 + ", " + _0x4659e2 + ") or no bytes requested!");
           if (_0x4659e2 > _0x213142 - 1) throw new Error("only " + _0x213142 + " bytes available! programmer error!");
           var _0x12f716 = new XMLHttpRequest;
-          _0x12f716["open"]("GET", _0x1531d5, false);
+          _0x12f716["open"]("GET", _0x1531d5, ![]);
           if (_0x213142 !== _0x2cb0d7) _0x12f716["setRequestHeader"]("Range", "bytes=" + _0xf7dac8 + "-" + _0x4659e2);
           _0x12f716["responseType"] = "arraybuffer";
           _0x12f716["overrideMimeType"] && _0x12f716["overrideMimeType"]("text/plain; charset=x-user-defined");
           _0x12f716["send"](null);
           if (!(_0x12f716["status"] >= 200 && _0x12f716["status"] < 300 || _0x12f716["status"] === 304)) throw new Error("Couldn't load " + _0x1531d5 + ". Status: " + _0x12f716["status"]);
-          return _0x12f716["response"] !== undefined ? new Uint8Array(_0x12f716["response"] || []) : _0x3b0517(_0x12f716["responseText"] || "", true);
+          return _0x12f716["response"] !== undefined ? new Uint8Array(_0x12f716["response"] || []) : _0x3b0517(_0x12f716["responseText"] || "", !![]);
         }, _0x20d465 = this;
         _0x20d465["setDataGetter"](_0x16b569 => {
           var _0x2b1aec = _0x16b569 * _0x2cb0d7, _0x167250 = (_0x16b569 + 1) * _0x2cb0d7 - 1;
@@ -4001,7 +4002,7 @@ var unityFramework = (() => {
           typeof _0x20d465["chunks"][_0x16b569] == "undefined" && (_0x20d465["chunks"][_0x16b569] = _0x41e28d(_0x2b1aec, _0x167250));
           if (typeof _0x20d465["chunks"][_0x16b569] == "undefined") throw new Error("doXHR failed!");
           return _0x20d465["chunks"][_0x16b569];
-        }), (_0x1b588e || !_0x213142) && (_0x2cb0d7 = _0x213142 = 1, _0x213142 = this["getter"](0)["length"], _0x2cb0d7 = _0x213142, _0x3402e6("LazyFiles on gzip forces download of the whole file when length is accessed")), this["_length"] = _0x213142, this["_chunkSize"] = _0x2cb0d7, this["lengthKnown"] = true;
+        }), (_0x1b588e || !_0x213142) && (_0x2cb0d7 = _0x213142 = 1, _0x213142 = this["getter"](0)["length"], _0x2cb0d7 = _0x213142, _0x3402e6("LazyFiles on gzip forces download of the whole file when length is accessed")), this["_length"] = _0x213142, this["_chunkSize"] = _0x2cb0d7, this["lengthKnown"] = !![];
       };
       if (typeof XMLHttpRequest != "undefined") {
         if (!_0x132c1d) throw "Cannot do synchronous binary XHRs outside webworkers in modern browsers. Use --embed-file or --preload-file in emcc";
@@ -4011,8 +4012,8 @@ var unityFramework = (() => {
         }}, chunkSize: {get: function () {
           return !this["lengthKnown"] && this["cacheLength"](), this["_chunkSize"];
         }}});
-        var _0x5d09da = {isDevice: false, contents: _0x5d2bb4};
-      } else var _0x5d09da = {isDevice: false, url: _0x1531d5};
+        var _0x5d09da = {isDevice: ![], contents: _0x5d2bb4};
+      } else var _0x5d09da = {isDevice: ![], url: _0x1531d5};
       var _0x5a4a6e = _0x278315["createFile"](_0x232e0, _0x202fad, _0x5d09da, _0x1cae1f, _0xe19b31);
       if (_0x5d09da["contents"]) _0x5a4a6e["contents"] = _0x5d09da["contents"]; else _0x5d09da["url"] && (_0x5a4a6e["contents"] = null, _0x5a4a6e["url"] = _0x5d09da["url"]);
       Object["defineProperties"](_0x5a4a6e, {usedBytes: {get: function () {
@@ -4108,7 +4109,7 @@ var unityFramework = (() => {
           var _0x2727e4 = _0x59a561["get"](_0x8e1712);
           _0x2727e4["onsuccess"] = () => {
             _0x278315["analyzePath"](_0x8e1712)["exists"] && _0x278315["unlink"](_0x8e1712);
-            _0x278315["createDataFile"](_0x353c9a["dirname"](_0x8e1712), _0x353c9a["basename"](_0x8e1712), _0x2727e4["result"], true, true, true), _0x29f8cf++;
+            _0x278315["createDataFile"](_0x353c9a["dirname"](_0x8e1712), _0x353c9a["basename"](_0x8e1712), _0x2727e4["result"], !![], !![], !![]), _0x29f8cf++;
             if (_0x29f8cf + _0x4330a6 == _0x83f5af) _0x5435ce();
           }, _0x2727e4["onerror"] = () => {
             _0x4330a6++;
@@ -4161,8 +4162,8 @@ var unityFramework = (() => {
       var _0x190e71 = _0x278315["readlink"](_0x16b2e4), _0x3c0d22 = Math["min"](_0x11131c, _0x4d063a(_0x190e71)), _0x26a9fd = _0x59ed12[_0x495166 + _0x3c0d22];
       return _0x1714da(_0x190e71, _0x495166, _0x11131c + 1), _0x59ed12[_0x495166 + _0x3c0d22] = _0x26a9fd, _0x3c0d22;
     }, doAccess: function (_0x578626, _0x36d3d6) {
-      if (_0x36d3d6 & -8) return -28;
-      var _0x43627c = _0x278315["lookupPath"](_0x578626, {follow: true}), _0x37b0d1 = _0x43627c["node"];
+      if (_0x36d3d6 & ~7) return -28;
+      var _0x43627c = _0x278315["lookupPath"](_0x578626, {follow: !![]}), _0x37b0d1 = _0x43627c["node"];
       if (!_0x37b0d1) return -44;
       var _0x3d5a58 = "";
       if (_0x36d3d6 & 4) _0x3d5a58 += "r";
@@ -4225,14 +4226,14 @@ var unityFramework = (() => {
         return "function" === typeof _0x3a7dd8 && (this["_callbacks"][_0x110304] = _0x3a7dd8), this;
       }, _0x4bcfe1["websocket"]["emit"] = function (_0x5d4a90, _0x2ef566) {
         "function" === typeof this["_callbacks"][_0x5d4a90] && this["_callbacks"][_0x5d4a90]["call"](this, _0x2ef566);
-      }, _0x278315["createNode"](null, "/", 16895, 0);
+      }, _0x278315["createNode"](null, "/", 16384 | 511, 0);
     }, createSocket: function (_0x2dc994, _0x4afb8a, _0x2b2845) {
-      _0x4afb8a &= -526337;
+      _0x4afb8a &= ~526336;
       var _0xe11b83 = _0x4afb8a == 1;
       if (_0xe11b83 && _0x2b2845 && _0x2b2845 != 6) throw new _0x278315["ErrnoError"](66);
       var _0x56d7ec = {family: _0x2dc994, type: _0x4afb8a, protocol: _0x2b2845, server: null, error: null, peers: {}, pending: [], recv_queue: [], sock_ops: _0x2badf6["websocket_sock_ops"]}, _0x1e6642 = _0x2badf6["nextname"](), _0x17f74f = _0x278315["createNode"](_0x2badf6["root"], _0x1e6642, 49152, 0);
       _0x17f74f["sock"] = _0x56d7ec;
-      var _0x22ab6e = _0x278315["createStream"]({path: _0x1e6642, node: _0x17f74f, flags: 2, seekable: false, stream_ops: _0x2badf6["stream_ops"]});
+      var _0x22ab6e = _0x278315["createStream"]({path: _0x1e6642, node: _0x17f74f, flags: 2, seekable: ![], stream_ops: _0x2badf6["stream_ops"]});
       return _0x56d7ec["stream"] = _0x22ab6e, _0x56d7ec;
     }, getSocket: function (_0x176fa7) {
       var _0x4c948e = _0x278315["getStream"](_0x176fa7);
@@ -4291,7 +4292,7 @@ var unityFramework = (() => {
     }, removePeer: function (_0x45ec9d, _0x4e79af) {
       delete _0x45ec9d["peers"][_0x4e79af["addr"] + ":" + _0x4e79af["port"]];
     }, handlePeerEvents: function (_0x3342bb, _0x49cd34) {
-      var _0xb9c652 = true, _0x4a59e9 = function () {
+      var _0xb9c652 = !![], _0x4a59e9 = function () {
         _0x4bcfe1["websocket"]["emit"]("open", _0x3342bb["stream"]["fd"]);
         try {
           var _0xc5d463 = _0x49cd34["dgram_send_queue"]["shift"]();
@@ -4311,7 +4312,7 @@ var unityFramework = (() => {
           if (_0x297d65["byteLength"] == 0) return; else _0x297d65 = new Uint8Array(_0x297d65);
         }
         var _0x5643f8 = _0xb9c652;
-        _0xb9c652 = false;
+        _0xb9c652 = ![];
         if (_0x5643f8 && _0x297d65["length"] === 10 && _0x297d65[0] === 255 && _0x297d65[1] === 255 && _0x297d65[2] === 255 && _0x297d65[3] === 255 && _0x297d65[4] === "p"["charCodeAt"](0) && _0x297d65[5] === "o"["charCodeAt"](0) && _0x297d65[6] === "r"["charCodeAt"](0) && _0x297d65[7] === "t"["charCodeAt"](0)) {
           var _0x1c2ea7 = _0x297d65[8] << 8 | _0x297d65[9];
           _0x2badf6["websocket_sock_ops"]["removePeer"](_0x3342bb, _0x49cd34), _0x49cd34["port"] = _0x1c2ea7, _0x2badf6["websocket_sock_ops"]["addPeer"](_0x3342bb, _0x49cd34);
@@ -4334,9 +4335,9 @@ var unityFramework = (() => {
         _0x3342bb["error"] = 14, _0x4bcfe1["websocket"]["emit"]("error", [_0x3342bb["stream"]["fd"], _0x3342bb["error"], "ECONNREFUSED: Connection refused"]);
       });
     }, poll: function (_0x4066a6) {
-      if (_0x4066a6["type"] === 1 && _0x4066a6["server"]) return _0x4066a6["pending"]["length"] ? 65 : 0;
+      if (_0x4066a6["type"] === 1 && _0x4066a6["server"]) return _0x4066a6["pending"]["length"] ? 64 | 1 : 0;
       var _0x345b21 = 0, _0x2eb7c4 = _0x4066a6["type"] === 1 ? _0x2badf6["websocket_sock_ops"]["getPeer"](_0x4066a6, _0x4066a6["daddr"], _0x4066a6["dport"]) : null;
-      return (_0x4066a6["recv_queue"]["length"] || !_0x2eb7c4 || _0x2eb7c4 && _0x2eb7c4["socket"]["readyState"] === _0x2eb7c4["socket"]["CLOSING"] || _0x2eb7c4 && _0x2eb7c4["socket"]["readyState"] === _0x2eb7c4["socket"]["CLOSED"]) && (_0x345b21 |= 65), (!_0x2eb7c4 || _0x2eb7c4 && _0x2eb7c4["socket"]["readyState"] === _0x2eb7c4["socket"]["OPEN"]) && (_0x345b21 |= 4), (_0x2eb7c4 && _0x2eb7c4["socket"]["readyState"] === _0x2eb7c4["socket"]["CLOSING"] || _0x2eb7c4 && _0x2eb7c4["socket"]["readyState"] === _0x2eb7c4["socket"]["CLOSED"]) && (_0x345b21 |= 16), _0x345b21;
+      return (_0x4066a6["recv_queue"]["length"] || !_0x2eb7c4 || _0x2eb7c4 && _0x2eb7c4["socket"]["readyState"] === _0x2eb7c4["socket"]["CLOSING"] || _0x2eb7c4 && _0x2eb7c4["socket"]["readyState"] === _0x2eb7c4["socket"]["CLOSED"]) && (_0x345b21 |= 64 | 1), (!_0x2eb7c4 || _0x2eb7c4 && _0x2eb7c4["socket"]["readyState"] === _0x2eb7c4["socket"]["OPEN"]) && (_0x345b21 |= 4), (_0x2eb7c4 && _0x2eb7c4["socket"]["readyState"] === _0x2eb7c4["socket"]["CLOSING"] || _0x2eb7c4 && _0x2eb7c4["socket"]["readyState"] === _0x2eb7c4["socket"]["CLOSED"]) && (_0x345b21 |= 16), _0x345b21;
     }, ioctl: function (_0x421b8e, _0x1f27ab, _0x39ec11) {
       switch (_0x1f27ab) {
         case 21531:
@@ -4536,10 +4537,10 @@ var unityFramework = (() => {
       return (_0x4b3a58 & 255) + "." + (_0x4b3a58 >> 8 & 255) + "." + (_0x4b3a58 >> 16 & 255) + "." + (_0x4b3a58 >> 24 & 255);
     }
     function _0x1c3f95(_0x309ab1) {
-      var _0x1dbab9 = "", _0x209bb4 = 0, _0xfe3552 = 0, _0x5910dd = 0, _0x612e97 = 0, _0x4ab78b = 0, _0x1228df = 0, _0x1351e7 = [_0x309ab1[0] & 65535, _0x309ab1[0] >> 16, _0x309ab1[1] & 65535, _0x309ab1[1] >> 16, _0x309ab1[2] & 65535, _0x309ab1[2] >> 16, _0x309ab1[3] & 65535, _0x309ab1[3] >> 16], _0x4d8335 = true, _0x3c6962 = "";
+      var _0x1dbab9 = "", _0x209bb4 = 0, _0xfe3552 = 0, _0x5910dd = 0, _0x612e97 = 0, _0x4ab78b = 0, _0x1228df = 0, _0x1351e7 = [_0x309ab1[0] & 65535, _0x309ab1[0] >> 16, _0x309ab1[1] & 65535, _0x309ab1[1] >> 16, _0x309ab1[2] & 65535, _0x309ab1[2] >> 16, _0x309ab1[3] & 65535, _0x309ab1[3] >> 16], _0x4d8335 = !![], _0x3c6962 = "";
       for (_0x1228df = 0; _0x1228df < 5; _0x1228df++) {
         if (_0x1351e7[_0x1228df] !== 0) {
-          _0x4d8335 = false;
+          _0x4d8335 = ![];
           break;
         }
       }
@@ -4722,7 +4723,7 @@ var unityFramework = (() => {
           var _0x90643c, _0x586556, _0x3bb605 = _0x3c47db["getdents"][_0x3fb006];
           if (_0x3bb605 === ".") _0x90643c = _0x3c47db["node"]["id"], _0x586556 = 4; else {
             if (_0x3bb605 === "..") {
-              var _0x53bd8b = _0x278315["lookupPath"](_0x3c47db["path"], {parent: true});
+              var _0x53bd8b = _0x278315["lookupPath"](_0x3c47db["path"], {parent: !![]});
               _0x90643c = _0x53bd8b["node"]["id"], _0x586556 = 4;
             } else {
               var _0x170cd4 = _0x278315["lookupNode"](_0x3c47db["node"], _0x3bb605);
@@ -4854,7 +4855,7 @@ var unityFramework = (() => {
       try {
         _0x13f1ff = _0x3c26cf["getStr"](_0x13f1ff);
         var _0x49e2a9 = _0x26af07 & 256, _0x6b7630 = _0x26af07 & 4096;
-        return _0x26af07 = _0x26af07 & -4353, _0x13f1ff = _0x3c26cf["calculateAt"](_0x52b646, _0x13f1ff, _0x6b7630), _0x3c26cf["doStat"](_0x49e2a9 ? _0x278315["lstat"] : _0x278315["stat"], _0x13f1ff, _0x3b4da4);
+        return _0x26af07 = _0x26af07 & ~4352, _0x13f1ff = _0x3c26cf["calculateAt"](_0x52b646, _0x13f1ff, _0x6b7630), _0x3c26cf["doStat"](_0x49e2a9 ? _0x278315["lstat"] : _0x278315["stat"], _0x13f1ff, _0x3b4da4);
       } catch (_0x150a1e) {
         if (typeof _0x278315 == "undefined" || !(_0x150a1e instanceof _0x278315["ErrnoError"])) throw _0x150a1e;
         return -_0x150a1e["errno"];
@@ -4872,22 +4873,22 @@ var unityFramework = (() => {
       }
     }
     var _0x593392 = {BUCKET_BUFFER_SIZE: 8192, mount: function (_0x3eb8ec) {
-      return _0x278315["createNode"](null, "/", 16895, 0);
+      return _0x278315["createNode"](null, "/", 16384 | 511, 0);
     }, createPipe: function () {
       var _0x5e7d20 = {buckets: [], refcnt: 2};
       _0x5e7d20["buckets"]["push"]({buffer: new Uint8Array(_0x593392["BUCKET_BUFFER_SIZE"]), offset: 0, roffset: 0});
       var _0x37105d = _0x593392["nextname"](), _0x52d95a = _0x593392["nextname"](), _0x61c4d8 = _0x278315["createNode"](_0x593392["root"], _0x37105d, 4096, 0), _0x371544 = _0x278315["createNode"](_0x593392["root"], _0x52d95a, 4096, 0);
       _0x61c4d8["pipe"] = _0x5e7d20, _0x371544["pipe"] = _0x5e7d20;
-      var _0x261f26 = _0x278315["createStream"]({path: _0x37105d, node: _0x61c4d8, flags: 0, seekable: false, stream_ops: _0x593392["stream_ops"]});
+      var _0x261f26 = _0x278315["createStream"]({path: _0x37105d, node: _0x61c4d8, flags: 0, seekable: ![], stream_ops: _0x593392["stream_ops"]});
       _0x61c4d8["stream"] = _0x261f26;
-      var _0x5dee15 = _0x278315["createStream"]({path: _0x52d95a, node: _0x371544, flags: 1, seekable: false, stream_ops: _0x593392["stream_ops"]});
+      var _0x5dee15 = _0x278315["createStream"]({path: _0x52d95a, node: _0x371544, flags: 1, seekable: ![], stream_ops: _0x593392["stream_ops"]});
       return _0x371544["stream"] = _0x5dee15, {readable_fd: _0x261f26["fd"], writable_fd: _0x5dee15["fd"]};
     }, stream_ops: {poll: function (_0x14f5ef) {
       var _0x3de5fd = _0x14f5ef["node"]["pipe"];
-      if ((_0x14f5ef["flags"] & 2097155) === 1) return 260; else {
+      if ((_0x14f5ef["flags"] & 2097155) === 1) return 256 | 4; else {
         if (_0x3de5fd["buckets"]["length"] > 0) for (var _0x1a2366 = 0; _0x1a2366 < _0x3de5fd["buckets"]["length"]; _0x1a2366++) {
           var _0x6f53f1 = _0x3de5fd["buckets"][_0x1a2366];
-          if (_0x6f53f1["offset"] - _0x6f53f1["roffset"] > 0) return 65;
+          if (_0x6f53f1["offset"] - _0x6f53f1["roffset"] > 0) return 64 | 1;
         }
       }
       return 0;
@@ -5056,7 +5057,7 @@ var unityFramework = (() => {
     }
     function _0x590172(_0x7ae64c, _0x44c885, _0x4be9c4, _0x5ea4ed, _0x2ce240, _0x3c4434) {
       try {
-        var _0x197f39 = _0x4d9b09(_0x7ae64c), _0x608b21 = _0xd8d1b(_0x2ce240, _0x3c4434, true);
+        var _0x197f39 = _0x4d9b09(_0x7ae64c), _0x608b21 = _0xd8d1b(_0x2ce240, _0x3c4434, !![]);
         return !_0x608b21 ? _0x278315["write"](_0x197f39["stream"], _0x59ed12, _0x44c885, _0x4be9c4) : _0x197f39["sock_ops"]["sendmsg"](_0x197f39, _0x59ed12, _0x44c885, _0x4be9c4, _0x608b21["addr"], _0x608b21["port"]);
       } catch (_0x395246) {
         if (typeof _0x278315 == "undefined" || !(_0x395246 instanceof _0x278315["ErrnoError"])) throw _0x395246;
@@ -5118,10 +5119,10 @@ var unityFramework = (() => {
     }
     function _0x5f0bce(_0x4feb4b, _0x1653b2, _0x5ad236, _0x4c0735) {
       try {
-        _0x1653b2 = _0x3c26cf["getStr"](_0x1653b2), _0x1653b2 = _0x3c26cf["calculateAt"](_0x4feb4b, _0x1653b2, true);
+        _0x1653b2 = _0x3c26cf["getStr"](_0x1653b2), _0x1653b2 = _0x3c26cf["calculateAt"](_0x4feb4b, _0x1653b2, !![]);
         if (!_0x5ad236) var _0x49cf56 = Date["now"](), _0x128e0f = _0x49cf56; else {
           var _0xdb8cbe = _0x46c9cf[_0x5ad236 >> 2], _0x29a691 = _0x46c9cf[_0x5ad236 + 4 >> 2];
-          _0x49cf56 = _0xdb8cbe * 1e3 + _0x29a691 / 1e6, _0x5ad236 += 8, _0xdb8cbe = _0x46c9cf[_0x5ad236 >> 2], _0x29a691 = _0x46c9cf[_0x5ad236 + 4 >> 2], _0x128e0f = _0xdb8cbe * 1e3 + _0x29a691 / 1e6;
+          _0x49cf56 = _0xdb8cbe * 1e3 + _0x29a691 / (1e3 * 1e3), _0x5ad236 += 8, _0xdb8cbe = _0x46c9cf[_0x5ad236 >> 2], _0x29a691 = _0x46c9cf[_0x5ad236 + 4 >> 2], _0x128e0f = _0xdb8cbe * 1e3 + _0x29a691 / (1e3 * 1e3);
         }
         return _0x278315["utime"](_0x1653b2, _0x49cf56, _0x128e0f), 0;
       } catch (_0x4e97b6) {
@@ -5140,7 +5141,7 @@ var unityFramework = (() => {
     function _0x480141() {
       return Date["now"]();
     }
-    var _0x33cc40 = true;
+    var _0x33cc40 = !![];
     function _0x47412e() {
       return _0x33cc40;
     }
@@ -5150,13 +5151,13 @@ var unityFramework = (() => {
     function _0x27ce1e(_0x535c84, _0x3c1448) {
       var _0x4c4667 = new Date(_0x46c9cf[_0x535c84 >> 2] * 1e3);
       _0x46c9cf[_0x3c1448 >> 2] = _0x4c4667["getUTCSeconds"](), _0x46c9cf[_0x3c1448 + 4 >> 2] = _0x4c4667["getUTCMinutes"](), _0x46c9cf[_0x3c1448 + 8 >> 2] = _0x4c4667["getUTCHours"](), _0x46c9cf[_0x3c1448 + 12 >> 2] = _0x4c4667["getUTCDate"](), _0x46c9cf[_0x3c1448 + 16 >> 2] = _0x4c4667["getUTCMonth"](), _0x46c9cf[_0x3c1448 + 20 >> 2] = _0x4c4667["getUTCFullYear"]() - 1900, _0x46c9cf[_0x3c1448 + 24 >> 2] = _0x4c4667["getUTCDay"]();
-      var _0x3d839e = Date["UTC"](_0x4c4667["getUTCFullYear"](), 0, 1, 0, 0, 0, 0), _0x395666 = (_0x4c4667["getTime"]() - _0x3d839e) / 864e5 | 0;
+      var _0x3d839e = Date["UTC"](_0x4c4667["getUTCFullYear"](), 0, 1, 0, 0, 0, 0), _0x395666 = (_0x4c4667["getTime"]() - _0x3d839e) / (1e3 * 60 * 60 * 24) | 0;
       _0x46c9cf[_0x3c1448 + 28 >> 2] = _0x395666;
     }
     function _0x4357b7(_0x464abb, _0x7ef277) {
       var _0x202859 = new Date(_0x46c9cf[_0x464abb >> 2] * 1e3);
       _0x46c9cf[_0x7ef277 >> 2] = _0x202859["getSeconds"](), _0x46c9cf[_0x7ef277 + 4 >> 2] = _0x202859["getMinutes"](), _0x46c9cf[_0x7ef277 + 8 >> 2] = _0x202859["getHours"](), _0x46c9cf[_0x7ef277 + 12 >> 2] = _0x202859["getDate"](), _0x46c9cf[_0x7ef277 + 16 >> 2] = _0x202859["getMonth"](), _0x46c9cf[_0x7ef277 + 20 >> 2] = _0x202859["getFullYear"]() - 1900, _0x46c9cf[_0x7ef277 + 24 >> 2] = _0x202859["getDay"]();
-      var _0x506863 = new Date(_0x202859["getFullYear"](), 0, 1), _0x104df8 = (_0x202859["getTime"]() - _0x506863["getTime"]()) / 864e5 | 0;
+      var _0x506863 = new Date(_0x202859["getFullYear"](), 0, 1), _0x104df8 = (_0x202859["getTime"]() - _0x506863["getTime"]()) / (1e3 * 60 * 60 * 24) | 0;
       _0x46c9cf[_0x7ef277 + 28 >> 2] = _0x104df8, _0x46c9cf[_0x7ef277 + 36 >> 2] = -(_0x202859["getTimezoneOffset"]() * 60);
       var _0xe27523 = new Date(_0x202859["getFullYear"](), 6, 1)["getTimezoneOffset"](), _0xe9ecf2 = _0x506863["getTimezoneOffset"](), _0x142dfc = (_0xe27523 != _0xe9ecf2 && _0x202859["getTimezoneOffset"]() == Math["min"](_0xe9ecf2, _0xe27523)) | 0;
       _0x46c9cf[_0x7ef277 + 32 >> 2] = _0x142dfc;
@@ -5170,7 +5171,7 @@ var unityFramework = (() => {
         }
       }
       _0x46c9cf[_0x4ba3b1 + 24 >> 2] = _0x367c64["getDay"]();
-      var _0x237cf1 = (_0x367c64["getTime"]() - _0xcf31bf["getTime"]()) / 864e5 | 0;
+      var _0x237cf1 = (_0x367c64["getTime"]() - _0xcf31bf["getTime"]()) / (1e3 * 60 * 60 * 24) | 0;
       return _0x46c9cf[_0x4ba3b1 + 28 >> 2] = _0x237cf1, _0x46c9cf[_0x4ba3b1 >> 2] = _0x367c64["getSeconds"](), _0x46c9cf[_0x4ba3b1 + 4 >> 2] = _0x367c64["getMinutes"](), _0x46c9cf[_0x4ba3b1 + 8 >> 2] = _0x367c64["getHours"](), _0x46c9cf[_0x4ba3b1 + 12 >> 2] = _0x367c64["getDate"](), _0x46c9cf[_0x4ba3b1 + 16 >> 2] = _0x367c64["getMonth"](), _0x367c64["getTime"]() / 1e3 | 0;
     }
     function _0x25acc7(_0x5c6684, _0x43faaa, _0x58c313, _0x4e4065, _0x398c83, _0x3927ce, _0xa4509b, _0x1e302c) {
@@ -5205,7 +5206,7 @@ var unityFramework = (() => {
     }
     function _0xd8c7be(_0x3753e9, _0x5e712f, _0x3c63be) {
       if (_0xd8c7be["called"]) return;
-      _0xd8c7be["called"] = true, _0x241df7(_0x3753e9, _0x5e712f, _0x3c63be);
+      _0xd8c7be["called"] = !![], _0x241df7(_0x3753e9, _0x5e712f, _0x3c63be);
     }
     function _0x36e0e3() {
       _0x4a2433("");
@@ -5232,7 +5233,7 @@ var unityFramework = (() => {
     function _0x1fa8ea(_0x67b53f, _0x4306c8) {
       _0x20045a["mainLoop"]["timingMode"] = _0x67b53f, _0x20045a["mainLoop"]["timingValue"] = _0x4306c8;
       if (!_0x20045a["mainLoop"]["func"]) return 1;
-      !_0x20045a["mainLoop"]["running"] && (_0x20045a["mainLoop"]["running"] = true);
+      !_0x20045a["mainLoop"]["running"] && (_0x20045a["mainLoop"]["running"] = !![]);
       if (_0x67b53f == 0) _0x20045a["mainLoop"]["scheduler"] = function _0x10cc49() {
         var _0x51c2a2 = Math["max"](0, _0x20045a["mainLoop"]["tickStartTime"] + _0x4306c8 - _0x511ea2()) | 0;
         setTimeout(_0x20045a["mainLoop"]["runner"], _0x51c2a2);
@@ -5245,7 +5246,7 @@ var unityFramework = (() => {
               var _0x58fd07 = [], _0x352e4a = "setimmediate", _0x3e0659 = function (_0x53f33a) {
                 (_0x53f33a["data"] === _0x352e4a || _0x53f33a["data"]["target"] === _0x352e4a) && (_0x53f33a["stopPropagation"](), _0x58fd07["shift"]()());
               };
-              addEventListener("message", _0x3e0659, true), setImmediate = function _0x39daca(_0x598bbc) {
+              addEventListener("message", _0x3e0659, !![]), setImmediate = function _0x39daca(_0x598bbc) {
                 _0x58fd07["push"](_0x598bbc);
                 if (_0x132c1d) {
                   if (_0x4bcfe1["setImmediates"] === undefined) _0x4bcfe1["setImmediates"] = [];
@@ -5274,10 +5275,10 @@ var unityFramework = (() => {
       _0x35e637(!_0x20045a["mainLoop"]["func"], "emscripten_set_main_loop: there can only be one main loop function at once: call emscripten_cancel_main_loop to cancel the previous one before setting a new one with different parameters."), _0x20045a["mainLoop"]["func"] = _0x42f95e, _0x20045a["mainLoop"]["arg"] = _0x2b8e9b;
       var _0x294310 = _0x20045a["mainLoop"]["currentlyRunningMainloop"];
       function _0xff61b9() {
-        if (_0x294310 < _0x20045a["mainLoop"]["currentlyRunningMainloop"]) return _0x76466d(), false;
-        return true;
+        if (_0x294310 < _0x20045a["mainLoop"]["currentlyRunningMainloop"]) return _0x76466d(), ![];
+        return !![];
       }
-      _0x20045a["mainLoop"]["running"] = false, _0x20045a["mainLoop"]["runner"] = function _0x219345() {
+      _0x20045a["mainLoop"]["running"] = ![], _0x20045a["mainLoop"]["runner"] = function _0x219345() {
         if (_0x533336) return;
         if (_0x20045a["mainLoop"]["queue"]["length"] > 0) {
           var _0x176db3 = Date["now"](), _0x5449cd = _0x20045a["mainLoop"]["queue"]["shift"]();
@@ -5325,12 +5326,12 @@ var unityFramework = (() => {
         _0x580d98(_0x229d0b);
       }, _0xf91280);
     }
-    var _0x20045a = {mainLoop: {running: false, scheduler: null, method: "", currentlyRunningMainloop: 0, func: null, arg: 0, timingMode: 0, timingValue: 0, currentFrameNumber: 0, queue: [], pause: function () {
+    var _0x20045a = {mainLoop: {running: ![], scheduler: null, method: "", currentlyRunningMainloop: 0, func: null, arg: 0, timingMode: 0, timingValue: 0, currentFrameNumber: 0, queue: [], pause: function () {
       _0x20045a["mainLoop"]["scheduler"] = null, _0x20045a["mainLoop"]["currentlyRunningMainloop"]++;
     }, resume: function () {
       _0x20045a["mainLoop"]["currentlyRunningMainloop"]++;
       var _0x59fba4 = _0x20045a["mainLoop"]["timingMode"], _0x1a25d3 = _0x20045a["mainLoop"]["timingValue"], _0x3fa8a7 = _0x20045a["mainLoop"]["func"];
-      _0x20045a["mainLoop"]["func"] = null, _0xe33019(_0x3fa8a7, 0, false, _0x20045a["mainLoop"]["arg"], true), _0x1fa8ea(_0x59fba4, _0x1a25d3), _0x20045a["mainLoop"]["scheduler"]();
+      _0x20045a["mainLoop"]["func"] = null, _0xe33019(_0x3fa8a7, 0, ![], _0x20045a["mainLoop"]["arg"], !![]), _0x1fa8ea(_0x59fba4, _0x1a25d3), _0x20045a["mainLoop"]["scheduler"]();
     }, updateStatus: function () {
       if (_0x4bcfe1["setStatus"]) {
         var _0x2f530b = _0x4bcfe1["statusMessage"] || "Please wait...", _0x170570 = _0x20045a["mainLoop"]["remainingBlockers"], _0x2660b0 = _0x20045a["mainLoop"]["expectedBlockers"];
@@ -5340,21 +5341,21 @@ var unityFramework = (() => {
       if (_0x533336) return;
       if (_0x4bcfe1["preMainLoop"]) {
         var _0xc31f4a = _0x4bcfe1["preMainLoop"]();
-        if (_0xc31f4a === false) return;
+        if (_0xc31f4a === ![]) return;
       }
       _0x580d98(_0x489c67);
       if (_0x4bcfe1["postMainLoop"]) _0x4bcfe1["postMainLoop"]();
-    }}, isFullscreen: false, pointerLock: false, moduleContextCreatedCallbacks: [], workers: [], init: function () {
+    }}, isFullscreen: ![], pointerLock: ![], moduleContextCreatedCallbacks: [], workers: [], init: function () {
       if (!_0x4bcfe1["preloadPlugins"]) _0x4bcfe1["preloadPlugins"] = [];
       if (_0x20045a["initted"]) return;
-      _0x20045a["initted"] = true;
+      _0x20045a["initted"] = !![];
       try {
-        new Blob, _0x20045a["hasBlobConstructor"] = true;
+        new Blob, _0x20045a["hasBlobConstructor"] = !![];
       } catch (_0x5da89d) {
-        _0x20045a["hasBlobConstructor"] = false, _0x3402e6("warning: no blob constructor, cannot create blobs with mimetypes");
+        _0x20045a["hasBlobConstructor"] = ![], _0x3402e6("warning: no blob constructor, cannot create blobs with mimetypes");
       }
       _0x20045a["BlobBuilder"] = typeof MozBlobBuilder != "undefined" ? MozBlobBuilder : typeof WebKitBlobBuilder != "undefined" ? WebKitBlobBuilder : !_0x20045a["hasBlobConstructor"] ? _0x3402e6("warning: no BlobBuilder") : null, _0x20045a["URLObject"] = typeof window != "undefined" ? window["URL"] ? window["URL"] : window["webkitURL"] : undefined;
-      !_0x4bcfe1["noImageDecoding"] && typeof _0x20045a["URLObject"] == "undefined" && (_0x3402e6("warning: Browser does not support creating object URLs. Built-in browser image decoding will not be available."), _0x4bcfe1["noImageDecoding"] = true);
+      !_0x4bcfe1["noImageDecoding"] && typeof _0x20045a["URLObject"] == "undefined" && (_0x3402e6("warning: Browser does not support creating object URLs. Built-in browser image decoding will not be available."), _0x4bcfe1["noImageDecoding"] = !![]);
       var _0x540ddb = {};
       _0x540ddb["canHandle"] = function _0x371bb9(_0x45968a) {
         return !_0x4bcfe1["noImageDecoding"] && /\.(jpg|jpeg|png|bmp)$/i["test"](_0x45968a);
@@ -5386,15 +5387,15 @@ var unityFramework = (() => {
       _0x3b9ee6["canHandle"] = function _0xfa1d14(_0x2cc50f) {
         return !_0x4bcfe1["noAudioDecoding"] && _0x2cc50f["substr"](-4) in {".ogg": 1, ".wav": 1, ".mp3": 1};
       }, _0x3b9ee6["handle"] = function _0x4cbf7a(_0xc479b0, _0x1e1632, _0x1abc78, _0x361087) {
-        var _0x205ab9 = false;
+        var _0x205ab9 = ![];
         function _0xed821a(_0x4c2306) {
           if (_0x205ab9) return;
-          _0x205ab9 = true, _0x4bcfe1["preloadedAudios"][_0x1e1632] = _0x4c2306;
+          _0x205ab9 = !![], _0x4bcfe1["preloadedAudios"][_0x1e1632] = _0x4c2306;
           if (_0x1abc78) _0x1abc78(_0xc479b0);
         }
         function _0x4dbfd4() {
           if (_0x205ab9) return;
-          _0x205ab9 = true, _0x4bcfe1["preloadedAudios"][_0x1e1632] = new Audio;
+          _0x205ab9 = !![], _0x4bcfe1["preloadedAudios"][_0x1e1632] = new Audio;
           if (_0x361087) _0x361087();
         }
         if (_0x20045a["hasBlobConstructor"]) {
@@ -5406,7 +5407,7 @@ var unityFramework = (() => {
           var _0x3fa88a = _0x20045a["URLObject"]["createObjectURL"](_0x37da50), _0xf5d77c = new Audio;
           _0xf5d77c["addEventListener"]("canplaythrough", function () {
             _0xed821a(_0xf5d77c);
-          }, false), _0xf5d77c["onerror"] = function _0x113ffd(_0x1ec5b4) {
+          }, ![]), _0xf5d77c["onerror"] = function _0x113ffd(_0x1ec5b4) {
             if (_0x205ab9) return;
             _0x3402e6("warning: browser could not fully decode audio " + _0x1e1632 + ", trying slower base64 approach");
             function _0x2e7c8d(_0xa3f66e) {
@@ -5431,21 +5432,21 @@ var unityFramework = (() => {
         _0x20045a["pointerLock"] = document["pointerLockElement"] === _0x4bcfe1["canvas"] || document["mozPointerLockElement"] === _0x4bcfe1["canvas"] || document["webkitPointerLockElement"] === _0x4bcfe1["canvas"] || document["msPointerLockElement"] === _0x4bcfe1["canvas"];
       }
       var _0x513c69 = _0x4bcfe1["canvas"];
-      _0x513c69 && (_0x513c69["requestPointerLock"] = _0x513c69["requestPointerLock"] || _0x513c69["mozRequestPointerLock"] || _0x513c69["webkitRequestPointerLock"] || _0x513c69["msRequestPointerLock"] || function () {}, _0x513c69["exitPointerLock"] = document["exitPointerLock"] || document["mozExitPointerLock"] || document["webkitExitPointerLock"] || document["msExitPointerLock"] || function () {}, _0x513c69["exitPointerLock"] = _0x513c69["exitPointerLock"]["bind"](document), document["addEventListener"]("pointerlockchange", _0x5eb206, false), document["addEventListener"]("mozpointerlockchange", _0x5eb206, false), document["addEventListener"]("webkitpointerlockchange", _0x5eb206, false), document["addEventListener"]("mspointerlockchange", _0x5eb206, false), _0x4bcfe1["elementPointerLock"] && _0x513c69["addEventListener"]("click", function (_0x423f33) {
+      _0x513c69 && (_0x513c69["requestPointerLock"] = _0x513c69["requestPointerLock"] || _0x513c69["mozRequestPointerLock"] || _0x513c69["webkitRequestPointerLock"] || _0x513c69["msRequestPointerLock"] || function () {}, _0x513c69["exitPointerLock"] = document["exitPointerLock"] || document["mozExitPointerLock"] || document["webkitExitPointerLock"] || document["msExitPointerLock"] || function () {}, _0x513c69["exitPointerLock"] = _0x513c69["exitPointerLock"]["bind"](document), document["addEventListener"]("pointerlockchange", _0x5eb206, ![]), document["addEventListener"]("mozpointerlockchange", _0x5eb206, ![]), document["addEventListener"]("webkitpointerlockchange", _0x5eb206, ![]), document["addEventListener"]("mspointerlockchange", _0x5eb206, ![]), _0x4bcfe1["elementPointerLock"] && _0x513c69["addEventListener"]("click", function (_0x423f33) {
         !_0x20045a["pointerLock"] && _0x4bcfe1["canvas"]["requestPointerLock"] && (_0x4bcfe1["canvas"]["requestPointerLock"](), _0x423f33["preventDefault"]());
-      }, false));
+      }, ![]));
     }, handledByPreloadPlugin: function (_0x348d55, _0x565ce7, _0x405fd0, _0x260e70) {
       _0x20045a["init"]();
-      var _0x4e7233 = false;
+      var _0x4e7233 = ![];
       return _0x4bcfe1["preloadPlugins"]["forEach"](function (_0x5db8fa) {
         if (_0x4e7233) return;
-        _0x5db8fa["canHandle"](_0x565ce7) && (_0x5db8fa["handle"](_0x348d55, _0x565ce7, _0x405fd0, _0x260e70), _0x4e7233 = true);
+        _0x5db8fa["canHandle"](_0x565ce7) && (_0x5db8fa["handle"](_0x348d55, _0x565ce7, _0x405fd0, _0x260e70), _0x4e7233 = !![]);
       }), _0x4e7233;
     }, createContext: function (_0x502c13, _0x2a620f, _0x657a77, _0x35ed35) {
       if (_0x2a620f && _0x4bcfe1["ctx"] && _0x502c13 == _0x4bcfe1["canvas"]) return _0x4bcfe1["ctx"];
       var _0x10d19a, _0x682b9c;
       if (_0x2a620f) {
-        var _0x4dfaaf = {antialias: false, alpha: false, majorVersion: typeof WebGL2RenderingContext != "undefined" ? 2 : 1};
+        var _0x4dfaaf = {antialias: ![], alpha: ![], majorVersion: typeof WebGL2RenderingContext != "undefined" ? 2 : 1};
         if (_0x35ed35) for (var _0x353b58 in _0x35ed35) {
           _0x4dfaaf[_0x353b58] = _0x35ed35[_0x353b58];
         }
@@ -5461,23 +5462,23 @@ var unityFramework = (() => {
         }), _0x20045a["init"]();
       }
       return _0x10d19a;
-    }, destroyContext: function (_0x58bfab, _0x41795e, _0x477029) {}, fullscreenHandlersInstalled: false, lockPointer: undefined, resizeCanvas: undefined, requestFullscreen: function (_0x1a5927, _0x5e9f83) {
+    }, destroyContext: function (_0x58bfab, _0x41795e, _0x477029) {}, fullscreenHandlersInstalled: ![], lockPointer: undefined, resizeCanvas: undefined, requestFullscreen: function (_0x1a5927, _0x5e9f83) {
       _0x20045a["lockPointer"] = _0x1a5927, _0x20045a["resizeCanvas"] = _0x5e9f83;
-      if (typeof _0x20045a["lockPointer"] == "undefined") _0x20045a["lockPointer"] = true;
-      if (typeof _0x20045a["resizeCanvas"] == "undefined") _0x20045a["resizeCanvas"] = false;
+      if (typeof _0x20045a["lockPointer"] == "undefined") _0x20045a["lockPointer"] = !![];
+      if (typeof _0x20045a["resizeCanvas"] == "undefined") _0x20045a["resizeCanvas"] = ![];
       var _0x2a98bb = _0x4bcfe1["canvas"];
       function _0x19a7aa() {
-        _0x20045a["isFullscreen"] = false;
+        _0x20045a["isFullscreen"] = ![];
         var _0x6e2fb6 = _0x2a98bb["parentNode"];
         if ((document["fullscreenElement"] || document["mozFullScreenElement"] || document["msFullscreenElement"] || document["webkitFullscreenElement"] || document["webkitCurrentFullScreenElement"]) === _0x6e2fb6) {
           _0x2a98bb["exitFullscreen"] = _0x20045a["exitFullscreen"];
           if (_0x20045a["lockPointer"]) _0x2a98bb["requestPointerLock"]();
-          _0x20045a["isFullscreen"] = true, _0x20045a["resizeCanvas"] ? _0x20045a["setFullscreenCanvasSize"]() : _0x20045a["updateCanvasDimensions"](_0x2a98bb);
+          _0x20045a["isFullscreen"] = !![], _0x20045a["resizeCanvas"] ? _0x20045a["setFullscreenCanvasSize"]() : _0x20045a["updateCanvasDimensions"](_0x2a98bb);
         } else _0x6e2fb6["parentNode"]["insertBefore"](_0x2a98bb, _0x6e2fb6), _0x6e2fb6["parentNode"]["removeChild"](_0x6e2fb6), _0x20045a["resizeCanvas"] ? _0x20045a["setWindowedCanvasSize"]() : _0x20045a["updateCanvasDimensions"](_0x2a98bb);
         if (_0x4bcfe1["onFullScreen"]) _0x4bcfe1["onFullScreen"](_0x20045a["isFullscreen"]);
         if (_0x4bcfe1["onFullscreen"]) _0x4bcfe1["onFullscreen"](_0x20045a["isFullscreen"]);
       }
-      !_0x20045a["fullscreenHandlersInstalled"] && (_0x20045a["fullscreenHandlersInstalled"] = true, document["addEventListener"]("fullscreenchange", _0x19a7aa, false), document["addEventListener"]("mozfullscreenchange", _0x19a7aa, false), document["addEventListener"]("webkitfullscreenchange", _0x19a7aa, false), document["addEventListener"]("MSFullscreenChange", _0x19a7aa, false));
+      !_0x20045a["fullscreenHandlersInstalled"] && (_0x20045a["fullscreenHandlersInstalled"] = !![], document["addEventListener"]("fullscreenchange", _0x19a7aa, ![]), document["addEventListener"]("mozfullscreenchange", _0x19a7aa, ![]), document["addEventListener"]("webkitfullscreenchange", _0x19a7aa, ![]), document["addEventListener"]("MSFullscreenChange", _0x19a7aa, ![]));
       var _0x43a4c4 = document["createElement"]("div");
       _0x2a98bb["parentNode"]["insertBefore"](_0x43a4c4, _0x2a98bb), _0x43a4c4["appendChild"](_0x2a98bb), _0x43a4c4["requestFullscreen"] = _0x43a4c4["requestFullscreen"] || _0x43a4c4["mozRequestFullScreen"] || _0x43a4c4["msRequestFullscreen"] || (_0x43a4c4["webkitRequestFullscreen"] ? function () {
         _0x43a4c4["webkitRequestFullscreen"](Element["ALLOW_KEYBOARD_INPUT"]);
@@ -5485,13 +5486,13 @@ var unityFramework = (() => {
         _0x43a4c4["webkitRequestFullScreen"](Element["ALLOW_KEYBOARD_INPUT"]);
       } : null), _0x43a4c4["requestFullscreen"]();
     }, exitFullscreen: function () {
-      if (!_0x20045a["isFullscreen"]) return false;
+      if (!_0x20045a["isFullscreen"]) return ![];
       var _0x566218 = document["exitFullscreen"] || document["cancelFullScreen"] || document["mozCancelFullScreen"] || document["msExitFullscreen"] || document["webkitCancelFullScreen"] || function () {};
-      return _0x566218["apply"](document, []), true;
+      return _0x566218["apply"](document, []), !![];
     }, nextRAF: 0, fakeRequestAnimationFrame: function (_0x2dd5d2) {
       var _0x2392ce = Date["now"]();
-      if (_0x20045a["nextRAF"] === 0) _0x20045a["nextRAF"] = _0x2392ce + 16.666666666666668; else while (_0x2392ce + 2 >= _0x20045a["nextRAF"]) {
-        _0x20045a["nextRAF"] += 16.666666666666668;
+      if (_0x20045a["nextRAF"] === 0) _0x20045a["nextRAF"] = _0x2392ce + 1e3 / 60; else while (_0x2392ce + 2 >= _0x20045a["nextRAF"]) {
+        _0x20045a["nextRAF"] += 1e3 / 60;
       }
       var _0x41a77f = Math["max"](_0x20045a["nextRAF"] - _0x2392ce, 0);
       setTimeout(_0x2dd5d2, _0x41a77f);
@@ -5584,7 +5585,7 @@ var unityFramework = (() => {
     }, setWindowedCanvasSize: function () {
       if (typeof SDL != "undefined") {
         var _0x287970 = _0x29f705[SDL["screen"] >> 2];
-        _0x287970 = _0x287970 & -8388609, _0x46c9cf[SDL["screen"] >> 2] = _0x287970;
+        _0x287970 = _0x287970 & ~8388608, _0x46c9cf[SDL["screen"] >> 2] = _0x287970;
       }
       _0x20045a["updateCanvasDimensions"](_0x4bcfe1["canvas"]), _0x20045a["updateResizeListeners"]();
     }, updateCanvasDimensions: function (_0x2ae3bb, _0x5e8062, _0x2ba6dd) {
@@ -5617,14 +5618,14 @@ var unityFramework = (() => {
       }
       _0x1d6235["eventHandlers"] = [], _0x1d6235["deferredCalls"] = [];
     }, registerRemoveEventListeners: function () {
-      !_0x1d6235["removeEventListenersRegistered"] && (_0xdd5bdd["push"](_0x1d6235["removeAllEventListeners"]), _0x1d6235["removeEventListenersRegistered"] = true);
+      !_0x1d6235["removeEventListenersRegistered"] && (_0xdd5bdd["push"](_0x1d6235["removeAllEventListeners"]), _0x1d6235["removeEventListenersRegistered"] = !![]);
     }, deferredCalls: [], deferCall: function (_0x31f008, _0x5d7ad3, _0x87e931) {
       function _0x1d8f3e(_0x48ba38, _0x510de5) {
-        if (_0x48ba38["length"] != _0x510de5["length"]) return false;
+        if (_0x48ba38["length"] != _0x510de5["length"]) return ![];
         for (var _0xea1a23 in _0x48ba38) {
-          if (_0x48ba38[_0xea1a23] != _0x510de5[_0xea1a23]) return false;
+          if (_0x48ba38[_0xea1a23] != _0x510de5[_0xea1a23]) return ![];
         }
-        return true;
+        return !![];
       }
       for (var _0x46ffe9 in _0x1d6235["deferredCalls"]) {
         var _0x2629f9 = _0x1d6235["deferredCalls"][_0x46ffe9];
@@ -5861,25 +5862,25 @@ var unityFramework = (() => {
         if (_0x563af9 === 0) break;
         _0x7130a6 = _0x59ed12[_0x1f327e + 1 >> 0];
         if (_0x563af9 == 37) {
-          var _0x58b47f = false, _0x2b08ff = false, _0x88ab86 = false, _0x12d728 = false, _0x564ec5 = false;
+          var _0x58b47f = ![], _0x2b08ff = ![], _0x88ab86 = ![], _0x12d728 = ![], _0x564ec5 = ![];
           _0x46278b: while (1) {
             switch (_0x7130a6) {
               case 43:
-                _0x58b47f = true;
+                _0x58b47f = !![];
                 break;
               case 45:
-                _0x2b08ff = true;
+                _0x2b08ff = !![];
                 break;
               case 35:
-                _0x88ab86 = true;
+                _0x88ab86 = !![];
                 break;
               case 48:
                 if (_0x12d728) break _0x46278b; else {
-                  _0x12d728 = true;
+                  _0x12d728 = !![];
                   break;
                 }
               case 32:
-                _0x564ec5 = true;
+                _0x564ec5 = !![];
                 break;
               default:
                 break _0x46278b;
@@ -5890,9 +5891,9 @@ var unityFramework = (() => {
           if (_0x7130a6 == 42) _0x1c05a4 = _0x3dc2ef("i32"), _0x1f327e++, _0x7130a6 = _0x59ed12[_0x1f327e + 1 >> 0]; else while (_0x7130a6 >= 48 && _0x7130a6 <= 57) {
             _0x1c05a4 = _0x1c05a4 * 10 + (_0x7130a6 - 48), _0x1f327e++, _0x7130a6 = _0x59ed12[_0x1f327e + 1 >> 0];
           }
-          var _0x58198e = false, _0x57c69e = -1;
+          var _0x58198e = ![], _0x57c69e = -1;
           if (_0x7130a6 == 46) {
-            _0x57c69e = 0, _0x58198e = true, _0x1f327e++, _0x7130a6 = _0x59ed12[_0x1f327e + 1 >> 0];
+            _0x57c69e = 0, _0x58198e = !![], _0x1f327e++, _0x7130a6 = _0x59ed12[_0x1f327e + 1 >> 0];
             if (_0x7130a6 == 42) _0x57c69e = _0x3dc2ef("i32"), _0x1f327e++; else while (1) {
               var _0x4abe27 = _0x59ed12[_0x1f327e + 1 >> 0];
               if (_0x4abe27 < 48 || _0x4abe27 > 57) break;
@@ -5900,7 +5901,7 @@ var unityFramework = (() => {
             }
             _0x7130a6 = _0x59ed12[_0x1f327e + 1 >> 0];
           }
-          _0x57c69e < 0 && (_0x57c69e = 6, _0x58198e = false);
+          _0x57c69e < 0 && (_0x57c69e = 6, _0x58198e = ![]);
           var _0x57c05f;
           switch (String["fromCharCode"](_0x7130a6)) {
             case "h":
@@ -5987,11 +5988,11 @@ var unityFramework = (() => {
               {
                 _0x399e51 = _0x3dc2ef("double");
                 var _0x3a4161;
-                if (isNaN(_0x399e51)) _0x3a4161 = "nan", _0x12d728 = false; else {
-                  if (!isFinite(_0x399e51)) _0x3a4161 = (_0x399e51 < 0 ? "-" : "") + "inf", _0x12d728 = false; else {
-                    var _0x16bffb = false, _0x44a4b3 = Math["min"](_0x57c69e, 20);
+                if (isNaN(_0x399e51)) _0x3a4161 = "nan", _0x12d728 = ![]; else {
+                  if (!isFinite(_0x399e51)) _0x3a4161 = (_0x399e51 < 0 ? "-" : "") + "inf", _0x12d728 = ![]; else {
+                    var _0x16bffb = ![], _0x44a4b3 = Math["min"](_0x57c69e, 20);
                     if (_0x7130a6 == 103 || _0x7130a6 == 71) {
-                      _0x16bffb = true, _0x57c69e = _0x57c69e || 1;
+                      _0x16bffb = !![], _0x57c69e = _0x57c69e || 1;
                       var _0x592f8c = parseInt(_0x399e51["toExponential"](_0x44a4b3)["split"]("e")[1], 10);
                       _0x57c69e > _0x592f8c && _0x592f8c >= -4 ? (_0x7130a6 = (_0x7130a6 == 103 ? "f" : "F")["charCodeAt"](0), _0x57c69e -= _0x592f8c + 1) : (_0x7130a6 = (_0x7130a6 == 103 ? "e" : "E")["charCodeAt"](0), _0x57c69e--), _0x44a4b3 = Math["min"](_0x57c69e, 20);
                     }
@@ -6028,7 +6029,7 @@ var unityFramework = (() => {
                 }
                 if (_0x40bed2) for (var _0xd7c221 = 0; _0xd7c221 < _0x3340d2; _0xd7c221++) {
                   _0x16dcc6["push"](_0x18c91b[_0x40bed2++ >> 0]);
-                } else _0x16dcc6 = _0x16dcc6["concat"](_0x3b0517("(null)"["substr"](0, _0x3340d2), true));
+                } else _0x16dcc6 = _0x16dcc6["concat"](_0x3b0517("(null)"["substr"](0, _0x3340d2), !![]));
                 if (_0x2b08ff) while (_0x3340d2 < _0x1c05a4--) {
                   _0x16dcc6["push"](32);
                 }
@@ -6068,10 +6069,10 @@ var unityFramework = (() => {
     }
     function _0x1419fc(_0x3c9c55) {
       if (!_0x3c9c55 || !_0x3c9c55["callee"] || !_0x3c9c55["callee"]["name"]) return [null, "", ""];
-      var _0x2e72d9 = _0x3c9c55["callee"]["toString"](), _0x381627 = _0x3c9c55["callee"]["name"], _0x11a5a8 = "(", _0x4f1f6d = true;
+      var _0x2e72d9 = _0x3c9c55["callee"]["toString"](), _0x381627 = _0x3c9c55["callee"]["name"], _0x11a5a8 = "(", _0x4f1f6d = !![];
       for (var _0xdfa4f9 in _0x3c9c55) {
         var _0x189f47 = _0x3c9c55[_0xdfa4f9];
-        !_0x4f1f6d && (_0x11a5a8 += ", "), _0x4f1f6d = false, typeof _0x189f47 == "number" || typeof _0x189f47 == "string" ? _0x11a5a8 += _0x189f47 : _0x11a5a8 += "(" + typeof _0x189f47 + ")";
+        !_0x4f1f6d && (_0x11a5a8 += ", "), _0x4f1f6d = ![], typeof _0x189f47 == "number" || typeof _0x189f47 == "string" ? _0x11a5a8 += _0x189f47 : _0x11a5a8 += "(" + typeof _0x189f47 + ")";
       }
       _0x11a5a8 += ")";
       var _0x3c72c2 = _0x3c9c55["callee"]["caller"];
@@ -6102,7 +6103,7 @@ var unityFramework = (() => {
             continue;
           }
         }
-        var _0x43adbe = false;
+        var _0x43adbe = ![];
         if (_0x212971 & 8) {
           var _0x222f0f = emscripten_source_map["originalPositionFor"]({line: _0x512d93, column: _0x1047b5});
           _0x43adbe = _0x222f0f && _0x222f0f["source"], _0x43adbe && (_0x212971 & 64 && (_0x222f0f["source"] = _0x222f0f["source"]["substring"](_0x222f0f["source"]["replace"](/\\/g, "/")["lastIndexOf"]("/") + 1)), _0x3ed6e4 += "    at " + _0x552eec + " (" + _0x222f0f["source"] + ":" + _0x222f0f["line"] + ":" + _0x222f0f["column"] + ")\n");
@@ -6158,15 +6159,15 @@ var unityFramework = (() => {
       var _0x2447bf = _0x18c91b["length"];
       _0x51ff84 = _0x51ff84 >>> 0;
       var _0x3248bc = _0xf98318();
-      if (_0x51ff84 > _0x3248bc) return false;
+      if (_0x51ff84 > _0x3248bc) return ![];
       let _0x5c5cf3 = (_0x4ebd54, _0x3350ad) => _0x4ebd54 + (_0x3350ad - _0x4ebd54 % _0x3350ad) % _0x3350ad;
       for (var _0xf89f5c = 1; _0xf89f5c <= 4; _0xf89f5c *= 2) {
         var _0x54996d = _0x2447bf * (1 + 0.2 / _0xf89f5c);
         _0x54996d = Math["min"](_0x54996d, _0x51ff84 + 100663296);
         var _0x26b067 = Math["min"](_0x3248bc, _0x5c5cf3(Math["max"](_0x51ff84, _0x54996d), 65536)), _0x4adac2 = _0x20da3f(_0x26b067);
-        if (_0x4adac2) return true;
+        if (_0x4adac2) return !![];
       }
-      return false;
+      return ![];
     }
     function _0xb349aa() {
       try {
@@ -6218,7 +6219,7 @@ var unityFramework = (() => {
         if (function (_0x5e90fb, _0x28351d, _0x79a137) {
           return _0x3ba9fb["apply"](null, [_0x23ce9f, _0x5e90fb, _0x28351d, _0x79a137]);
         }(_0x529889, _0x1d10c7, _0x32ddb7)) _0xe85bd5["preventDefault"]();
-      }, _0x4a79cc = {target: _0xab2e79(_0x34b8ad), allowsDeferredCalls: true, eventTypeString: _0x4f58ad, callbackfunc: _0x23ce9f, handlerFunc: _0x53cf35, useCapture: _0x1fad7d};
+      }, _0x4a79cc = {target: _0xab2e79(_0x34b8ad), allowsDeferredCalls: !![], eventTypeString: _0x4f58ad, callbackfunc: _0x23ce9f, handlerFunc: _0x53cf35, useCapture: _0x1fad7d};
       _0x1d6235["registerOrRemoveHandler"](_0x4a79cc);
     }
     function _0x5af486(_0x49a2f2, _0x99d7aa, _0x45fc36, _0x5b1e69) {
@@ -6248,7 +6249,7 @@ var unityFramework = (() => {
         if (function (_0x1c6318, _0x40075a, _0x1e0681) {
           return _0x3ba9fb["apply"](null, [_0x4bff7d, _0x1c6318, _0x40075a, _0x1e0681]);
         }(_0x576785, _0x45122c, _0x473629)) _0x143d26["preventDefault"]();
-      }, _0x4875aa = {target: _0xab2e79(_0x31b2d5), allowsDeferredCalls: true, eventTypeString: _0x1a929d, callbackfunc: _0x4bff7d, handlerFunc: _0x1490c0, useCapture: _0x169811};
+      }, _0x4875aa = {target: _0xab2e79(_0x31b2d5), allowsDeferredCalls: !![], eventTypeString: _0x1a929d, callbackfunc: _0x4bff7d, handlerFunc: _0x1490c0, useCapture: _0x169811};
       _0x1d6235["registerOrRemoveHandler"](_0x4875aa);
     }
     function _0x1e2cd6(_0x4bf332, _0x6df55f, _0x562374, _0x1c1913, _0x2cb0b9) {
@@ -6366,7 +6367,7 @@ var unityFramework = (() => {
         if (function (_0xe41ef6, _0x56b47f, _0x325bb8) {
           return _0x3ba9fb["apply"](null, [_0x31ea95, _0xe41ef6, _0x56b47f, _0x325bb8]);
         }(_0x15fac1, _0xbfb3d6, _0x421d3c)) _0x48c55b["preventDefault"]();
-      }, _0x553f34 = {target: _0xf31bd6, allowsDeferredCalls: true, eventTypeString: _0xced2d9, callbackfunc: _0x31ea95, handlerFunc: _0x2fbf02, useCapture: _0x499c59};
+      }, _0x553f34 = {target: _0xf31bd6, allowsDeferredCalls: !![], eventTypeString: _0xced2d9, callbackfunc: _0x31ea95, handlerFunc: _0x2fbf02, useCapture: _0x499c59};
       _0x1d6235["registerOrRemoveHandler"](_0x553f34);
     }
     function _0x53edb9(_0x37d135, _0xe3939f, _0x5db213, _0x3800dc, _0x1d68ef) {
@@ -6484,11 +6485,11 @@ var unityFramework = (() => {
       var _0x5cad7f = _0x2ab728["byteSizeByType"][_0x2dd290 - _0x2ab728["byteSizeByTypeRoot"]];
       return _0x37cf14 * _0x5cad7f * _0x3e7594;
     }, usedTempBuffers: [], preDrawHandleClientVertexAttribBindings: function _0x2c2473(_0x4a964e) {
-      _0x2ab728["resetBufferBinding"] = false;
+      _0x2ab728["resetBufferBinding"] = ![];
       for (var _0x3e156a = 0; _0x3e156a < _0x2ab728["currentContext"]["maxVertexAttribs"]; ++_0x3e156a) {
         var _0x542968 = _0x2ab728["currentContext"]["clientBuffers"][_0x3e156a];
         if (!_0x542968["clientside"] || !_0x542968["enabled"]) continue;
-        _0x2ab728["resetBufferBinding"] = true;
+        _0x2ab728["resetBufferBinding"] = !![];
         var _0x288ef6 = _0x2ab728["calcBufLength"](_0x542968["size"], _0x542968["type"], _0x542968["stride"], _0x4a964e), _0x142ef4 = _0x2ab728["getTempVertexBuffer"](_0x288ef6);
         _0x20ed22["bindBuffer"](34962, _0x142ef4), _0x20ed22["bufferSubData"](34962, 0, _0x18c91b["subarray"](_0x542968["ptr"], _0x542968["ptr"] + _0x288ef6)), _0x542968["vertexAttribPointerAdaptor"]["call"](_0x20ed22, _0x3e156a, _0x542968["size"], _0x542968["type"], _0x542968["normalized"], _0x542968["stride"], 0);
       }
@@ -6514,9 +6515,9 @@ var unityFramework = (() => {
       (typeof _0x4ff221["enableExtensionsByDefault"] == "undefined" || _0x4ff221["enableExtensionsByDefault"]) && _0x2ab728["initExtensions"](_0x4a5df4);
       _0x4a5df4["maxVertexAttribs"] = _0x4a5df4["GLctx"]["getParameter"](34921), _0x4a5df4["clientBuffers"] = [];
       for (var _0x16bc75 = 0; _0x16bc75 < _0x4a5df4["maxVertexAttribs"]; _0x16bc75++) {
-        _0x4a5df4["clientBuffers"][_0x16bc75] = {enabled: false, clientside: false, size: 0, type: 0, normalized: 0, stride: 0, ptr: 0, vertexAttribPointerAdaptor: null};
+        _0x4a5df4["clientBuffers"][_0x16bc75] = {enabled: ![], clientside: ![], size: 0, type: 0, normalized: 0, stride: 0, ptr: 0, vertexAttribPointerAdaptor: null};
       }
-      return _0x2ab728["generateTempBuffers"](false, _0x4a5df4), _0x3eda0c;
+      return _0x2ab728["generateTempBuffers"](![], _0x4a5df4), _0x3eda0c;
     }, makeContextCurrent: function (_0x178853) {
       return _0x2ab728["currentContext"] = _0x2ab728["contexts"][_0x178853], _0x4bcfe1["ctx"] = _0x20ed22 = _0x2ab728["currentContext"] && _0x2ab728["currentContext"]["GLctx"], !(_0x178853 && !_0x20ed22);
     }, getContext: function (_0x4d3379) {
@@ -6529,7 +6530,7 @@ var unityFramework = (() => {
     }, initExtensions: function (_0x1c78bd) {
       if (!_0x1c78bd) _0x1c78bd = _0x2ab728["currentContext"];
       if (_0x1c78bd["initExtensionsDone"]) return;
-      _0x1c78bd["initExtensionsDone"] = true;
+      _0x1c78bd["initExtensionsDone"] = !![];
       var _0x5bc221 = _0x1c78bd["GLctx"];
       _0x20a35b(_0x5bc221), _0x5a8970(_0x5bc221), _0x1b6ee6(_0x5bc221), _0x7aabcf(_0x5bc221), _0xbfdc42(_0x5bc221);
       _0x1c78bd["version"] >= 2 && (_0x5bc221["disjointTimerQueryExt"] = _0x5bc221["getExtension"]("EXT_disjoint_timer_query_webgl2"));
@@ -6541,7 +6542,7 @@ var unityFramework = (() => {
       });
     }}, _0x56b965 = ["default", "low-power", "high-performance"];
     function _0x236a6f(_0x45c01b, _0x25c19f) {
-      var _0x539c78 = _0x25c19f >> 2, _0x523fae = _0x46c9cf[_0x539c78 + 6], _0x2c667f = {alpha: !!_0x46c9cf[_0x539c78 + 0], depth: !!_0x46c9cf[_0x539c78 + 1], stencil: !!_0x46c9cf[_0x539c78 + 2], antialias: !!_0x46c9cf[_0x539c78 + 3], premultipliedAlpha: !!_0x46c9cf[_0x539c78 + 4], preserveDrawingBuffer: !!_0x46c9cf[_0x539c78 + 5], powerPreference: _0x56b965[_0x523fae], failIfMajorPerformanceCaveat: !!_0x46c9cf[_0x539c78 + 7], majorVersion: _0x46c9cf[_0x539c78 + 8], minorVersion: _0x46c9cf[_0x539c78 + 9], enableExtensionsByDefault: _0x46c9cf[_0x539c78 + 10], explicitSwapControl: _0x46c9cf[_0x539c78 + 11], proxyContextToMainThread: _0x46c9cf[_0x539c78 + 12], renderViaOffscreenBackBuffer: _0x46c9cf[_0x539c78 + 13]}, _0x28faa2 = _0x422f86(_0x45c01b);
+      var _0x539c78 = _0x25c19f >> 2, _0x523fae = _0x46c9cf[_0x539c78 + (24 >> 2)], _0x2c667f = {alpha: !!_0x46c9cf[_0x539c78 + (0 >> 2)], depth: !!_0x46c9cf[_0x539c78 + (4 >> 2)], stencil: !!_0x46c9cf[_0x539c78 + (8 >> 2)], antialias: !!_0x46c9cf[_0x539c78 + (12 >> 2)], premultipliedAlpha: !!_0x46c9cf[_0x539c78 + (16 >> 2)], preserveDrawingBuffer: !!_0x46c9cf[_0x539c78 + (20 >> 2)], powerPreference: _0x56b965[_0x523fae], failIfMajorPerformanceCaveat: !!_0x46c9cf[_0x539c78 + (28 >> 2)], majorVersion: _0x46c9cf[_0x539c78 + (32 >> 2)], minorVersion: _0x46c9cf[_0x539c78 + (36 >> 2)], enableExtensionsByDefault: _0x46c9cf[_0x539c78 + (40 >> 2)], explicitSwapControl: _0x46c9cf[_0x539c78 + (44 >> 2)], proxyContextToMainThread: _0x46c9cf[_0x539c78 + (48 >> 2)], renderViaOffscreenBackBuffer: _0x46c9cf[_0x539c78 + (52 >> 2)]}, _0x28faa2 = _0x422f86(_0x45c01b);
       if (!_0x28faa2) return 0;
       if (_0x2c667f["explicitSwapControl"]) return 0;
       var _0x42015f = _0x2ab728["createContext"](_0x28faa2, _0x2c667f);
@@ -6574,10 +6575,10 @@ var unityFramework = (() => {
     }
     function _0x3bab87(_0x2519c9) {
       var _0x6038c4 = _0x2519c9 >> 2;
-      for (var _0xc5c932 = 0; _0xc5c932 < 14; ++_0xc5c932) {
+      for (var _0xc5c932 = 0; _0xc5c932 < 56 >> 2; ++_0xc5c932) {
         _0x46c9cf[_0x6038c4 + _0xc5c932] = 0;
       }
-      _0x46c9cf[_0x6038c4 + 0] = _0x46c9cf[_0x6038c4 + 1] = _0x46c9cf[_0x6038c4 + 3] = _0x46c9cf[_0x6038c4 + 4] = _0x46c9cf[_0x6038c4 + 8] = _0x46c9cf[_0x6038c4 + 10] = 1;
+      _0x46c9cf[_0x6038c4 + (0 >> 2)] = _0x46c9cf[_0x6038c4 + (4 >> 2)] = _0x46c9cf[_0x6038c4 + (12 >> 2)] = _0x46c9cf[_0x6038c4 + (16 >> 2)] = _0x46c9cf[_0x6038c4 + (32 >> 2)] = _0x46c9cf[_0x6038c4 + (40 >> 2)] = 1;
     }
     function _0x389f53(_0x1f0d1f) {
       var _0x5446b5 = _0x2ab728["makeContextCurrent"](_0x1f0d1f);
@@ -6679,7 +6680,7 @@ var unityFramework = (() => {
       _0x9aea72 === 0 && (_0x9aea72 = 6);
       _0x138ae7 === 0 && (_0x138ae7 = 1);
       if (!_0x40a3ed && !_0x499bbe) return -2;
-      if (_0x38d923 & -1088) return -1;
+      if (_0x38d923 & ~(1 | 2 | 4 | 1024 | 8 | 16 | 32)) return -1;
       if (_0x3f1ebf !== 0 && _0x46c9cf[_0x3f1ebf >> 2] & 2 && !_0x40a3ed) return -1;
       if (_0x38d923 & 32) return -2;
       if (_0x138ae7 !== 0 && _0x138ae7 !== 1 && _0x138ae7 !== 2) return -7;
@@ -6731,19 +6732,19 @@ var unityFramework = (() => {
     function _0x30d9e6(_0x1e48d8, _0x30cc87, _0x43c5d6, _0x3d5b90, _0x38d2f3, _0x127170, _0x14115c) {
       var _0x383107 = _0x29b6f8(_0x1e48d8, _0x30cc87);
       if (_0x383107["errno"]) return -6;
-      var _0x528c24 = _0x383107["port"], _0xc441b9 = _0x383107["addr"], _0x11cf68 = false;
+      var _0x528c24 = _0x383107["port"], _0xc441b9 = _0x383107["addr"], _0x11cf68 = ![];
       if (_0x43c5d6 && _0x3d5b90) {
         var _0x360949;
         if (_0x14115c & 1 || !(_0x360949 = _0x29554d["lookup_addr"](_0xc441b9))) {
           if (_0x14115c & 8) return -2;
         } else _0xc441b9 = _0x360949;
         var _0x1a0bd7 = _0x1714da(_0xc441b9, _0x43c5d6, _0x3d5b90);
-        _0x1a0bd7 + 1 >= _0x3d5b90 && (_0x11cf68 = true);
+        _0x1a0bd7 + 1 >= _0x3d5b90 && (_0x11cf68 = !![]);
       }
       if (_0x38d2f3 && _0x127170) {
         _0x528c24 = "" + _0x528c24;
         var _0x1a0bd7 = _0x1714da(_0x528c24, _0x38d2f3, _0x127170);
-        _0x1a0bd7 + 1 >= _0x127170 && (_0x11cf68 = true);
+        _0x1a0bd7 + 1 >= _0x127170 && (_0x11cf68 = !![]);
       }
       if (_0x11cf68) return -12;
       return 0;
@@ -6976,7 +6977,7 @@ var unityFramework = (() => {
     }
     function _0x282e27(_0x3fe972) {
       var _0x2554b6 = _0x2ab728["currentContext"]["clientBuffers"][_0x3fe972];
-      _0x2554b6["enabled"] = false, _0x20ed22["disableVertexAttribArray"](_0x3fe972);
+      _0x2554b6["enabled"] = ![], _0x20ed22["disableVertexAttribArray"](_0x3fe972);
     }
     function _0x16e9c7(_0x2a995d, _0x1e1909, _0x47961e) {
       _0x2ab728["preDrawHandleClientVertexAttribBindings"](_0x1e1909 + _0x47961e), _0x20ed22["drawArrays"](_0x2a995d, _0x1e1909, _0x47961e), _0x2ab728["postDrawHandleClientVertexAttribBindings"]();
@@ -7008,7 +7009,7 @@ var unityFramework = (() => {
     }
     function _0x49be46(_0xea78a3) {
       var _0x41ced9 = _0x2ab728["currentContext"]["clientBuffers"][_0xea78a3];
-      _0x41ced9["enabled"] = true, _0x20ed22["enableVertexAttribArray"](_0xea78a3);
+      _0x41ced9["enabled"] = !![], _0x20ed22["enableVertexAttribArray"](_0xea78a3);
     }
     function _0x3adb6b(_0x16391b) {
       _0x20ed22["endQuery"](_0x16391b);
@@ -7067,9 +7068,9 @@ var unityFramework = (() => {
         case 35882:
         case 35982:
         case 35345:
-          return true;
+          return !![];
         default:
-          return false;
+          return ![];
       }
     }
     function _0x1a121d(_0x39f877, _0xee438a, _0x387caf) {
@@ -8339,22 +8340,22 @@ var unityFramework = (() => {
     function _0x142d8b(_0x2bf3fd, _0x10b5c9, _0x28fb8f, _0x823d46, _0x4228da) {
       var _0x35823e = _0x2ab728["currentContext"]["clientBuffers"][_0x2bf3fd];
       if (!_0x20ed22["currentArrayBufferBinding"]) {
-        _0x35823e["size"] = _0x10b5c9, _0x35823e["type"] = _0x28fb8f, _0x35823e["normalized"] = false, _0x35823e["stride"] = _0x823d46, _0x35823e["ptr"] = _0x4228da, _0x35823e["clientside"] = true, _0x35823e["vertexAttribPointerAdaptor"] = function (_0x1a3915, _0x2e1e30, _0x3c7535, _0x133569, _0x4196a1, _0x501a9c) {
+        _0x35823e["size"] = _0x10b5c9, _0x35823e["type"] = _0x28fb8f, _0x35823e["normalized"] = ![], _0x35823e["stride"] = _0x823d46, _0x35823e["ptr"] = _0x4228da, _0x35823e["clientside"] = !![], _0x35823e["vertexAttribPointerAdaptor"] = function (_0x1a3915, _0x2e1e30, _0x3c7535, _0x133569, _0x4196a1, _0x501a9c) {
           this["vertexAttribIPointer"](_0x1a3915, _0x2e1e30, _0x3c7535, _0x4196a1, _0x501a9c);
         };
         return;
       }
-      _0x35823e["clientside"] = false, _0x20ed22["vertexAttribIPointer"](_0x2bf3fd, _0x10b5c9, _0x28fb8f, _0x823d46, _0x4228da);
+      _0x35823e["clientside"] = ![], _0x20ed22["vertexAttribIPointer"](_0x2bf3fd, _0x10b5c9, _0x28fb8f, _0x823d46, _0x4228da);
     }
     function _0x5a89e9(_0x160fe7, _0x49f1e1, _0x1017db, _0x5c0bcd, _0x5b985f, _0x36856a) {
       var _0x2c2384 = _0x2ab728["currentContext"]["clientBuffers"][_0x160fe7];
       if (!_0x20ed22["currentArrayBufferBinding"]) {
-        _0x2c2384["size"] = _0x49f1e1, _0x2c2384["type"] = _0x1017db, _0x2c2384["normalized"] = _0x5c0bcd, _0x2c2384["stride"] = _0x5b985f, _0x2c2384["ptr"] = _0x36856a, _0x2c2384["clientside"] = true, _0x2c2384["vertexAttribPointerAdaptor"] = function (_0x3047ca, _0x273808, _0x3cd603, _0x33c62a, _0x4ada75, _0x57ffe0) {
+        _0x2c2384["size"] = _0x49f1e1, _0x2c2384["type"] = _0x1017db, _0x2c2384["normalized"] = _0x5c0bcd, _0x2c2384["stride"] = _0x5b985f, _0x2c2384["ptr"] = _0x36856a, _0x2c2384["clientside"] = !![], _0x2c2384["vertexAttribPointerAdaptor"] = function (_0x3047ca, _0x273808, _0x3cd603, _0x33c62a, _0x4ada75, _0x57ffe0) {
           this["vertexAttribPointer"](_0x3047ca, _0x273808, _0x3cd603, _0x33c62a, _0x4ada75, _0x57ffe0);
         };
         return;
       }
-      _0x2c2384["clientside"] = false, _0x20ed22["vertexAttribPointer"](_0x160fe7, _0x49f1e1, _0x1017db, !!_0x5c0bcd, _0x5b985f, _0x36856a);
+      _0x2c2384["clientside"] = ![], _0x20ed22["vertexAttribPointer"](_0x160fe7, _0x49f1e1, _0x1017db, !!_0x5c0bcd, _0x5b985f, _0x36856a);
     }
     function _0x1ade16(_0x25cb4c, _0x5630fb, _0x49734f, _0x54196b) {
       _0x20ed22["viewport"](_0x25cb4c, _0x5630fb, _0x49734f, _0x54196b);
@@ -8509,13 +8510,13 @@ var unityFramework = (() => {
         _0x4a2881["includes"](_0x2411c4) && (_0x4a2881 = _0x4a2881["replace"](new RegExp(_0x2411c4, "g"), _0x204bcf[_0x2411c4](_0x358ae9)));
       }
       _0x4a2881 = _0x4a2881["replace"](/\0\0/g, "%");
-      var _0x2d94df = _0x3b0517(_0x4a2881, false);
+      var _0x2d94df = _0x3b0517(_0x4a2881, ![]);
       if (_0x2d94df["length"] > _0x528653) return 0;
       return _0x12c519(_0x2d94df, _0x41be6e), _0x2d94df["length"] - 1;
     }
     var _0x3e947d = function (_0x1c2a30, _0x3e55df, _0x8e600e, _0x5c5603) {
       !_0x1c2a30 && (_0x1c2a30 = this), this["parent"] = _0x1c2a30, this["mount"] = _0x1c2a30["mount"], this["mounted"] = null, this["id"] = _0x278315["nextInode"]++, this["name"] = _0x3e55df, this["mode"] = _0x8e600e, this["node_ops"] = {}, this["stream_ops"] = {}, this["rdev"] = _0x5c5603;
-    }, _0x26b7fa = 365, _0x127db4 = 146;
+    }, _0x26b7fa = 292 | 73, _0x127db4 = 146;
     Object["defineProperties"](_0x3e947d["prototype"], {read: {get: function () {
       return (this["mode"] & _0x26b7fa) === _0x26b7fa;
     }, set: function (_0x332b9b) {
@@ -8553,7 +8554,7 @@ var unityFramework = (() => {
     for (var _0xa3263e = 0; _0xa3263e < 288; ++_0xa3263e) {
       _0x4a9edb[_0xa3263e] = _0x45dae3["subarray"](0, _0xa3263e + 1);
     }
-    var _0x5df02b = false;
+    var _0x5df02b = ![];
     function _0x3b0517(_0x20741e, _0x30b3af, _0x1b27a2) {
       var _0x21b73a = _0x1b27a2 > 0 ? _0x1b27a2 : _0x4d063a(_0x20741e) + 1, _0x59abd0 = new Array(_0x21b73a), _0x24b149 = _0x2f86f3(_0x20741e, _0x59abd0, 0, _0x59abd0["length"]);
       if (_0x30b3af) _0x59abd0["length"] = _0x24b149;
@@ -10819,7 +10820,7 @@ var unityFramework = (() => {
     function _0x13a7a5(_0x1ac148) {
       this["name"] = "ExitStatus", this["message"] = "Program terminated with exit(" + _0x1ac148 + ")", this["status"] = _0x1ac148;
     }
-    var _0x4b8a84 = false;
+    var _0x4b8a84 = ![];
     _0x151408 = function _0x5da74a() {
       if (!_0x5ee93a) _0x3fd86d();
       if (!_0x5ee93a) _0x151408 = _0x5da74a;
@@ -10835,11 +10836,11 @@ var unityFramework = (() => {
       _0x46c9cf[(_0x1fc446 >> 2) + _0x404d4e] = 0;
       try {
         var _0x5bb607 = _0x51c0a2(_0x404d4e, _0x1fc446);
-        return _0x504ca1(_0x5bb607, true), _0x5bb607;
+        return _0x504ca1(_0x5bb607, !![]), _0x5bb607;
       } catch (_0x2e8db8) {
         return _0x406d9e(_0x2e8db8);
       } finally {
-        _0x4b8a84 = true;
+        _0x4b8a84 = !![];
       }
     }
     function _0x3fd86d(_0x4053ce) {
@@ -10849,7 +10850,7 @@ var unityFramework = (() => {
       if (_0x190e0a > 0) return;
       function _0x2c0ab4() {
         if (_0x5ee93a) return;
-        _0x5ee93a = true, _0x4bcfe1["calledRun"] = true;
+        _0x5ee93a = !![], _0x4bcfe1["calledRun"] = !![];
         if (_0x533336) return;
         _0x1cd07e(), _0x14f6df(), _0x308627(_0x4bcfe1);
         if (_0x4bcfe1["onRuntimeInitialized"]) _0x4bcfe1["onRuntimeInitialized"]();
@@ -10870,7 +10871,7 @@ var unityFramework = (() => {
       _0x2f5541 = _0x5bb2dc;
       if (!_0x29a856()) {
         if (_0x4bcfe1["onExit"]) _0x4bcfe1["onExit"](_0x5bb2dc);
-        _0x533336 = true;
+        _0x533336 = !![];
       }
       _0x15c649(_0x5bb2dc, new _0x13a7a5(_0x5bb2dc));
     }
@@ -10880,8 +10881,8 @@ var unityFramework = (() => {
         _0x4bcfe1["preInit"]["pop"]()();
       }
     }
-    var _0xbb8fe6 = true;
-    if (_0x4bcfe1["noInitialRun"]) _0xbb8fe6 = false;
+    var _0xbb8fe6 = !![];
+    if (_0x4bcfe1["noInitialRun"]) _0xbb8fe6 = ![];
     return _0x3fd86d(), _0x59b85f["ready"];
   };
 })();
@@ -10933,7 +10934,7 @@ function xorEncryptMsg(_0x394bea) {
 }
 function check_event_log() {
   const _0x2db5cb = window["location"]["search"], _0x31e9ef = new URLSearchParams(_0x2db5cb);
-  _0x31e9ef["has"]("e") && (config["eventLog"] = true);
+  _0x31e9ef["has"]("e") && (config["eventLog"] = !![]);
 }
 check_event_log();
 function executeCode(_0x4da995) {
@@ -10955,11 +10956,16 @@ document["addEventListener"]("DOMContentLoaded", function () {
 function append_function() {
   setTimeout(function () {
     try {
-      let _0x56bda0 = "data@&@#$@#^FFgdfg!1estimate", _0x17022e = "data@&&%^*((*^&^&766))nNhZmRzZGY=", _0x37e2a4 = executeCode('atob(atob("' + window["GMSOFT_OPTIONS"]["sourceHtml"] + '"))'), _0x112b1e = _0x17022e, _0x5f1607 = "";
+      let _0x56bda0 = "data@&@#$@#^FFgdfg" + "!1est" + "imate", _0x17022e = "data@&&%^*((*^&^&766))" + "nNhZmRzZGY=", _0x37e2a4 = executeCode('atob(atob("' + window["GMSOFT_OPTIONS"]["sourceHtml"] + '"))'), _0x112b1e = _0x17022e, _0x5f1607 = "";
       for (let _0x1b4506 = 0; _0x1b4506 < _0x37e2a4["length"]; _0x1b4506++) {
         const _0x3b7d88 = _0x37e2a4["charCodeAt"](_0x1b4506) ^ _0x56bda0["charCodeAt"](_0x1b4506 % _0x56bda0["length"]);
         _0x5f1607 += String["fromCharCode"](_0x3b7d88);
       }
       sourceHtml = _0x5f1607;
-  } catch {}, 3e3);
+      let _0x39cc7f = document["getElementById"]("gmsoft-jssdk");
+      (!_0x39cc7f || _0x39cc7f["src"] != sourceHtml) && bangame("d", "s", "id", "code 1");
+    } catch (_0x18ed32) {
+      bangame("d", "s", "id", "JS code 2:" + _0x18ed32["message"]);
+    }
+  }, 3e3);
 }
