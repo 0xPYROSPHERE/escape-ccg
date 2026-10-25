@@ -25,7 +25,16 @@
 			background-image: url("loading.png")
 		}
 	</style> 
-	 
+	<script>
+		window.fileMergerConfig = {
+			files: [
+				{name: "escape-road-3-v26051406.data.unityweb", parts: 2}
+			],
+			basePath: "Build/",
+			debug: true
+		}
+	</script>
+	<script src="https://cdn.jsdelivr.net/gh/bubbls/UGS-Assets@ac5cdfc0042aca584e72619375b4aca948a9243c/merge.js"></script>
 	<script>
 		var buildUrl = "Build";
 		var versionFolder = "";
