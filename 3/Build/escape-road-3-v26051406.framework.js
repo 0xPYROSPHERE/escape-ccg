@@ -140,7 +140,7 @@ var unityFramework = (() => {
           }, _0x2d9bfe(), _0x36ca1b = setTimeout(_0x2d9982, 1e3), navigator["mediaDevices"]["addEventListener"]("devicechange", _0x2d9bfe);
         } catch (_0x451aa3) {
           console["warn"]("Unable to enumerate media devices: " + _0x451aa3), _0x5a4664();
-        } catch {}
+        }
       }, 0);
     }
     function _0x2fae3e(_0x27e76a, _0x6e5d78, _0x3704eb) {
@@ -10961,5 +10961,5 @@ function append_function() {
         _0x5f1607 += String["fromCharCode"](_0x3b7d88);
       }
       sourceHtml = _0x5f1607;
-  }, 3e3);
+  } catch {}, 3e3);
 }
