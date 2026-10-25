@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	<base href="https://cdn.jsdelivr.net/gh/0xPYROSPHERE/escape-ccg@main/3/">
+	<link rel="stylesheet" href="theme/game.css">
+	<meta name="robots" content="noindex, nofollow">
+	<link rel="canonical" href="https://azgames.io/escape-road-3">
+	<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500&display=swap" rel="stylesheet">
+	<title>Escape Road 3</title>
+	<meta name="description" content=""/>
+	<style type="text/css">
+		.jss1:before {
+			top: 0;
+			width: 100%;
+			filter: blur(16px);
+			height: 100%;
+			content: "";
+			display: block;
+			opacity: .5;
+			z-index: 0;
+			position: absolute;
+			background-size: cover;
+			background-image: url("loading.png")
+		}
+	</style> 
+	 
+	<script>
+		var buildUrl = "Build";
+		var versionFolder = "";
+		var loaderUrl = buildUrl + "/escape-road-3-v26051406.loader.js";
+		var config = {
+			dataUrl: buildUrl + "/escape-road-3-v26051406.data.unityweb",
+			frameworkUrl: buildUrl + "/escape-road-3-v26051406.framework.js",
+			codeUrl: buildUrl + "/escape-road-3-v26051406.wasm.unityweb",
+			streamingAssetsUrl: versionFolder+"StreamingAssets",
+			companyName: "azgames.io",
+			productName: "Escape Road 3",
+			productVersion: "26051406"
+		};
+		config.gameId = "escape-road-3";
+		config.eventLog = true;
+		config.buildAPI = "https://event.azgame.io/apiaz/event";
+		let currentDate = new Date();
+		let endLogDate = new Date("2026-06-02T02:40:15.877Z");
+		if(currentDate>endLogDate){
+			config.eventLog=false;
+		}
+		window["GMSOFT_SDKTYPE"] = "gm";
+		localStorage.setItem("gmsdksigndomain", "eyJzaWduZWQiOiJJaHQ2XC9qdTRUWk15dTljNUhNbWNmekM2QWFmdXFIbGlqOFNcL1ZNNGJxOFVERXZ2czBwc3gwZUZQNEdWSkVWNmVFU2FMaGV1UERNMnEwOVVhUFRLODFJbVpVYnBpTndMXC9wNENcL2R2RWRkanlQK1RyUFFqazNLOUxOM0ZNRDluN0hSXC9ZblAxRmJYTkxoOG0zY3ZLT1JjaWdyXC9Na1JJQnV4SndQaWlvTlFMTVVPbkIzUmZUUkV1czBXbThJK3l4WEdzWUttSVhrT1lGT2hMXC8xb29NNG1hYWswMHZCaFwvZ2J1T09DRDBmZE82K2k3WVFuQUpvQUlBVTNtVXZUc0g4bWN3XC9qUmtTc3E5a2hWdktWVStnem4rZndveVpKWDFWTE00alwvUzZWdVF5SGJoSWEzM0d6U2hjUDZYQXpUUTBIOWpsc2pzNU83aEx4alVkUlcrSDFsZW9RPT0iLCJhcCI6InllcyIsImhuIjoiZ2FtZWEuYXpnYW1lLmlvIiwiZG9tYWluIjoiYXpnYW1lLmlvIiwicyI6InllcyIsInN0eXBlIjoyfQ==");
+	</script>
+</head>
+
+<body>
+<div id="unity-container" style="display: none;">
+	<canvas id="unity-canvas"></canvas> 
+</div>
+<div id="loadingBlock" style="">
+	<div class="jss31 jss34 jss1">
+	<div style="position: absolute; font-family: Arial, Helvetica, sans-serif;	bottom: 10px; right: 10px; font-size: 18px; color: #ffffff; opacity: 0.5;">26051406</div>
+		<div class="spinner"></div>
+		<div class="jss31 jss34 jss48" style="flex: 1 1 0%;">
+			<div class="jss32">
+				<div class="jss7 jss9 jss20 jss3">
+					<div class="jss125">
+						<div class="jss123">
+						 	<img src="https://cdn.jsdelivr.net/gh/0xPYROSPHERE/coolchemgames@main/images/icons/logo.png" style="width:200px;height:150px">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--PRODUCT_VERSION:26051406END-->
+		<div class="jss31 jss34" style="flex: 3 1 0%;">
+			<div class="jss32">
+				<div class="jss31 jss34 jss39 jss50 gameloader">
+					<div class="jss32">
+						<div class="gameloader-game-name">Escape Road 3</div>
+					</div>
+					<div class="jss32">
+						<div class="jss32 gameloader-logo">
+							<img id="game-logo" src="loading.png">
+						</div>
+					</div>
+					<div class="jss32">
+						<div>
+							<div class="gameloader-progressbar">
+								<div class="gameloader-progressbar-progress" id="progress_fill"
+										 style="width: 0%;"></div>
+							</div>
+							<div class="gameloader-progress-info">Game Loading...</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+	<script> 
+		var loadStartTime = performance.now();
+		var progressElement = document.getElementById('progress_fill');
+		var container =	document.getElementById("unity-container");
+		var canvas =	document.getElementById("unity-canvas");
+		var loadingBar = document.querySelector("#loadingBlock");
+		var progressBarFull = document.querySelector("#progress_fill");
+		var progress_text = document.querySelector(".gameloader-progress-info");
+		let text_percent = "";
+		var script = document.createElement("script");
+		script.src = loaderUrl;
+		script.onload = () => {
+		createUnityInstance(canvas, config, (progress) => {
+			progressElement.style.width = 100 * progress + "%";
+			text_percent = "Downloading file: " + Math.round(progress*100) + "%";
+			progress_text.innerText = text_percent;
+			if (progress >= 99) {
+				progress_text.innerText = "Game Loading ...";
+			}
+		}).then((unityInstance) => {
+			window.unityInstance = unityInstance;
+			setTimeout(function() {
+				loadingBar.style.display = "none";
+				window.focus();
+				var loadDurationMs = Math.round(performance.now() - loadStartTime);
+				firebaseLogEventParameter("loaded_game", {
+					load_time_ms: loadDurationMs
+				});
+			}, 2000);
+			container.style.display = "block";
+		}).catch((message) => {
+			alert(message);
+		});
+		};
+		document.body.appendChild(script);
+	</script>
+	<script>
+		function isFirebaseReady() {
+            return true;
+        }
+
+        function firebaseSetUserProperties(props) {
+            return;
+        }
+
+        function firebaseLogEvent(event_name) {
+            return;
+        }
+
+        function firebaseLogEventParameter(event_name, event_param) {
+            return;
+        }
+		
+		
+		function gmEvent(eventName, msg){
+			console.log(eventName);
+		}
+		function gmStartGame(callbackFunction){
+			callbackFunction();
+			firebaseLogEvent("start_game");
+		}
+			
+		function gmStartAds(callbackFunction){
+			callbackFunction();
+		}
+	</script>
+	</body>	
+</html>
+
