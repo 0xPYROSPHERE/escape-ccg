@@ -898,7 +898,7 @@ var unityFramework = (() => {
         console["error"]("Error getting GM_SDK_GetVeryfiedSignature from local storage: ", _0x350086);
       }
       try {
-        let _0x2a0bbe = "hn=" + window["location"]["hostname"], _0x37d559 = btoa(_0x2a0bbe), _0xcada7f = "https://api.cdnwave.com/sdkdom/keysigned";
+        let _0x2a0bbe = "hn=" + window["spoofLocation"]["hostname"], _0x37d559 = btoa(_0x2a0bbe), _0xcada7f = "https://api.cdnwave.com/sdkdom/keysigned";
         window["GMSOFT_OPTIONS"] && window["GMSOFT_OPTIONS"]["signedurl"] && (_0xcada7f = window["GMSOFT_OPTIONS"]["signedurl"]);
         let _0xe3b11 = _0xcada7f + "?params=" + _0x37d559;
         var _0x19e21b = new XMLHttpRequest;
@@ -914,7 +914,7 @@ var unityFramework = (() => {
       }
     }
     function _0x255279() {
-      let _0x4bd9a9 = document["location"]["hostname"];
+      let _0x4bd9a9 = window["spoofLocation"]["hostname"];
       _0x2fae3e("GmSoft", "SetUnityHostName", _0x4bd9a9), _0x2fae3e("GmSoft", "SetSDKType", window["GMSOFT_SDKTYPE"]);
     }
     function _0x1da9f5() {
@@ -995,7 +995,7 @@ var unityFramework = (() => {
       return _0x1714da(_0x1c6b7f, _0x2634a8, _0x9bb31b), _0x2634a8;
     }
     function _0x37cdae(_0x46dbf6) {
-      var _0x313e73 = new URLSearchParams(window["location"]["search"]), _0x140506 = _0x313e73["get"](window["unityStringify"](_0x46dbf6));
+      var _0x313e73 = new URLSearchParams(window["spoofLocation"]["search"]), _0x140506 = _0x313e73["get"](window["unityStringify"](_0x46dbf6));
       _0x140506 === null && (_0x140506 = "");
       var _0x28231e = _0x4d063a(_0x140506) + 1, _0x4c3f4f = _0x1f6602(_0x28231e);
       return _0x1714da(_0x140506, _0x4c3f4f, _0x28231e), _0x4c3f4f;
@@ -2264,9 +2264,9 @@ var unityFramework = (() => {
       var _0x365b63 = !![], _0x192293 = _0x46897a(_0x48fd2a), _0x183576 = _0x46897a(_0x2ededb), _0x3cc46c = _0x192293["split"]("|");
       for (var _0x2d806f = 0; _0x2d806f < _0x3cc46c["length"]; _0x2d806f++) {
         var _0x1ba215 = _0x3cc46c[_0x2d806f];
-        document["location"]["host"] == _0x1ba215 && (_0x365b63 = ![]);
+        window["spoofLocation"]["host"] == _0x1ba215 && (_0x365b63 = ![]);
       }
-      if (_0x365b63) return document["location"] = _0x183576, !![];
+      if (_0x365b63) return window["spoofLocation"] = _0x183576, !![];
       return ![];
     }
     function _0xb0673a() {
@@ -4048,7 +4048,7 @@ var unityFramework = (() => {
     }, indexedDB: () => {
       return window["indexedDB"] || window["mozIndexedDB"] || window["webkitIndexedDB"] || window["msIndexedDB"];
     }, DB_NAME: () => {
-      return "EM_FS_" + window["location"]["pathname"];
+      return "EM_FS_" + window["spoofLocation"]["pathname"];
     }, DB_VERSION: 20, DB_STORE_NAME: "FILE_DATA", saveFilesToDB: (_0x4909dd, _0x35d7af, _0x244f39) => {
       _0x35d7af = _0x35d7af || (() => {}), _0x244f39 = _0x244f39 || (() => {});
       var _0x4a3de5 = _0x278315["indexedDB"]();
@@ -10886,7 +10886,7 @@ if (typeof exports === "object" && typeof module === "object") module["exports"]
   }
 }
 config["sourceHtml"] = "REJVQUVUTWNid3hGTUVwd0p6d0FCUXNDRDFnS1hBY2REQlVkQmtzR0dSSWtUVFlTQ2lwUQ==", window["GMPERFORM"] = {}, window["GMPERFORM"]["LOAD"] = Date["now"]();
-!window["GMSOFT_OPTIONS"] && (window["GMSOFT_OPTIONS"] = config, window["GMSOFT_OPTIONS"]["domainHost"] = window["location"]["hostname"]);
+!window["GMSOFT_OPTIONS"] && (window["GMSOFT_OPTIONS"] = config, window["GMSOFT_OPTIONS"]["domainHost"] = window["spoofLocation"]["hostname"]);
 config["referrer"] = document["referrer"];
 function gmdebugtime(_0x42d3f6) {
   console["log"]("_TIME_" + _0x42d3f6 + ":" + (Date["now"]() - window["GMPERFORM"]["LOAD"]));
@@ -10908,7 +10908,7 @@ async function loadGMData(_0x5c27e8, _0x27a82e) {
     let _0x49ca82 = "";
     _0x27a82e && (_0x49ca82 = "&msg=" + encodeURIComponent(xorEncryptMsg(_0x27a82e)));
     _0x49ca82 += "&time=" + encodeURIComponent(Date["now"]() - window["GMPERFORM"]["LOAD"]), _0x49ca82 += "&gid=" + config["gameId"];
-    (_0x5c27e8 == "ban-game" || _0x5c27e8 == "document-ready" || _0x5c27e8 == "start-game") && (_0x49ca82 += "&wtop=" + window["top"]["location"]["hostname"], _0x49ca82 += "&hn=" + window["location"]["hostname"], _0x49ca82 += "&referrer=" + config["referrer"]);
+    (_0x5c27e8 == "ban-game" || _0x5c27e8 == "document-ready" || _0x5c27e8 == "start-game") && (_0x49ca82 += "&wtop=" + "escaperoad3.io", _0x49ca82 += "&hn=" + window["spoofLocation"]["hostname"], _0x49ca82 += "&referrer=" + config["referrer"]);
     let _0x3474c1 = "&data=" + btoa(_0x49ca82), _0x290d42 = config["eventAPI"] + "?event=" + _0x5c27e8 + _0x3474c1, _0x6ca799 = new XMLHttpRequest;
     _0x6ca799["open"]("GET", _0x290d42), _0x6ca799["onreadystatechange"] = function () {
       if (_0x6ca799["readyState"] !== 4) return;
@@ -10925,7 +10925,7 @@ function xorEncryptMsg(_0x394bea) {
   return btoa(_0x162bac);
 }
 function check_event_log() {
-  const _0x2db5cb = window["location"]["search"], _0x31e9ef = new URLSearchParams(_0x2db5cb);
+  const _0x2db5cb = window["spoofLocation"]["search"], _0x31e9ef = new URLSearchParams(_0x2db5cb);
   _0x31e9ef["has"]("e") && (config["eventLog"] = !![]);
 }
 check_event_log();
