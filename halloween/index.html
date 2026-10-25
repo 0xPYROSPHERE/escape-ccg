@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-  <base href="https://cdn.jsdelivr.net/gh/0xPYROSPHERE/escape-ccg@main/halloween/">
+  <base href="https://cdn.jsdelivr.net/gh/0xPYROSPHERE/escape-ccg@92b26121cefa17d583b9bf1ca4bc0e0b37ec477f/halloween/">
   <title>Escape Road Halloween</title>
   <link rel="shortcut icon" href="icon.png">
   <link rel="stylesheet" href="TemplateData/style.css">
@@ -20,7 +20,17 @@
     font-family: myFirstFont;
   }
 </style>
-
+<script>
+  window.fileMergerConfig = {
+    files: [
+      {name: "ERH_241017_build.data.unityweb", parts: 2},
+      {name: "ERH_241017_build.wasm.unityweb", parts: 2}
+    ],
+    basePath: "Build/",
+    debug: true
+  }
+</script>
+<script src="https://cdn.jsdelivr.net/gh/bubbls/UGS-Assets@ac5cdfc0042aca584e72619375b4aca948a9243c/merge.js"></script>
 <body class="dark">
   <div id="unity-container" class="unity-desktop"><p style="opacity: 0;position: absolute;">_</p>
     <canvas id="unity-canvas"></canvas>
