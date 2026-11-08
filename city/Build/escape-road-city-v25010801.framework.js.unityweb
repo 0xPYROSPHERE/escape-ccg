@@ -1911,11 +1911,19 @@ var unityFramework = (() => {
     }
     function _0x5861c6(_0x499eba) {
       var _0x5b91fc = _0x49ee84(_0x499eba);
-      firebase["analytics"]()["logEvent"](_0x5b91fc);
+	  try {
+	    firebase["analytics"]()["logEvent"](_0x5b91fc);
+	  } catch (e) {
+	  	return;
+	  }
     }
     function _0x87e2c1(_0x47856e, _0x4a7d89) {
       var _0x4a4850 = _0x49ee84(_0x47856e), _0x4f17a8 = JSON["parse"](_0x49ee84(_0x4a7d89));
-      firebase["analytics"]()["logEvent"](_0x4a4850, _0x4f17a8);
+	  try {
+	    firebase["analytics"]()["logEvent"](_0x4a4850, _0x4f17a8);
+	  } catch (e) {
+	    return;
+	  }
     }
     function _0x2e6e6a(_0x44820a, _0x3420ff, _0x3a45f0, _0x4c1ecd, _0x5cdf73) {
       var _0x54edcb = _0x49ee84(_0x44820a), _0x387f27 = _0x49ee84(_0x3a45f0), _0x2690ed = _0x49ee84(_0x4c1ecd), _0x510ac0 = _0x49ee84(_0x5cdf73);
@@ -2102,7 +2110,11 @@ var unityFramework = (() => {
     }
     function _0x384080(_0x2797a6) {
       var _0x4aafae = JSON["parse"](_0x49ee84(_0x2797a6));
-      firebase["analytics"]()["setUserProperties"](_0x4aafae);
+	  try {
+		firebase["analytics"]()["setUserProperties"](_0x4aafae);
+	  } catch (e) {
+		return;
+	  }
     }
     function _0x15553a() {
       window[preroll["config"]["loaderObjectName"]]["showRewardAd"]();
